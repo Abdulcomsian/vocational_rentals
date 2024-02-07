@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.sponsor {
+  background: rgba(0, 98, 255, 0.1882352941);
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+.new {
+  background: #0062ff;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+.deals {
+  background: rgba(125, 240, 178, 0.1882352941);
+  border-radius: 50px;
+  color: #47C682;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+section.detail {
+  margin-top: 50px;
+}
+section.detail .tool-detail-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+section.detail .tool-detail-top .other h3 {
+  font-weight: 700;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+section.detail .tool-detail-top .other h3 .type {
+  padding: 8px 15px;
+  font-weight: 500;
+}
+section.detail .tool-detail-top .other p {
+  width: 75%;
+}
+section.detail .tool-detail-top .other .web-link {
+  padding: 10px 30px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+section.detail .detail-image {
+  width: 500px;
+}
+section.detail .tool-detail {
+  font-size: 15px;
+  font-weight: 500;
+}
+section.detail .tool-detail p {
+  margin-bottom: 5px;
+  line-height: 30px;
+}
+section.detail .tool-detail ol li {
+  margin-bottom: 7px;
+}
+section.detail .tool-img img {
+  width: 100%;
+}

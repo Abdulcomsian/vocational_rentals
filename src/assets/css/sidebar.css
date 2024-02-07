@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+aside {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  width: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+aside .mini-sidebar {
+  width: 70px;
+  border-right: 1px solid #E0E3E6;
+  text-align: center;
+  height: inherit;
+}
+aside .mini-sidebar .logo img {
+  width: 100%;
+}
+aside .mini-sidebar ul {
+  padding: 0 10px;
+  margin-top: 30px;
+}
+aside .mini-sidebar ul li {
+  list-style-type: none;
+  margin-bottom: 15px;
+}
+aside .mini-sidebar ul li a {
+  color: #000;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+aside .mini-sidebar ul li a i {
+  color: #000;
+  font-size: 26px;
+  margin-top: 3px;
+}
+aside .mini-sidebar ul li a.active {
+  background-color: #F7E8E8;
+}
+aside .mini-sidebar ul li a.active i {
+  color: #E30B0B;
+}
+aside .mini-sidebar ul li .close-side {
+  display: none;
+}
+aside .sidebar-menu {
+  background: #fff;
+}
+aside .sidebar-menu ul {
+  padding-left: 0;
+  margin-top: 10px;
+}
+aside .sidebar-menu ul li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
+}
+aside .sidebar-menu ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 8px 24px 8px 14px;
+  color: #8A92A6;
+  font-size: 12px;
+  font-weight: 400;
+}
+aside .sidebar-menu ul li a i {
+  font-size: 18px;
+  margin-right: 5px;
+}

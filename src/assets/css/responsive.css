@@ -1,0 +1,92 @@
+@media only screen and (max-width: 992px) {
+  aside .mini-sidebar ul li a.close-side {
+    display: block;
+    color: #000;
+  }
+  aside .mini-sidebar ul li a.close-side i {
+    font-size: 20px;
+  }
+  .open-mobile {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+    height: auto;
+    z-index: 99999;
+  }
+  nav.navbar .top-menu .buttons-actions {
+    display: none;
+    position: absolute;
+    width: 103%;
+    text-align: center;
+    left: -7px;
+    top: 60px;
+    z-index: 999;
+    height: auto;
+    padding: 20px 20px;
+    border-radius: 10px;
+    background: #eee;
+  }
+  nav.navbar .top-menu .buttons-actions a {
+    display: block;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  nav.navbar .top-menu .mobile-hamburger {
+    display: block;
+  }
+  nav.navbar .top-menu .mobile-hamburger i.left-icon {
+    display: block;
+  }
+  nav.navbar .top-menu .mobile-sidebar-trigger-right {
+    display: block;
+  }
+  nav.navbar .top-menu .mobile-sidebar-trigger-right i.left-icon {
+    display: block;
+  }
+  nav.navbar .top-menu .desc p {
+    display: none;
+  }
+  nav.navbar .top-menu .navbar-brand img {
+    width: 100%;
+  }
+  aside {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  main {
+    margin-left: 340px;
+    position: relative;
+    top: 0;
+    width: calc(100% - 350px);
+  }
+}
+@media only screen and (max-width: 560px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  aside {
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) and (min-width: 630px) {
+  main {
+    margin-left: 336px;
+    position: relative;
+    top: 0;
+    width: calc(100% - 340px);
+  }
+}
+@media only screen and (max-width: 630px) {
+  main {
+    width: 100%;
+    position: unset;
+    margin: 0;
+  }
+  aside {
+    display: none;
+  }
+}
