@@ -1,10 +1,12 @@
 @media only screen and (max-width: 992px) {
-  aside .mini-sidebar ul li a.close-side {
-    display: block;
-    color: #000;
+  .container-mini {
+    width: 100%;
   }
-  aside .mini-sidebar ul li a.close-side i {
-    font-size: 20px;
+  .container-mini header {
+    text-align: center;
+  }
+  header {
+    text-align: center;
   }
   .open-mobile {
     display: -webkit-inline-box !important;
@@ -37,12 +39,6 @@
   nav.navbar .top-menu .mobile-hamburger i.left-icon {
     display: block;
   }
-  nav.navbar .top-menu .mobile-sidebar-trigger-right {
-    display: block;
-  }
-  nav.navbar .top-menu .mobile-sidebar-trigger-right i.left-icon {
-    display: block;
-  }
   nav.navbar .top-menu .desc p {
     display: none;
   }
@@ -53,6 +49,7 @@
     position: absolute;
     top: 0;
     z-index: 999;
+    height: auto;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -61,6 +58,9 @@
     position: relative;
     top: 0;
     width: calc(100% - 350px);
+    .dashboard{
+      padding: 10px 20px;
+    }
   }
 }
 @media only screen and (max-width: 560px) {
@@ -79,6 +79,9 @@
     top: 0;
     width: calc(100% - 340px);
   }
+  header {
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 630px) {
   main {
@@ -88,5 +91,21 @@
   }
   aside {
     display: none;
+  }
+  .signin-module {
+    padding: 0 30px;
+  }
+  .mobile-sidebar-trigger-right {
+    display: block !important;
+  }
+  .mobile-sidebar-trigger-right i.left-icon {
+    display: block;
+  }
+  aside .mini-sidebar ul li a.close-side {
+    display: block;
+    color: #000;
+  }
+  aside .mini-sidebar ul li a.close-side i {
+    font-size: 20px;
   }
 }

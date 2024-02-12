@@ -4,15 +4,15 @@ import Logo from "@/assets/images/logo.svg"
 function Topbar() {
   return (
     <>
-      <section class="menu-top">
-        <div class="row mx-3">
-          <nav class="navbar navbar-expand-lg">
-            <div class="top-menu">
-              <a href="javascript:void(0)" class="mobile-sidebar-trigger-right">
-                <i class="las la-angle-double-right right-icon"></i>
+      <section className="menu-top">
+        <div className="row mx-3">
+          <nav className="navbar navbar-expand-lg">
+            <div className="top-menu">
+              <a href="#" className="mobile-sidebar-trigger-right">
+                <i className="las la-angle-double-right right-icon"></i>
               </a>
-              <div class="desc">
-                <a class="navbar-brand" href="javascript:void(0)">
+              <div className="desc">
+                <a className="navbar-brand" href="#">
                   <Image src={Logo} alt="" />
                 </a>
                 <p>
@@ -20,17 +20,17 @@ function Topbar() {
                   Carefully vetted and maintained by renters
                 </p>
               </div>
-              <a href="javascript:void(0)" class="mobile-hamburger">
-                <i class="las la-bars hamburger"></i>
+              <a href="# onClick={e => e.preventDefault()}" className="mobile-hamburger">
+                <i className="las la-bars hamburger"></i>
               </a>
-              <div class="buttons-actions">
+              <div className="buttons-actions">
                 <a href="#">Login</a>
-                <a href="#" class="submit-btn">
+                <a href="#" className="submit-btn">
                   {" "}
                   Submit{" "}
                 </a>
-                <a href="#" class="subscribe-btn">
-                  <i class="lar la-envelope"></i>
+                <a href="#" className="subscribe-btn">
+                  <i className="lar la-envelope"></i>
                   Subscribe
                 </a>
               </div>

@@ -53,6 +53,9 @@ section.detail .tool-detail-top .other h3 .type {
 section.detail .tool-detail-top .other p {
   width: 75%;
 }
+section.detail .tool-detail-top .other .web-link i{
+  margin-left: 10px;
+}
 section.detail .tool-detail-top .other .web-link {
   padding: 10px 30px;
   background: #000;
