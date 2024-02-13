@@ -1,4 +1,6 @@
 import Image from "next/image";
+import ProductImage from "@/assets/images/detail.svg"
+import ProductIcon from "@/assets/images/detail-icon.svg"
 
 function Carddetails() {
   return (
@@ -7,7 +9,7 @@ function Carddetails() {
         <div className="row">
           <div className="col-lg-7">
             <div className="tool-detail-top">
-              {/* <Image src="assets/images/detail-icon.svg" alt="" /> */}
+              <Image src={ProductIcon} alt="" />
               <div className="other">
                 <h3>
                   Universium
@@ -23,11 +25,11 @@ function Carddetails() {
                 </a>
               </div>
             </div>
-            {/* <Image
-              src="assets/images/detail.svg"
-              className="detail-image mt-5 mb-2"
+            <Image
+              src={ProductImage}
+              className="detail-image mb-0"
               alt=""
-            /> */}
+            />
             <div className="tool-detail">
               <p>No time to wait for design? You’re at the right place.</p>
               <p>
@@ -65,7 +67,7 @@ function Carddetails() {
           </div>
           <div className="col-lg-5">
             <div className="tool-img">
-              {/* <Image src="assets/images/detail.svg" alt="" /> */}
+              <Image src={ProductImage} alt="" />
             </div>
           </div>
         </div>

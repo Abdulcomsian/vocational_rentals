@@ -7,7 +7,7 @@ function Cardpage() {
   return (
     <>
       <section className="search-area">
-        <div className="row mx-0">
+        <div className="row">
           <div className="search-box">
             <div className="input-group search-input mb-3">
               <i className="las la-search"></i>
@@ -47,7 +47,7 @@ function Cardpage() {
         </div>
       </section>
       <section className="cards">
-        <div className="row mx-0">
+        <div className="row">
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/dashboard/carddetails">
               <div className="card">

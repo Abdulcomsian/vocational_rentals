@@ -5,7 +5,7 @@ function Topbar() {
   return (
     <>
       <section className="menu-top">
-        <div className="row mx-3">
+        <div className="row mx-0">
           <nav className="navbar navbar-expand-lg">
             <div className="top-menu">
               <a href="#" className="mobile-sidebar-trigger-right">
@@ -16,8 +16,7 @@ function Topbar() {
                   <Image src={Logo} alt="" />
                 </a>
                 <p>
-                  An exclusive list of the best tools for Vacation Rentals.
-                  Carefully vetted and maintained by renters
+                  An exclusive list of the best tools & resources for Vacation Rentals
                 </p>
               </div>
               <a href="# onClick={e => e.preventDefault()}" className="mobile-hamburger">

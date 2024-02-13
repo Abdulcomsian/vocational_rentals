@@ -4,10 +4,10 @@ body {
 }
 
 main {
-  margin-left: 344px;
+  margin-left: 373px;
   position: relative;
   top: 0;
-  width: calc(100% - 386px);
+  width: calc(100% - 411px);
 }
 
 .sponsor {
@@ -84,6 +84,9 @@ section.cards {
   display: -ms-flexbox;
   display: flex;
   gap: 15px;
+}
+section.cards a{
+  text-decoration: none;
 }
 section.cards .card {
   margin-bottom: 25px;

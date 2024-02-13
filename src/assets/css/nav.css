@@ -71,6 +71,7 @@ nav.navbar .top-menu .desc p {
 }
 nav.navbar .top-menu .navbar-brand img {
   width: 300px;
+  height: auto;
 }
 nav.navbar .top-menu .buttons-actions a {
   margin-bottom: 10px;
