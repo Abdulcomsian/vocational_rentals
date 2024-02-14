@@ -84,7 +84,7 @@ aside .sidebar-menu ul li a {
   font-size: 14px;
   font-weight: 400;
 }
-aside .sidebar-menu ul li a i {
+aside .sidebar-menu ul li a i, aside .sidebar-menu ul li a img {
   font-size: 18px;
   margin-right: 5px;
 }
