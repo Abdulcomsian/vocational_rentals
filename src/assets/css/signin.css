@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+section.signin-module {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+section.signin-module .back {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+section.signin-module .back i {
+  font-size: 20px;
+}
+section.signin-module .title {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 36;
+  font-weight: 700;
+  margin-top: 15px;
+}
+section.signin-module form {
+  margin-top: 50px;
+}
+section.signin-module form label {
+  font-weight: 500;
+  font-size: 18px;
+}
+section.signin-module form input {
+  height: 50px;
+}
+section.signin-module form input:focus, section.signin-module form input :active, section.signin-module form input :visited {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border-right: 1px solid #E30B0B;
+  border-color: #E30B0B;
+}
+section.signin-module form .pass-view {
+  position: relative;
+}
+section.signin-module form .pass-view .view-pass {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #AEAEAE;
+}
+section.signin-module form .pass-view .view-pass i {
+  font-size: 25px;
+}
+section.signin-module form .form-check .form-check-label a {
+  color: #AEAEAE;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.signin-module form .form-check .form-check-label a:hover {
+  color: #E30B0B;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.signin-module form .submit {
+  display: block;
+  width: 100%;
+  background: #E30B0B;
+  color: #fff;
+  height: 50px;
+}
+section.signin-module form .submit:focus, section.signin-module form .submit :active, section.signin-module form .submit :visited {
+  background: #E30B0B;
+  color: #fff;
+  border: 1px solid #E30B0B;
+}
+
+.container-mini {
+  width: 90%;
+  margin: 0 auto;
+}

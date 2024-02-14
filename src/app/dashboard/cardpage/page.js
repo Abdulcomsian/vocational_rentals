@@ -6,38 +6,38 @@ import Link from "next/link";
 function Cardpage() {
   return (
     <>
-      <section class="search-area">
-        <div class="row mx-0">
-          <div class="search-box">
-            <div class="input-group search-input mb-3">
-              <i class="las la-search"></i>
+      <section className="search-area">
+        <div className="row">
+          <div className="search-box">
+            <div className="input-group search-input mb-3">
+              <i className="las la-search"></i>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Text input with dropdown button"
                 placeholder="Search"
               />
               <button
-                class="btn dropdown-toggle"
+                className="btn dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Sort By : Has Deals
               </button>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul className="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Action
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Another action
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
                     Something else here
                   </a>
                 </li>
@@ -46,18 +46,18 @@ function Cardpage() {
           </div>
         </div>
       </section>
-      <section class="cards">
-        <div class="row mx-0">
-          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+      <section className="cards">
+        <div className="row">
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/dashboard/carddetails">
-              <div class="card">
+              <div className="card">
                 <Image src={card} alt="" />
-                <div class="card-info">
-                  <div class="name-img">
+                <div className="card-info">
+                  <div className="name-img">
                     <Image src={card11} alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div class="type sponsor">Ad</div>
+                  <div className="type sponsor">Ad</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
@@ -66,16 +66,16 @@ function Cardpage() {
               </div>
             </Link>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/dashboard/carddetails">
-              <div class="card">
+              <div className="card">
                 <Image src={card} alt="" />
-                <div class="card-info">
-                  <div class="name-img">
+                <div className="card-info">
+                  <div className="name-img">
                     <Image src={card11} alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div class="type new">New</div>
+                  <div className="type new">New</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
@@ -84,16 +84,16 @@ function Cardpage() {
               </div>
             </Link>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/dashboard/carddetails">
-              <div class="card">
+              <div className="card">
                 <Image src={card} alt="" />
-                <div class="card-info">
-                  <div class="name-img">
+                <div className="card-info">
+                  <div className="name-img">
                     <Image src={card11} alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div class="type new">New</div>
+                  <div className="type new">New</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
@@ -102,16 +102,16 @@ function Cardpage() {
               </div>
             </Link>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/dashboard/carddetails">
-              <div class="card">
+              <div className="card">
                 <Image src={card} alt="" />
-                <div class="card-info">
-                  <div class="name-img">
+                <div className="card-info">
+                  <div className="name-img">
                     <Image src={card11} alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div class="type deals">2 Deals</div>
+                  <div className="type deals">2 Deals</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in

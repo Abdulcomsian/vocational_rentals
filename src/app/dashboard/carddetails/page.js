@@ -1,34 +1,36 @@
 import Image from "next/image";
+import ProductImage from "@/assets/images/detail.svg"
+import ProductIcon from "@/assets/images/detail-icon.svg"
 
 function Carddetails() {
   return (
     <>
-      <section class="detail">
-        <div class="row">
-          <div class="col-lg-7">
-            <div class="tool-detail-top">
-              {/* <Image src="assets/images/detail-icon.svg" alt="" /> */}
-              <div class="other">
+      <section className="detail">
+        <div className="row">
+          <div className="col-lg-7">
+            <div className="tool-detail-top">
+              <Image src={ProductIcon} alt="" />
+              <div className="other">
                 <h3>
                   Universium
-                  <div class="type new">New</div>
+                  <div className="type new">New</div>
                 </h3>
                 <p>
                   Exceptional web & digital design for marketing and SaaS
                   product teams.
                 </p>
-                <a href="#" class="web-link">
+                <a href="#" className="web-link">
                   Visit Website
-                  <i class="las la-arrow-right"></i>
+                  <i className="las la-arrow-right"></i>
                 </a>
               </div>
             </div>
-            {/* <Image
-              src="assets/images/detail.svg"
-              class="detail-image mt-5 mb-2"
+            <Image
+              src={ProductImage}
+              className="detail-image mb-0"
               alt=""
-            /> */}
-            <div class="tool-detail">
+            />
+            <div className="tool-detail">
               <p>No time to wait for design? You’re at the right place.</p>
               <p>
                 <b>With us, you can expect:</b>
@@ -63,9 +65,9 @@ function Carddetails() {
               </p>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="tool-img">
-              {/* <Image src="assets/images/detail.svg" alt="" /> */}
+          <div className="col-lg-5">
+            <div className="tool-img">
+              <Image src={ProductImage} alt="" />
             </div>
           </div>
         </div>
