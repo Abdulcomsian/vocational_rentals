@@ -11,10 +11,10 @@ function Carddetails() {
             <div className="tool-detail-top">
               <Image src={ProductIcon} alt="" />
               <div className="other">
-                <h3>
+                <h1>
                   Universium
                   <div className="type new">New</div>
-                </h3>
+                </h1>
                 <p>
                   Exceptional web & digital design for marketing and SaaS
                   product teams.
@@ -31,7 +31,7 @@ function Carddetails() {
               alt=""
             />
             <div className="tool-detail">
-              <p>No time to wait for design? You’re at the right place.</p>
+              <p>No time to wait for design? You are at the right place.</p>
               <p>
                 <b>With us, you can expect:</b>
               </p>
@@ -53,7 +53,7 @@ function Carddetails() {
                 <li>Get started within 12 hours.</li>
               </ol>
               <p>
-                We’re a design service provider specializing in
+                We are a design service provider specializing in
                 subscription-based offerings for a flat monthly fee, targeting
                 clients who seek exceptional user experiences without the hassle
                 of expensive agencies and hourly freelance jobs.

@@ -7,6 +7,13 @@ import "@/assets/css/bootstrap.min.css";
 import "@/assets/css/responsive.css";
 import "@/assets/css/variable.css";
 import "@/assets/css/detail.css";
+import "@/assets/css/variable.css";
+import "@/assets/css/addlist.css";
+import "@/assets/css/about.css";
+import "@/assets/css/signin.css";
+import "@/assets/css/signup.css";
+import "@/assets/css/contact.css";
+import "@/assets/css/subscription.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
