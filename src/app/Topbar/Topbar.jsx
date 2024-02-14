@@ -23,8 +23,9 @@ function Topbar() {
                 <i className="las la-bars hamburger"></i>
               </a>
               <div className="buttons-actions">
-                <a href="#">Login</a>
-                <a href="#" className="submit-btn">
+                <a href="/dashboard/signin">Login</a>
+                <a href="/dashboard/signup">Signup</a>
+                <a href="/dashboard/addlisting" className="submit-btn">
                   {" "}
                   Submit{" "}
                 </a>

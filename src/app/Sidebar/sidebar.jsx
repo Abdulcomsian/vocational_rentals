@@ -18,22 +18,22 @@ function Sidebar() {
           </div>
           <ul>
             <li>
-              <a href="#" className="active">
+              <a href="/dashboard/cardpage" className="active">
                 <i className="las la-home"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/dashboard/about">
                 <i className="lar la-star"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/dashboard/subscription">
                 <i className="las la-tag"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/dashboard/contact">
                 <i className="las la-phone"></i>
               </a>
             </li>

@@ -38,7 +38,7 @@ section.detail .tool-detail-top {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-section.detail .tool-detail-top .other h3 {
+section.detail .tool-detail-top .other h1 {
   font-weight: 700;
   font-size: 25px;
   display: -webkit-box;
@@ -46,7 +46,7 @@ section.detail .tool-detail-top .other h3 {
   display: flex;
   gap: 30px;
 }
-section.detail .tool-detail-top .other h3 .type {
+section.detail .tool-detail-top .other h1 .type {
   padding: 8px 15px;
   font-weight: 500;
 }
