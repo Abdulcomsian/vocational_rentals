@@ -1,0 +1,48 @@
+.addtool form label{
+    font-weight: 600;
+}
+.addtool form input{
+    height: 50px;
+}
+.upload-icon {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+.upload-icon img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.upload-icon span{
+    display: block;
+    font-size:12px;
+    font-weight: 600;
+}
+#IconUpload{
+    display: none;
+}
+section.addtool input:focus, section.addtool input :active, section.addtool input :visited {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border-right: 1px solid #E30B0B;
+  border-color: #E30B0B;
+}
+.editor-parent{
+    height: 400px;
+}
+.ql-container{
+    height: 300px !important;
+}
+.btn-submit {
+    display: block;
+    width: 100%;
+    background: #E30B0B;
+    color: #fff;
+    height: 50px;
+}
+.btn-submit:hover, .btn-submit:focus, .btn-submit:visited, .btn-submit:active{
+    background: #E30B0B !important;
+    color: #fff !important;
+}

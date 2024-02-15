@@ -14,6 +14,8 @@ import "@/assets/css/signin.css";
 import "@/assets/css/signup.css";
 import "@/assets/css/contact.css";
 import "@/assets/css/subscription.css";
+import "@/assets/css/addtool.css";
+import "@/assets/css/alllisting.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +33,9 @@ export default function RootLayout({ children }) {
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      </body>
     </html>
     
   );
