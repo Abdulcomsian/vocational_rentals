@@ -1,15 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Logo from "@/assets/images/logo-mini.svg";
+import Link from "next/link";
 
-function Sidebar() {
+import { usePathname } from "next/navigation";
+
+function Sidebar({ isOpen, onToggleOpen }) {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
     <>
-      <aside>
+      <aside style={isOpen ? { left: 0 } : {}}>
         <div className="mini-sidebar">
           <ul className="mt-0 pt-0">
             <li>
               <a href="#" className="close-side">
-                <i className="las la-angle-double-left"></i>
+                <i
+                  className="las la-angle-double-left"
+                  onClick={() => onToggleOpen((is) => !is)}
+                ></i>
               </a>
             </li>
           </ul>
@@ -18,24 +29,38 @@ function Sidebar() {
           </div>
           <ul>
             <li>
-              <a href="/dashboard/cardpage" className="active">
+              <Link
+                href="/"
+                className={`link ${pathname === "/" ? "active" : ""}`}
+              >
                 <i className="las la-home"></i>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/dashboard/about">
+              <Link
+                href="/about"
+                className={`link ${pathname === "/about" ? "active" : ""}`}
+              >
                 <i className="lar la-star"></i>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/dashboard/subscription">
+              <Link
+                href="/subscription"
+                className={`link ${
+                  pathname === "/subscription" ? "active" : ""
+                }`}
+              >
                 <i className="las la-tag"></i>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/dashboard/contact">
+              <Link
+                href="/contact"
+                className={`link ${pathname === "/contact" ? "active" : ""}`}
+              >
                 <i className="las la-phone"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

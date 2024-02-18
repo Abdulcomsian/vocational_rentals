@@ -1,38 +1,47 @@
 import Image from "next/image";
-import Logo from "@/assets/images/logo.svg"
+import Logo from "@/assets/images/logo.svg";
+import Link from "next/link";
 
-function Topbar() {
+function Topbar({ onToggleSidebar }) {
   return (
     <>
       <section className="menu-top">
         <div className="row mx-0">
           <nav className="navbar navbar-expand-lg">
             <div className="top-menu">
-              <a href="#" className="mobile-sidebar-trigger-right">
+              <Link
+                href="#"
+                className="mobile-sidebar-trigger-right"
+                onClick={onToggleSidebar}
+              >
                 <i className="las la-angle-double-right right-icon"></i>
-              </a>
+              </Link>
               <div className="desc">
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" href="#">
                   <Image src={Logo} alt="" />
-                </a>
+                </Link>
                 <p>
-                  An exclusive list of the best tools & resources for Vacation Rentals
+                  An exclusive list of the best tools & resources for Vacation
+                  Rentals
                 </p>
               </div>
-              <a href="# onClick={e => e.preventDefault()}" className="mobile-hamburger">
+              <a
+                href="# onClick={e => e.preventDefault()}"
+                className="mobile-hamburger"
+              >
                 <i className="las la-bars hamburger"></i>
               </a>
               <div className="buttons-actions">
-                <a href="/dashboard/signin">Login</a>
-                <a href="/dashboard/signup">Signup</a>
-                <a href="/dashboard/addlisting" className="submit-btn">
+                <Link href="/signin">Login</Link>
+                <Link href="/signup">Signup</Link>
+                <Link href="/dashboard/addlisting" className="submit-btn">
                   {" "}
                   Submit{" "}
-                </a>
-                <a href="#" className="subscribe-btn">
+                </Link>
+                <Link href="#" className="subscribe-btn">
                   <i className="lar la-envelope"></i>
                   Subscribe
-                </a>
+                </Link>
               </div>
             </div>
           </nav>

@@ -9,12 +9,12 @@ section.signin-module {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
-section.signin-module .back {
+.back {
   color: #000;
   text-decoration: none;
   font-size: 20px;
 }
-section.signin-module .back i {
+.back i {
   font-size: 20px;
 }
 section.signin-module .title {
@@ -34,12 +34,14 @@ section.signin-module form label {
 section.signin-module form input {
   height: 50px;
 }
-section.signin-module form input:focus, section.signin-module form input :active, section.signin-module form input :visited {
+section.signin-module form input:focus,
+section.signin-module form input :active,
+section.signin-module form input :visited {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   outline: none;
-  border-right: 1px solid #E30B0B;
-  border-color: #E30B0B;
+  border-right: 1px solid #e30b0b;
+  border-color: #e30b0b;
 }
 section.signin-module form .pass-view {
   position: relative;
@@ -48,34 +50,36 @@ section.signin-module form .pass-view .view-pass {
   position: absolute;
   right: 15px;
   top: 15px;
-  color: #AEAEAE;
+  color: #aeaeae;
 }
 section.signin-module form .pass-view .view-pass i {
   font-size: 25px;
 }
 section.signin-module form .form-check .form-check-label a {
-  color: #AEAEAE;
+  color: #aeaeae;
   font-weight: 600;
   text-decoration: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 section.signin-module form .form-check .form-check-label a:hover {
-  color: #E30B0B;
+  color: #e30b0b;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 section.signin-module form .submit {
   display: block;
   width: 100%;
-  background: #E30B0B;
+  background: #e30b0b;
   color: #fff;
   height: 50px;
 }
-section.signin-module form .submit:focus, section.signin-module form .submit :active, section.signin-module form .submit :visited {
-  background: #E30B0B;
+section.signin-module form .submit:focus,
+section.signin-module form .submit :active,
+section.signin-module form .submit :visited {
+  background: #e30b0b;
   color: #fff;
-  border: 1px solid #E30B0B;
+  border: 1px solid #e30b0b;
 }
 
 .container-mini {

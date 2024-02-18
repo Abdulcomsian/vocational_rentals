@@ -1,11 +1,13 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Textpage from "./dashboard/page";
+import Cardpage from "./cardpage/page";
+import Layout from "./Applayout";
 
-export default function Home() {
+function Textpage() {
   return (
     <>
-      <Textpage />
+      <Layout>
+        <Cardpage />
+      </Layout>
     </>
   );
 }
+export default Textpage;

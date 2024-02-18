@@ -1,16 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import Topbar from "../Topbar/Topbar";
 
-export default function Layout({ children }) {
-  const [isOpenSidbar, setIsOpenSidebar] = useState(true);
-
+export default function RootLayout({ children }) {
   return (
     <>
       <div>
-        <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} />
+        <Sidebar />
         <main>
           <Topbar onToggleSidebar={() => setIsOpenSidebar((is) => !is)} />
           <div className="dashboard">{children}</div>
