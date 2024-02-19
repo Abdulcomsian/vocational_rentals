@@ -8,7 +8,7 @@ import 'quill/dist/quill.snow.css';
 import UploadIcon from "@/assets/images/upload.svg"
 function Alllistings() {
     useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
+        require("/src/assets/js/bootstrap.bundle.min.js");
       }, []);
       const { quill, quillRef } = useQuill();
     window.onload =()=>{
