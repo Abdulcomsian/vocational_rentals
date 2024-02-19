@@ -192,11 +192,6 @@ function Sidebar({ isOpen, onToggleOpen }) {
 
               </a>
             </li>
-
-           
-
-
-            
             <li>
               <a href="#">
                 <Image src={Cleaning} width={16} height={16} alt="" />
