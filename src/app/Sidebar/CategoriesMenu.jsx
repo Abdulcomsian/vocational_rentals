@@ -56,7 +56,7 @@ export default function CategoriesMenu() {
           <Link
             href="/categories/3d-tour"
             className={`link ${
-              pathname === "/cardpage" ? "active-catagory" : ""
+              pathname === "/categories/3d-tour" ? "active-catagory" : ""
             }`}
           >
             {/* <i className="las la-home"></i> */}
@@ -69,7 +69,12 @@ export default function CategoriesMenu() {
           </Link>
         </li>
         <li>
-          <Link href="/categories/accounting">
+          <Link
+            href="/categories/accounting"
+            className={`link ${
+              pathname === "/categories/accounting" ? "active-catagory" : ""
+            }`}
+          >
             {/*<i className="las la-home"></i>*/}
             {/* <Image src={Accounting} width={16} height={16} alt="" /> */}
             <span
@@ -80,7 +85,12 @@ export default function CategoriesMenu() {
           </Link>
         </li>
         <li>
-          <Link href="/categories/advertising">
+          <Link
+            href="/categories/advertising"
+            className={`link ${
+              pathname === "/categories/advertising" ? "active-catagory" : ""
+            }`}
+          >
             {/*<i className="las la-home"></i>*/}
             {/* <Image src={Advertising} width={16} height={16} alt="" /> */}
             <span
@@ -91,7 +101,14 @@ export default function CategoriesMenu() {
           </Link>
         </li>
         <li>
-          <Link href="/categories/booking-channel">
+          <Link
+            href="/categories/booking-channel"
+            className={`link ${
+              pathname === "/categories/booking-channel"
+                ? "active-catagory"
+                : ""
+            }`}
+          >
             {/* <Image src={Booking} width={16} height={16} alt="" /> */}
             <span
               className="categories"
@@ -101,24 +118,31 @@ export default function CategoriesMenu() {
           </Link>
         </li>
         <li>
-          <a href="/categories/central-reservation-system">
+          <Link
+            href="/categories/central-reservation-system"
+            className={`link ${
+              pathname === "/categories/central-reservation-system"
+                ? "active-catagory"
+                : ""
+            }`}
+          >
             {/* <Image src={Reservation} width={16} height={16} alt="" /> */}
             <span
               className="categories"
               style={{ maskImage: `url(${Reservation.src})` }}
             />
             Central Reservation System
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/categories/certifications">
+          <Link href="/categories/certifications">
             {/* <Image src={Certifications} width={16} height={16} alt="" /> */}
             <span
               className="categories"
               style={{ maskImage: `url(${Certifications.src})` }}
             />
             Certifications
-          </a>
+          </Link>
         </li>
 
         <li>
