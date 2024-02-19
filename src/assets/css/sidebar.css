@@ -96,8 +96,11 @@ aside .sidebar-menu ul li a img {
   background-color: #fc5a5a0d;
   color: #e30b0b !important;
 }
+.active-catagory .categories {
+  background-color: #e30b0b !important;
+}
 
-.categories{
+.categories {
   width: 16px !important;
   height: 16px !important;
   display: inline-block;
@@ -106,5 +109,4 @@ aside .sidebar-menu ul li a img {
   background-repeat: no-repeat;
   background-color: #8a92a6;
   mask-size: contain;
- 
 }
