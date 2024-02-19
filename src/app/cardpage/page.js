@@ -49,7 +49,7 @@ function Cardpage() {
       <section className="cards">
         <div className="row">
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
-            <Link href="/dashboard/carddetails">
+            <Link href="/carddetails">
               <div className="card">
                 <Image src={card} alt="" />
                 <div className="card-info">
@@ -67,7 +67,7 @@ function Cardpage() {
             </Link>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
-            <Link href="/dashboard/carddetails">
+            <Link href="/carddetails">
               <div className="card">
                 <Image src={card} alt="" />
                 <div className="card-info">
@@ -85,7 +85,7 @@ function Cardpage() {
             </Link>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
-            <Link href="/dashboard/carddetails">
+            <Link href="/carddetails">
               <div className="card">
                 <Image src={card} alt="" />
                 <div className="card-info">
@@ -103,7 +103,7 @@ function Cardpage() {
             </Link>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
-            <Link href="/dashboard/carddetails">
+            <Link href="/carddetails">
               <div className="card">
                 <Image src={card} alt="" />
                 <div className="card-info">

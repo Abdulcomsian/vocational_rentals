@@ -85,7 +85,14 @@ aside .sidebar-menu ul li a {
   font-size: 14px;
   font-weight: 400;
 }
-aside .sidebar-menu ul li a i, aside .sidebar-menu ul li a img {
+aside .sidebar-menu ul li a i,
+aside .sidebar-menu ul li a img {
   font-size: 18px;
   margin-right: 5px;
+}
+
+.active-catagory {
+  width: 100%;
+  background-color: #fc5a5a0d;
+  color: #e30b0b !important;
 }

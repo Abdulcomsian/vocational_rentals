@@ -38,7 +38,7 @@ function Topbar({ onToggleSidebar }) {
                   {" "}
                   Submit{" "}
                 </Link>
-                <Link href="#" className="subscribe-btn">
+                <Link href="/subscription" className="subscribe-btn">
                   <i className="lar la-envelope"></i>
                   Subscribe
                 </Link>

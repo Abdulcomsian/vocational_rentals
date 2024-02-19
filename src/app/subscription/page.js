@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ProductImage from "@/assets/images/detail.svg";
 import ProductIcon from "@/assets/images/detail-icon.svg";
+import Link from "next/link";
 
 function Carddetails() {
   return (
@@ -29,9 +30,9 @@ function Carddetails() {
                     <li>$1 first month, then $5.99/month.</li>
                   </ul>
                   <div class="action-btn mt-5">
-                    <a href="#" class="subscribe-btn">
+                    <Link href="/signup" class="subscribe-btn">
                       Sign Up
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -44,9 +45,9 @@ function Carddetails() {
                     <li>You Save $10</li>
                   </ul>
                   <div class="action-btn mt-5">
-                    <a href="#" class="subscribe-btn">
+                    <Link href="/signup" class="subscribe-btn">
                       Sign Up
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -60,9 +61,9 @@ function Carddetails() {
                     <li>Lorem ipsum dolor sit amet consectetur. </li>
                   </ul>
                   <div class="action-btn mt-5">
-                    <a href="#" class="subscribe-btn">
+                    <Link href="/signup" class="subscribe-btn">
                       Sign Up
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

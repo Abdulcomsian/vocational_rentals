@@ -8,7 +8,9 @@ function Signin() {
     <>
       <div class="container-mini">
         <header class="mt-3">
-          <Image src={Logo} alt="" height={50} />
+          <Link href="/">
+            <Image src={Logo} alt="" height={50} />
+          </Link>
         </header>
         <section class="signup-module">
           <Link href="/" class="back">
