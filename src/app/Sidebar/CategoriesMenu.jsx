@@ -49,6 +49,7 @@ import Wifi from "@/assets/images/categories/wifi-solution.svg";
 
 export default function CategoriesMenu() {
   const pathname = usePathname();
+  console.log("test", tour);
   return (
     <div className="sidebar-menu">
       <ul>
@@ -60,291 +61,379 @@ export default function CategoriesMenu() {
             }`}
           >
             {/* <i className="las la-home"></i> */}
-            <Image src={tour} width={16} height={16} alt="" />
+            {/* <Image src={tour} width={16} height={16} alt="" /> */}
+           
+            <span className="categories" style={{ maskImage: `url(${tour.src})`  }} />
             3D Tours
           </Link>
         </li>
         <li>
           <Link href="/accounting">
             {/*<i className="las la-home"></i>*/}
-            <Image src={Accounting} width={16} height={16} alt="" />
+            {/* <Image src={Accounting} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Accounting.src})`  }} />
+
             Accounting
           </Link>
         </li>
         <li>
           <a href="/">
             {/*<i className="las la-home"></i>*/}
-            <Image src={Advertising} width={16} height={16} alt="" />
+            {/* <Image src={Advertising} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Advertising.src})`  }} />
+
             Advertising
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Booking} width={16} height={16} alt="" />
+            {/* <Image src={Booking} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Booking.src})`  }} />
+
             Booking Channel
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Reservation} width={16} height={16} alt="" />
+            {/* <Image src={Reservation} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Reservation.src})`  }} />
+
             Central Reservation System
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Certifications} width={16} height={16} alt="" />
+            {/* <Image src={Certifications} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Certifications.src})`  }} />
+
             Certifications
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Channel} width={16} height={16} alt="" />
+            {/* <Image src={Channel} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Channel.src})`  }} />
+
             Channel Management
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Chatbot} width={16} height={16} alt="" />
+            {/* <Image src={Chatbot} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Chatbot.src})`  }} />
+
             Chatbot
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Check} width={16} height={16} alt="" />
+            {/* <Image src={Check} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Check.src})`  }} />
+
             Check-in Software
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Cleaning} width={16} height={16} alt="" />
+            {/* <Image src={Cleaning} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Cleaning.src})`  }} />
+
             Cleaning Management
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Communication} width={16} height={16} alt="" />
+            {/* <Image src={Communication} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Communication.src})`  }} />
+
             Communication
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Consultancy} width={16} height={16} alt="" />
+            {/* <Image src={Consultancy} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Consultancy.src})`  }} />
+
             Consultancy
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Copywriting} width={16} height={16} alt="" />
+            {/* <Image src={Copywriting} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Copywriting.src})`  }} />
+
             Copywriting
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={CRM} width={16} height={16} alt="" />
+            {/* <Image src={CRM} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${CRM.src})`  }} />
+
             CRM
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Data} width={16} height={16} alt="" />
+            {/* <Image src={Data} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Data.src})`  }} />
+
             Data Solutions
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Dynamic} width={16} height={16} alt="" />
+            {/* <Image src={Dynamic} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Dynamic.src})`  }} />
+
             Dynamic Pricing
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Education} width={16} height={16} alt="" />
+            {/* <Image src={Education} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Education.src})`  }} />
+
             Education & Training
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Events} width={16} height={16} alt="" />
+            {/* <Image src={Events} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Events.src})`  }} />
+
             Events
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Floor} width={16} height={16} alt="" />
+            {/* <Image src={Floor} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Floor.src})`  }} />
+
             Floor Plans
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Guest} width={16} height={16} alt="" />
+            {/* <Image src={Guest} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Guest.src})`  }} />
+
             Guest Communication
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Guest_Verification} width={16} height={16} alt="" />
+            {/* <Image src={Guest_Verification} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Guest_Verification.src})`  }} />
+
             Guest Verification
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Home_Automation} width={16} height={16} alt="" />
+            {/* <Image src={Home_Automation} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Home_Automation.src})`  }} />
+
             Home Automation
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Housekeeping} width={16} height={16} alt="" />
+            {/* <Image src={Housekeeping} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Housekeeping.src})`  }} />
+
             Housekeeping & Maintenance
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Innovative} width={16} height={16} alt="" />
+            {/* <Image src={Innovative} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Innovative.src})`  }} />
+
             Innovative Services
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Insurance} width={16} height={16} alt="" />
+            {/* <Image src={Insurance} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Insurance.src})`  }} />
+
             Insurance
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Key_Safes} width={16} height={16} alt="" />
+            {/* <Image src={Key_Safes} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Key_Safes.src})`  }} />
+
             Key Safes & Drop Boxes
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Lead} width={16} height={16} alt="" />
+            {/* <Image src={Lead} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Lead.src})`  }} />
+
             Lead Management
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Listing} width={16} height={16} alt="" />
+            {/* <Image src={Listing} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Listing.src})`  }} />
+
             Listing Sites
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Marketing} width={16} height={16} alt="" />
+            {/* <Image src={Marketing} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Marketing.src})`  }} />
+
             Marketing Automation
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Noise} width={16} height={16} alt="" />
+            {/* <Image src={Noise} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Noise.src})`  }} />
+
             Noise Control
           </a>
         </li>
 
         <li>
           <a href="#">
-            <Image src={Other} width={16} height={16} alt="" />
+            {/* <Image src={Other} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Other.src})`  }} />
+
             Other
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Payment} width={16} height={16} alt="" />
+            {/* <Image src={Payment} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Payment.src})`  }} />
+
             Payment Processing
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Payment_Solutions} width={16} height={16} alt="" />
+            {/* <Image src={Payment_Solutions} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Payment_Solutions.src})`  }} />
+
             Payment Solutions
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Photography} width={16} height={16} alt="" />
+            {/* <Image src={Photography} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Photography.src})`  }} />
+
             Photography
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Property} width={16} height={16} alt="" />
+            {/* <Image src={Property} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Property.src})`  }} />
+
             Property Management Systems
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Referral} width={16} height={16} alt="" />
+            {/* <Image src={Referral} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Referral.src})`  }} />
+
             Referral Networks
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Revenue} width={16} height={16} alt="" />
+            {/* <Image src={Revenue} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Revenue.src})`  }} />
+
             Revenue Management
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Smart} width={16} height={16} alt="" />
+            {/* <Image src={Smart} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Smart.src})`  }} />
+
             Smart Locks & Keyless Entry
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Supplies} width={16} height={16} alt="" />
+            {/* <Image src={Supplies} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Supplies.src})`  }} />
+
             Supplies & Interior Design
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Travel} width={16} height={16} alt="" />
+            {/* <Image src={Travel} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Travel.src})`  }} />
+
             Travel Marketplace
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Voice} width={16} height={16} alt="" />
+            {/* <Image src={Voice} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Voice.src})`  }} />
+
             Voice Solutions
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Website} width={16} height={16} alt="" />
+            {/* <Image src={Website} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Website.src})`  }} />
+
             Website Building
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Welcome} width={16} height={16} alt="" />
+            {/* <Image src={Welcome} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Welcome.src})`  }} />
+
             Welcome Apps
           </a>
         </li>
         <li>
           <a href="#">
-            <Image src={Wifi} width={16} height={16} alt="" />
+            {/* <Image src={Wifi} width={16} height={16} alt="" /> */}
+            <span className="categories" style={{ maskImage: `url(${Wifi.src})`  }} />
+
             Wifi Solutions
           </a>
         </li>
