@@ -60,7 +60,7 @@ export default function CategoriesMenu() {
             }`}
           >
             {/* <i className="las la-home"></i> */}
-            {/* <Image src={tour} width={16} height={16} alt="" /> */}
+            {/* <Image src={tour} width={16} height={16} alt="" />  */}
             <span
               className="categories"
               style={{ maskImage: `url(${tour.src})` }}
