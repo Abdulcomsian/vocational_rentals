@@ -11,13 +11,14 @@ aside {
   width: 345px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: flex !important;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.5s;
 }
 aside .mini-sidebar {
   width: 70px;
-  border-right: 1px solid #E0E3E6;
+  border-right: 1px solid #e0e3e6;
   text-align: center;
   height: inherit;
 }
@@ -45,10 +46,10 @@ aside .mini-sidebar ul li a i {
   margin-top: 3px;
 }
 aside .mini-sidebar ul li a.active {
-  background-color: #F7E8E8;
+  background-color: #f7e8e8;
 }
 aside .mini-sidebar ul li a.active i {
-  color: #E30B0B;
+  color: #e30b0b;
 }
 aside .mini-sidebar ul li .close-side {
   display: none;
@@ -72,19 +73,40 @@ aside .sidebar-menu ul li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   vertical-align: middle;
 }
 aside .sidebar-menu ul li a {
   display: block;
   text-decoration: none;
   padding: 8px 24px 8px 14px;
-  color: #8A92A6;
+  color: #8a92a6;
   font-size: 14px;
   font-weight: 400;
 }
-aside .sidebar-menu ul li a i, aside .sidebar-menu ul li a img {
+aside .sidebar-menu ul li a i,
+aside .sidebar-menu ul li a img {
   font-size: 18px;
   margin-right: 5px;
+}
+
+.active-catagory {
+  width: 100%;
+  background-color: #fc5a5a0d;
+  color: #e30b0b !important;
+}
+.active-catagory .categories {
+  background-color: #e30b0b !important;
+}
+
+.categories {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block;
+  background-size: contain;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-color: #8a92a6;
+  mask-size: contain;
 }

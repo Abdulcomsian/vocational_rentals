@@ -1,12 +1,10 @@
-import Cardpage from "./cardpage/page";
-import Layout from "./layout";
+import Cardpage from "../cardpage/page";
+// import Layout from "./Applayout";
 
 function Textpage() {
   return (
     <>
-      <Layout>
-        <Cardpage />
-      </Layout>
+      <Cardpage />
     </>
   );
 }

@@ -105,3 +105,10 @@ a {
     color-scheme: dark;
   }
 } */
+
+.link__more-info {
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
