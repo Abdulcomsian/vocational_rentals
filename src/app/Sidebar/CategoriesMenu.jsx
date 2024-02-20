@@ -3,6 +3,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import Accounting from "@/assets/images/categories/accounting.svg";
+import all from "@/assets/images/categories/all.svg";
 import tour from "@/assets/images/categories/3d.svg";
 import Advertising from "@/assets/images/categories/Advertise.svg";
 import Booking from "@/assets/images/categories/booking.svg";
@@ -52,6 +53,20 @@ export default function CategoriesMenu() {
   return (
     <div className="sidebar-menu">
       <ul>
+      <li>
+          <Link
+            href="/"
+            className={`link ${
+              pathname === "/" ? "active-catagory" : ""
+            }`}
+          >
+            <span
+              className="categories"
+              style={{ maskImage: `url(${all.src})` }} 
+            />
+            All
+          </Link>
+        </li>
         <li>
           <Link
             href="/categories/3d-tour"

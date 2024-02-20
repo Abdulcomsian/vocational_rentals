@@ -11,29 +11,29 @@ function Alllistings() {
         require("/src/assets/js/bootstrap.bundle.min.js");
       }, []);
       const { quill, quillRef } = useQuill();
-    window.onload =()=>{
-        var fileupload = document.getElementById("IconUpload");
-        var imgFileUpload = document.getElementById("imgFileUpload");
-        upload_icon.onclick = function () {
-        fileupload.click();
-        };
+    // window.onload =()=>{
+    //     var fileupload = document.getElementById("IconUpload");
+    //     var imgFileUpload = document.getElementById("imgFileUpload");
+    //     upload_icon.onclick = function () {
+    //     fileupload.click();
+    //     };
 
-        IconUpload.addEventListener('change', function() {
-        const file = this.files[0];
+    //     IconUpload.addEventListener('change', function() {
+    //     const file = this.files[0];
 
-        if (file) {
-            const reader = new FileReader();
+    //     if (file) {
+    //         const reader = new FileReader();
 
-            reader.onload = function(e) {
-            imgFileUpload.src = e.target.result;
-            }
+    //         reader.onload = function(e) {
+    //         imgFileUpload.src = e.target.result;
+    //         }
 
-            reader.readAsDataURL(file);
-        } else {
-            imagePreview.innerHTML = 'No image selected';
-        }
-        });
-    }
+    //         reader.readAsDataURL(file);
+    //     } else {
+    //         imagePreview.innerHTML = 'No image selected';
+    //     }
+    //     });
+    // }
   return (
     <>
         <section className="listings mt-4">
