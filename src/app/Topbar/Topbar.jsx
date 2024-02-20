@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/assets/images/logo.svg";
+import Logo from "@/assets/images/logo.png";
 import Link from "next/link";
 
 function Topbar({ onToggleSidebar }) {
@@ -38,7 +38,7 @@ function Topbar({ onToggleSidebar }) {
                   {" "}
                   Submit{" "}
                 </Link>
-                <Link href="/subscription" className="subscribe-btn">
+                <Link href="https://vrt.beehiiv.com/subscribe" target="_blank" className="subscribe-btn">
                   <i className="lar la-envelope"></i>
                   Subscribe
                 </Link>
