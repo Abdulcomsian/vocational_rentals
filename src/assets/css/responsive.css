@@ -91,12 +91,16 @@
   header {
     text-align: center;
   }
+ 
 }
 @media only screen and (max-width: 630px) {
   main {
     width: 100%;
     position: unset;
     margin: 0;
+  }
+  .deals-sec{
+    margin-top: 70px !important;
   }
   aside {
     /* display: none; */
@@ -117,5 +121,13 @@
   }
   aside .mini-sidebar ul li a.close-side i {
     font-size: 20px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .deal-added{
+    display: flow-root !important;
+  }
+  .actions{
+    margin-top: 20px;
   }
 }

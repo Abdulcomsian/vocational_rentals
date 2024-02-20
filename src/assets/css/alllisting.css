@@ -18,10 +18,20 @@
 #deletelistModal .modal-body{
     padding: 60px 20px;
 }
+#cancelModal .modal-body{
+    padding: 60px 20px;
+}
 #deletelistModal .icon-modal{
     text-align: center;
 }
+#cancelModal .icon-modal{
+    text-align: center;
+}
 #deletelistModal .icon-modal img{
+    width: 100px;
+    height: auto;
+}
+#cancelModal .icon-modal img{
     width: 100px;
     height: auto;
 }
@@ -42,6 +52,10 @@ section.editcompany input:focus, section.editcompany input :active, section.edit
     border-right: 1px solid #E30B0B;
     border-color: #E30B0B;
 } 
+.cancel-plan{
+    text-decoration: none;
+    font-size: 12px;
+}
 .editcompany form label{
     font-weight: 600;
 }

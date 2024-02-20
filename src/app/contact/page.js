@@ -3,7 +3,7 @@ import ProductImage from "@/assets/images/detail.svg";
 import ProductIcon from "@/assets/images/detail-icon.svg";
 import Link from "next/link";
 
-function Carddetails() {
+function Contact() {
   return (
     <>
       <section class="contact mt-5 pt-5">
@@ -58,4 +58,4 @@ function Carddetails() {
   );
 }
 
-export default Carddetails;
+export default Contact;
