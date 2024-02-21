@@ -67,8 +67,8 @@ function Signin() {
               />
               <label class="form-check-label" for="exampleCheck1">
                 Please confirm that you have read and agree to our{" "}
-                <Link href="#">terms & conditions</Link> and{" "}
-                <Link href="#">privacy policy</Link>
+                <Link href="/term-conditions">terms & conditions</Link> and{" "}
+                <Link href="/privacy-policy">privacy policy</Link>
               </label>
             </div>
             <button type="submit" class="btn submit mt-5">

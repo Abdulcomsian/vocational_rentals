@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Logo from "@/assets/images/logo.png";
 import Link from "next/link";
+import { useState } from "react";
 
-function Topbar({ onToggleSidebar }) {
+function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
   return (
     <>
       <section className="menu-top">
@@ -26,19 +27,28 @@ function Topbar({ onToggleSidebar }) {
                 </p>
               </div>
               <a
-                href="# onClick={e => e.preventDefault()}"
+                href="#"
                 className="mobile-hamburger"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLoginSection();
+                }}
               >
                 <i className="las la-bars hamburger"></i>
               </a>
-              <div className="buttons-actions">
+              <div
+                className={`buttons-actions ${loginSection ? "isOpen" : ""}`}
+              >
                 <Link href="/signin">Login</Link>
                 <Link href="/signup">Signup</Link>
                 <Link href="/dashboard/addlisting" className="submit-btn">
-                  {" "}
-                  Submit{" "}
+                  Submit
                 </Link>
-                <Link href="https://vrt.beehiiv.com/subscribe" target="_blank" className="subscribe-btn">
+                <Link
+                  href="https://vrt.beehiiv.com/subscribe"
+                  target="_blank"
+                  className="subscribe-btn"
+                >
                   <i className="lar la-envelope"></i>
                   Subscribe
                 </Link>
