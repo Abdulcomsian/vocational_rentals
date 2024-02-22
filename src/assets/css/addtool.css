@@ -50,7 +50,7 @@ section.addtool input:focus, section.addtool input :active, section.addtool inpu
     position: relative;
     border: 1px solid #dee2e6;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-radius: 7px;
     margin-top: 40px;
     padding-top: 30px;
@@ -70,8 +70,10 @@ section.addtool input:focus, section.addtool input :active, section.addtool inpu
     margin: 0;
     padding-right: 10px;
 }
-select{
-    height: 50px;
+.modal select{
+    height: 37px;
+    font-size: 12px !important;
+    padding-right: 10px !important;
 }
 .deal-head a{
     background: #000;
@@ -86,6 +88,23 @@ select{
 }
 .deal-head a i{
     margin-right: 5px;
+}
+.intervals{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.intervals span.active{
+    border: 1px solid #E30B0B;
+}
+.intervals span{
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 20px;
 }
 .deal-body{
     border: 1px solid #dee2e6;

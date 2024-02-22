@@ -38,7 +38,7 @@ function Carddetails() {
                           <span
                             style={{
                               textDecoration: "line-through",
-                              marginLeft: "0.6rem",
+                              marginLeft: "0.4rem",
                             }}
                           >
                             $5.99
@@ -50,12 +50,12 @@ function Carddetails() {
                         class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
                         style={{ width: "fit-content", fontSize: "0.65rem" }}
                       >
-                        Added in v5.2.0
+                      You Save $10
                       </small>
                       <div class="action-btn mt-2">
                         <Link
                           href="#"
-                          class="btn btn--black btn--round  m-auto"
+                          class="btn-buy  m-auto"
                         >
                           Buy
                         </Link>
@@ -73,7 +73,7 @@ function Carddetails() {
                           <span
                             style={{
                               textDecoration: "line-through",
-                              marginLeft: "0.6rem",
+                              marginLeft: "0.4rem",
                             }}
                           >
                             $5.99
@@ -85,12 +85,12 @@ function Carddetails() {
                         class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
                         style={{ width: "fit-content", fontSize: "0.65rem" }}
                       >
-                        Added in v5.2.0
+                        You Save $10
                       </small>
                       <div class="action-btn mt-2">
                         <Link
                           href="#"
-                          class="btn btn--black btn--round  m-auto"
+                          class="btn-buy m-auto"
                         >
                           Buy
                         </Link>

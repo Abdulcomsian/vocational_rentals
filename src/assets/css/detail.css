@@ -108,11 +108,20 @@ section.detail .tool-img img {
   text-align: center;
 }
 
-.card-deals .btn:link,
-.card-deals .btn:visited {
+.card-deals .btn-buy {
   margin-bottom: 0.5rem !important;
   font-size: 0.9rem;
   padding: 4px 10px;
+  background: #000;
+  color: #fff;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.card-deals .btn-buy:hover{
+  background: #E30B0B;
+  transition: all 0.5s;
 }
 
 .card-deals .cancel-text {

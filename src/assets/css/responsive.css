@@ -75,9 +75,6 @@
     width: 100%;
     margin: 0;
   }
-  aside {
-    display: none;
-  }
   section.cards .card img {
     height: 100% !important;
   }
@@ -106,8 +103,7 @@
     margin-top: 70px !important;
   }
   aside {
-    /* display: none; */
-    left: -100%;
+    left: -120%;
   }
   .signin-module {
     padding: 0 30px;
