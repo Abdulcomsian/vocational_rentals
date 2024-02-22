@@ -75,6 +75,9 @@
     width: 100%;
     margin: 0;
   }
+  section.signup-module{
+    padding: 0 20px;
+  }
   section.cards .card img {
     height: 100% !important;
   }
