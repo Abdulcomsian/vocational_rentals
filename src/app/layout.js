@@ -18,6 +18,7 @@ import "@/assets/css/addtool.css";
 import "@/assets/css/alllisting.css";
 import "@/assets/css/terms.css";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
           src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
           async
         ></script>
+        
       </body>
     </html>
   );

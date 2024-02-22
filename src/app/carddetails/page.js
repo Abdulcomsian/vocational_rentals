@@ -1,7 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import ProductImage from "@/assets/images/detail.svg";
 import ProductIcon from "@/assets/images/detail-icon.svg";
 import Link from "next/link";
+import Carousel from 'react-bootstrap/Carousel';;
 
 function Carddetails() {
   return (
@@ -27,80 +30,302 @@ function Carddetails() {
               </div>
             </div>
             <section className="select-package">
-              <div class="row">
-                <div class="row justify-content-center">
-                  <div class="col-md-12 d-flex gap-3">
-                    <div class="card card--white card-deals text-left">
-                      <h3 className="deal-title">Black Friday</h3>
-                      <ul class="mt-3 list">
-                        <li>
-                          $1
-                          <span
-                            style={{
-                              textDecoration: "line-through",
-                              marginLeft: "0.4rem",
-                            }}
-                          >
-                            $5.99
-                          </span>
-                          &nbsp;/&nbsp; month
-                        </li>
-                      </ul>
-                      <small
-                        class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                        style={{ width: "fit-content", fontSize: "0.65rem" }}
-                      >
-                      You Save $10
-                      </small>
-                      <div class="action-btn mt-2">
-                        <Link
-                          href="#"
-                          class="btn-buy  m-auto"
+              <h3 className="deal-title-main">Deals</h3>
+              <div class="row justify-content-center">
+                <div class="col-md-12 d-flex gap-3">
+                <Carousel>
+                  <Carousel.Item>
+                    <div className="cards-flex">
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
                         >
-                          Buy
-                        </Link>
-                        {/* <p className="cancel-text">Cancel anytime</p>
-                        <Link href="/subscription" className="cancel-text">
-                          More info
-                        </Link> */}
-                      </div>
-                    </div>
-                    <div class="card card--white card-deals text-left">
-                      <h3 className="deal-title">Black Friday</h3>
-                      <ul class="mt-3 list">
-                        <li>
-                          $1
-                          <span
-                            style={{
-                              textDecoration: "line-through",
-                              marginLeft: "0.4rem",
-                            }}
-                          >
-                            $5.99
-                          </span>
-                          &nbsp;/&nbsp; month
-                        </li>
-                      </ul>
-                      <small
-                        class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                        style={{ width: "fit-content", fontSize: "0.65rem" }}
-                      >
                         You Save $10
-                      </small>
-                      <div class="action-btn mt-2">
-                        <Link
-                          href="#"
-                          class="btn-buy m-auto"
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
                         >
-                          Buy
-                        </Link>
-                        {/* <p className="cancel-text">Cancel anytime</p>
-                        <Link href="/subscription" className="cancel-text">
-                          More info
-                        </Link> */}
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                  <div className="cards-flex">
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <div className="cards-flex">
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                      <div class="card card--white card-deals text-left">
+                        <h3 className="deal-title">Black Friday</h3>
+                        <ul class="mt-3 list">
+                          <li>
+                            $1
+                            <span
+                              style={{
+                                textDecoration: "line-through",
+                                marginLeft: "0.4rem",
+                              }}
+                            >
+                              $5.99
+                            </span>
+                            &nbsp;/&nbsp; month
+                          </li>
+                        </ul>
+                        <small
+                          class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+                        >
+                        You Save $10
+                        </small>
+                        <div class="action-btn mt-2">
+                          <Link
+                            href="#"
+                            class="btn-buy  m-auto"
+                          >
+                            Buy
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </Carousel.Item>
+                </Carousel>
                 </div>
               </div>
             </section>
