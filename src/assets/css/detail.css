@@ -87,12 +87,12 @@ section.detail .tool-img img {
   padding-right: 10px;
 }
 section.select-package{
-  background-color: #1e90ff14 !important;
+  background-color: #e831310d !important;
   padding: 30px;
   border-radius: 15px;
 }
 .carousel-control-prev{
-  top: 50% !important;
+  top: 45% !important;
   background:#000 !important;
   bottom: unset !important;
   width: auto !important;
@@ -102,7 +102,7 @@ section.select-package{
   left: -22px !important;
 }
 .carousel-control-next{
-  top: 50% !important;
+  top: 45% !important;
   background:#000 !important;
   bottom: unset !important;
   width: auto !important;

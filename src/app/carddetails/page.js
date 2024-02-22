@@ -33,7 +33,7 @@ function Carddetails() {
               <h3 className="deal-title-main">Deals</h3>
               <div class="row justify-content-center">
                 <div class="col-md-12 d-flex gap-3">
-                <Carousel>
+                <Carousel controls={true} indicators={false}>
                   <Carousel.Item>
                     <div className="cards-flex">
                       <div class="card card--white card-deals text-left">
