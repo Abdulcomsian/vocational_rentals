@@ -45,6 +45,9 @@ aside .mini-sidebar ul li a i {
   font-size: 26px;
   margin-top: 3px;
 }
+aside .mini-sidebar ul li a:hover {
+  background-color: #f7e8e8 !important;
+}
 aside .mini-sidebar ul li a.active {
   background-color: #f7e8e8;
 }
@@ -84,6 +87,11 @@ aside .sidebar-menu ul li a {
   color: #8a92a6;
   font-size: 14px;
   font-weight: 400;
+}
+aside .sidebar-menu ul li:hover {
+  width: 100%;
+  background-color: #fc5a5a0d;
+  color: #e30b0b !important;
 }
 aside .sidebar-menu ul li a i,
 aside .sidebar-menu ul li a img {

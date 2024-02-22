@@ -21,7 +21,7 @@ body {
 .deals {
   background: rgba(125, 240, 178, 0.1882352941);
   border-radius: 50px;
-  color: #47C682;
+  color: #47c682;
   font-size: 12px;
   padding: 3px 10px;
 }
@@ -35,8 +35,8 @@ section.detail .tool-detail-top {
   display: flex;
   gap: 15px;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 section.detail .tool-detail-top .other h1 {
   font-weight: 700;
@@ -53,7 +53,7 @@ section.detail .tool-detail-top .other h1 .type {
 /* section.detail .tool-detail-top .other p {
   width: 75%;
 } */
-section.detail .tool-detail-top .other .web-link i{
+section.detail .tool-detail-top .other .web-link i {
   margin-left: 10px;
 }
 section.detail .tool-detail-top .other .web-link {
@@ -81,4 +81,41 @@ section.detail .tool-detail ol li {
 }
 section.detail .tool-img img {
   width: 100%;
+}
+
+.card-deals {
+  width: 45%;
+  padding: 1.4rem !important;
+  background-color: #1e90ff14 !important;
+}
+
+.card-deals .deal-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.card-deals .list {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 9px;
+  margin-top: 0px !important;
+}
+.card-deals .list li {
+  font-size: 0.8rem;
+}
+
+.card-deals .action-btn {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.card-deals .btn:link,
+.card-deals .btn:visited {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+}
+
+.card-deals .cancel-text {
+  text-decoration: none;
+  color: inherit;
 }

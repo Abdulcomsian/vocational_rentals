@@ -1,0 +1,22 @@
+.condition-block {
+  margin-bottom: 1.5rem;
+}
+
+.title-container {
+  padding: 2rem 0px;
+  text-align: center;
+}
+
+.title-container {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.condition__title {
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.condition__description {
+  font-size: 0.9rem;
+}

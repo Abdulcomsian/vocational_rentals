@@ -7,12 +7,12 @@ function Addlisting() {
     <>
       <section className="add-link">
         <form className="row g-3 justify-content-center" action="#">
-          <h3 className="submit-tool">Submit tool</h3>
+          <h3 className="submit-tool">Submit your company</h3>
           <div className="col-auto">
             <input
               type="url"
               className="form-control"
-              placeholder="e.g https://applogocreator.com"
+              placeholder="e.g https://airbnb.com"
             />
           </div>
           <div className="col-auto">
@@ -42,7 +42,7 @@ function Addlisting() {
                   </ul>
                   <div class="action-btn mt-2">
                     <a href="#" class="subscribe-btn">
-                      Buy
+                      Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
                     <Link href="/subscription" className="cancel-text">
@@ -63,7 +63,7 @@ function Addlisting() {
                   </ul>
                   <div class="action-btn mt-2">
                     <a href="#" class="subscribe-btn">
-                      Buy
+                      Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
                     <Link href="/subscription" className="cancel-text">
@@ -84,7 +84,7 @@ function Addlisting() {
                   </ul>
                   <div class="action-btn mt-2">
                     <a href="#" class="subscribe-btn">
-                      Buy
+                      Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
                     <Link href="/subscription" className="cancel-text">

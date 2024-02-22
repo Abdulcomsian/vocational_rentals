@@ -7,14 +7,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import CategoriesMenu from "./CategoriesMenu";
+import { useEffect } from "react";
 
 function Sidebar({ isOpen, onToggleOpen }) {
   const pathname = usePathname();
   console.log(pathname);
 
+  // useEffect(function () {
+  //   document.documentElement.addEventListener("click", function (e) {
+  //     console.log(
+  //       "Class Identification",
+  //       e.target.getAttribute("className") !== "sidbar--main"
+  //     );
+  //   });
+  // }, []);
+
   return (
     <>
-      <aside style={isOpen ? { left: 0 } : {}}>
+      <aside className="sidbar--main" style={isOpen ? { left: 0 } : {}}>
         <div className="mini-sidebar">
           <ul className="mt-0 pt-0">
             <li>

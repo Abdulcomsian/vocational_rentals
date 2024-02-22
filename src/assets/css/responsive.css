@@ -28,6 +28,10 @@
     border-radius: 10px;
     background: #eee;
   }
+
+  nav.navbar .top-menu .isOpen {
+    display: block;
+  }
   nav.navbar .top-menu .buttons-actions a {
     display: block;
     margin: 0;
@@ -91,7 +95,6 @@
   header {
     text-align: center;
   }
- 
 }
 @media only screen and (max-width: 630px) {
   main {
@@ -99,7 +102,7 @@
     position: unset;
     margin: 0;
   }
-  .deals-sec{
+  .deals-sec {
     margin-top: 70px !important;
   }
   aside {
@@ -124,10 +127,10 @@
   }
 }
 @media only screen and (max-width: 370px) {
-  .deal-added{
+  .deal-added {
     display: flow-root !important;
   }
-  .actions{
+  .actions {
     margin-top: 20px;
   }
 }

@@ -112,3 +112,33 @@ a {
   margin-top: 1rem;
   text-decoration: none;
 }
+
+.card {
+  border: 1px solid rgba(193, 193, 193, 0.337254902) !important;
+  padding: 20px 15px !important;
+  border-radius: 10px !important;
+  position: relative;
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.1) !important;
+}
+.card--white {
+  background: #fff;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.btn--black:link,
+.btn--black:visited {
+  background: #000;
+  color: #fff;
+}
+
+.btn--round:link,
+.btn--round:visited {
+  border-radius: 50px;
+}

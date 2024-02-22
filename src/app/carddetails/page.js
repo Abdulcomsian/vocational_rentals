@@ -1,6 +1,7 @@
 import Image from "next/image";
-import ProductImage from "@/assets/images/detail.svg"
-import ProductIcon from "@/assets/images/detail-icon.svg"
+import ProductImage from "@/assets/images/detail.svg";
+import ProductIcon from "@/assets/images/detail-icon.svg";
+import Link from "next/link";
 
 function Carddetails() {
   return (
@@ -25,11 +26,85 @@ function Carddetails() {
                 </a>
               </div>
             </div>
-            <Image
-              src={ProductImage}
-              className="detail-image mb-0"
-              alt=""
-            />
+            <section className="select-package">
+              <div class="row">
+                <div class="row justify-content-center">
+                  <div class="col-md-12 d-flex gap-3">
+                    <div class="card card--white card-deals text-left">
+                      <h3 className="deal-title">Black Friday</h3>
+                      <ul class="mt-3 list">
+                        <li>
+                          $1
+                          <span
+                            style={{
+                              textDecoration: "line-through",
+                              marginLeft: "0.6rem",
+                            }}
+                          >
+                            $5.99
+                          </span>
+                          &nbsp;/&nbsp; month
+                        </li>
+                      </ul>
+                      <small
+                        class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                        style={{ width: "fit-content", fontSize: "0.65rem" }}
+                      >
+                        Added in v5.2.0
+                      </small>
+                      <div class="action-btn mt-2">
+                        <Link
+                          href="#"
+                          class="btn btn--black btn--round  m-auto"
+                        >
+                          Buy
+                        </Link>
+                        {/* <p className="cancel-text">Cancel anytime</p>
+                        <Link href="/subscription" className="cancel-text">
+                          More info
+                        </Link> */}
+                      </div>
+                    </div>
+                    <div class="card card--white card-deals text-left">
+                      <h3 className="deal-title">Black Friday</h3>
+                      <ul class="mt-3 list">
+                        <li>
+                          $1
+                          <span
+                            style={{
+                              textDecoration: "line-through",
+                              marginLeft: "0.6rem",
+                            }}
+                          >
+                            $5.99
+                          </span>
+                          &nbsp;/&nbsp; month
+                        </li>
+                      </ul>
+                      <small
+                        class="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                        style={{ width: "fit-content", fontSize: "0.65rem" }}
+                      >
+                        Added in v5.2.0
+                      </small>
+                      <div class="action-btn mt-2">
+                        <Link
+                          href="#"
+                          class="btn btn--black btn--round  m-auto"
+                        >
+                          Buy
+                        </Link>
+                        {/* <p className="cancel-text">Cancel anytime</p>
+                        <Link href="/subscription" className="cancel-text">
+                          More info
+                        </Link> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <Image src={ProductImage} className="detail-image mb-0" alt="" />
             <div className="tool-detail">
               <p>No time to wait for design? You are at the right place.</p>
               <p>
