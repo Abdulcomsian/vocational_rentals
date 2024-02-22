@@ -54,6 +54,7 @@ section.select-package .packages .package-single {
   border: 1px solid rgba(193, 193, 193, 0.337254902);
   padding: 20px 15px;
   border-radius: 10px;
+  margin-bottom: 40px;
   position: relative;
 }
 section.select-package .packages .package-single h3 span.sale {

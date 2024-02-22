@@ -79,7 +79,6 @@ function Cardpage() {
                     <Image src={card11} loader={loaderProp}  alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div className="type new">New</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
@@ -97,7 +96,6 @@ function Cardpage() {
                     <Image src={card11} loader={loaderProp}  alt="" />
                     <h3>EasyFast</h3>
                   </div>
-                  <div className="type new">New</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in

@@ -7,8 +7,8 @@ function Contact() {
   return (
     <>
       <section class="contact mt-5 pt-5">
-        <div class="row">
-          <div class="col-md-12 col-lg-6 offset-lg-3">
+        <div class="row mx-0">
+          <div class="col-md-12 col-lg-4 offset-lg-4">
             <Link href="/" className="back">
               <i class="las la-long-arrow-alt-left"></i>
               <span>Back</span>

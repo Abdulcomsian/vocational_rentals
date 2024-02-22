@@ -119,7 +119,7 @@ function Addtool() {
     <>
       <section className="addtool mt-5 mb-5">
         <div className="row">
-          <div className="col-md-6 col-sl-6 col-lg-6 offset-lg-3">
+          <div className="col-md-4 col-sl-12 col-lg-4 offset-lg-4">
             <form>
               <div className="mb-3 upload-icon" id="upload_icon">
                 <Image
@@ -139,6 +139,19 @@ function Addtool() {
                   className="form-control"
                   placeholder="Enter Company Name"
                 />
+              </div>
+              <div className="col-md-12 mb-3">
+                <label className="form-label">Company Category</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option selected>Select Category</option>
+                  <option value="1">3D Tours</option>
+                  <option value="1">Accounting</option>
+                  <option value="1">Advertising</option>
+                  <option value="1">Booking Channel</option>
+                </select>
               </div>
               <div className="mb-3">
                 <label className="form-label">Company Tag line</label>
@@ -195,7 +208,20 @@ function Addtool() {
                         />
                       </div>
                       <div className="row mb-3">
-                        <div className="col-md-6">
+                        <div className="col-md-4">
+                          <label className="form-label">Currency</label>
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Select Currency</option>
+                            <option value="1">$ - USD</option>
+                            <option value="2">£ - Pound</option>
+                            <option value="2">₽ - Ruouble</option>
+                            <option value="2">€ - Euro</option>
+                          </select>
+                        </div>
+                        <div className="col-md-4">
                           <label className="form-label">Discount Price</label>
                           <input
                             type="text"
@@ -203,7 +229,7 @@ function Addtool() {
                             placeholder="Discount Price"
                           />
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                           <label className="form-label">Actual Price</label>
                           <input
                             type="text"
@@ -211,23 +237,28 @@ function Addtool() {
                             placeholder="Actual Price"
                           />
                         </div>
-                        <div className="col-md-6 mt-3">
-                          <label className="form-label">Deal Duaration</label>
-                          <select
-                            class="form-select"
-                            aria-label="Default select example"
-                          >
-                            <option selected>Select Duration</option>
-                            <option value="1">Monthly</option>
-                            <option value="2">Annual</option>
-                          </select>
+                        <div className="col-md-12 mt-3">
+                          <label className="form-label">Billing Interval</label>
+                          <div className="intervals">
+                              <span>Lifetime</span>
+                              <span>Annual</span>
+                              <span className="active">Monthly</span>
+                              <span>Once</span>
+                          </div>
                         </div>
-                        <div className="col-md-6 mt-3">
-                          <label className="form-label">Discount Code</label>
+                        <div className="col-md-12 mt-3">
+                          <label className="form-label">Type</label>
+                          <div className="intervals">
+                              <span>Url</span>
+                              <span className="active">Code</span>
+                          </div>
+                        </div>
+                        <div className="col-md-12 mt-3">
+                          <label className="form-label">Coupon</label>
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="Discount Code"
+                            placeholder="Coupon Code"
                           />
                         </div>
                       </div>
