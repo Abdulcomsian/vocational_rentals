@@ -1,7 +1,7 @@
 import Image from "next/image";
-import ProductImage from "@/assets/images/detail.svg";
-import ProductIcon from "@/assets/images/detail-icon.svg";
-import Logo from "@/assets/images/logo.svg";
+import ProductImage from "../../../public/images/detail-icon.svg";
+import ProductIcon from "../../../public/images/detail-icon.svg";
+import Logo from "../../../public/images/logo.svg";
 import Link from "next/link";
 
 function Signin() {

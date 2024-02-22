@@ -2,8 +2,8 @@
 import Image from "next/image";
 // import { useQuill } from 'react-quilljs';
 import "quill/dist/quill.snow.css";
-import UploadIcon from "@/assets/images/upload.svg";
-import DeleteIcon from "@/assets/images/trash-bin.png";
+import UploadIcon from "../../../../public/images/upload.svg";
+import DeleteIcon from "../../../../public/images/trash-bin.png";
 import React, { useState } from "react";
 import { useEffect } from "react";
 const { useQuill } = require("react-quilljs");

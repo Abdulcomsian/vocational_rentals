@@ -1,8 +1,13 @@
+"use client"
 import Image from "next/image";
-import Logo from "@/assets/images/logo.png";
+import Logo from "../../../public/images/logo.png";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
+import {loaderProp} from '../utilities.js';
+// const loaderProp =({ src }) => {
+//   return src;
+// }
 function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
   return (
     <>
@@ -19,7 +24,7 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
               </Link>
               <div className="desc">
                 <Link className="navbar-brand" href="#">
-                  <Image src={Logo} alt="" />
+                  <Image src={Logo}  loader={loaderProp} alt="" />
                 </Link>
                 <p>
                   An exclusive list of the best tools & resources for Vacation
