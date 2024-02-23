@@ -37,7 +37,9 @@ function Sidebar({ isOpen, onToggleOpen }) {
             </li>
           </ul>
           <div className="logo">
-            <Image src={Logo} alt="" />
+            <a href="/">
+              <Image src={Logo} alt="" />
+            </a>
           </div>
           <ul>
             <li>

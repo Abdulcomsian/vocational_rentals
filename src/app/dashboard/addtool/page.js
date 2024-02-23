@@ -120,7 +120,7 @@ function Addtool() {
     <>
       <section className="addtool mt-5 mb-5">
         <div className="row">
-          <div className="col-md-4 col-sl-12 col-lg-4 offset-lg-4">
+          <div className="col-md-12 col-sl-12 col-lg-6 offset-lg-3">
             <form>
               <div className="mb-3 upload-icon" id="upload_icon">
                 <Image
@@ -208,7 +208,7 @@ function Addtool() {
                         <div className="col-md-4">
                           <label className="form-label">Currency</label>
                           <select
-                            class="form-select"
+                            className="form-select"
                             aria-label="Default select example"
                           >
                             <option selected>Select Currency</option>

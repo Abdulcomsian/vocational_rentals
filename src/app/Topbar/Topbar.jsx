@@ -18,7 +18,7 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
                 <i className="las la-angle-double-right right-icon"></i>
               </Link>
               <div className="desc">
-                <Link className="navbar-brand" href="#">
+                <Link className="navbar-brand" href="/">
                   <Image src={Logo} alt="" />
                 </Link>
                 <p>
