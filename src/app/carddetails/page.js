@@ -29,7 +29,7 @@ function Carddetails() {
                 </a>
               </div>
             </div>
-            <section className="select-package">
+            <section className="select-package with-bg">
               <h3 className="deal-title-main">Deals</h3>
               <div class="row justify-content-center">
                 <div class="col-md-12 d-flex gap-3">

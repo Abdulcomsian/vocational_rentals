@@ -86,7 +86,7 @@ section.detail .tool-img img {
   padding-left: 10px;
   padding-right: 10px;
 }
-section.select-package{
+section.select-package.with-bg{
   background-color: #e831310d !important;
   padding: 30px;
   border-radius: 15px;
