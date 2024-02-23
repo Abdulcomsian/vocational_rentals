@@ -5,6 +5,7 @@ import "quill/dist/quill.snow.css";
 import UploadIcon from "@/assets/images/upload.svg";
 import DeleteIcon from "@/assets/images/trash-bin.png";
 import React, { useState } from "react";
+import Multiselect from "multiselect-react-dropdown";
 import { useEffect } from "react";
 const { useQuill } = require("react-quilljs");
 function Addtool() {
@@ -35,7 +36,7 @@ function Addtool() {
   //     }
   //   });
   // };
-
+  const [options, setOptions] = useState(['3D Tours', 'Accounting', 'Advertising', 'Booking Channel']);
   const [cards, setCards] = useState([
     <div className="deal-body">
       <div className="deal-added">
@@ -142,16 +143,12 @@ function Addtool() {
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Company Category</label>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                >
-                  <option selected>Select Category</option>
-                  <option value="1">3D Tours</option>
-                  <option value="1">Accounting</option>
-                  <option value="1">Advertising</option>
-                  <option value="1">Booking Channel</option>
-                </select>
+                <Multiselect 
+                  isObject= {false}
+                  options={options}
+                  showCheckbox={true}
+                  placeholder="Select Categories"
+                />
               </div>
               <div className="mb-3">
                 <label className="form-label">Company Tag line</label>

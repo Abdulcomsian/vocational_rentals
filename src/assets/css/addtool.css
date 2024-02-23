@@ -70,6 +70,41 @@ section.addtool input:focus, section.addtool input :active, section.addtool inpu
     margin: 0;
     padding-right: 10px;
 }
+.multiSelectContainer .searchWrapper input{
+    border: none !important;
+    height: 40px;
+    font-family: "Inter", sans-serif;
+}
+.multiSelectContainer .searchWrapper{
+    border: 1px solid #dee2e6;
+    font-family: "Inter", sans-serif;
+}
+.multiSelectContainer li:hover {
+    background: #e731311f !important;
+    color: #000 !important;
+    
+}
+.multiSelectContainer li.selected {
+    background: #e7313128 !important;
+    color: #e73131 !important;
+}
+.highlightOption {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: "Inter", sans-serif;
+}
+.chip{
+    background: #e73131 !important;
+    color: #fff !important;
+    font-family: "Inter", sans-serif;
+}
+.optionListContainer{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.optionContainer input{
+    height: auto !important;
+    accent-color: #e30d0d;
+}
 .modal select{
     height: 37px;
     font-size: 12px !important;
