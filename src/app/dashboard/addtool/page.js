@@ -217,8 +217,7 @@ function Addtool() {
                             <option selected>Select Currency</option>
                             <option value="1">$ - USD</option>
                             <option value="2">£ - Pound</option>
-                            <option value="2">₽ - Ruouble</option>
-                            <option value="2">€ - Euro</option>
+                            <option value="3">€ - Euro</option>
                           </select>
                         </div>
                         <div className="col-md-4">
