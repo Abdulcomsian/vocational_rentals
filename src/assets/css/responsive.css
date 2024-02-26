@@ -55,6 +55,10 @@
     z-index: 999;
     height: 100vh;
   }
+  section.detail .detail-image{
+    width: 100%;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 1200px) {
   main {
@@ -75,6 +79,9 @@
     width: 100%;
     margin: 0;
   }
+  section.signup-module{
+    padding: 0 20px;
+  }
   section.cards .card img {
     height: 100% !important;
   }
@@ -92,12 +99,16 @@
   header {
     text-align: center;
   }
+ 
 }
 @media only screen and (max-width: 630px) {
   main {
     width: 100%;
     position: unset;
     margin: 0;
+  }
+  section.about .info{
+    margin-top: 50px;
   }
   .deals-sec {
     margin-top: 70px !important;
@@ -128,5 +139,13 @@
   }
   .actions {
     margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 1100px) and (min-width: 992px) {
+  nav.navbar .top-menu .desc{
+    width: 30%;
+  }
+  nav.navbar .top-menu .navbar-brand img{
+    width: 100%;
   }
 }

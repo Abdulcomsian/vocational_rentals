@@ -23,8 +23,8 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
                 <i className="las la-angle-double-right right-icon"></i>
               </Link>
               <div className="desc">
-                <Link className="navbar-brand" href="#">
-                  <Image src={Logo}  loader={loaderProp} alt="" />
+                <Link className="navbar-brand" href="/">
+                  <Image src={Logo} alt="" />
                 </Link>
                 <p>
                   An exclusive list of the best tools & resources for Vacation

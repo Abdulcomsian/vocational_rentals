@@ -6,11 +6,11 @@ import Link from "next/link";
 function Contact() {
   return (
     <>
-      <section class="contact mt-5 pt-5">
-        <div class="row mx-0">
-          <div class="col-md-12 col-lg-4 offset-lg-4">
+      <section className="contact mt-5 pt-5">
+        <div className="row mx-0">
+          <div className="col-md-12 col-lg-4 offset-lg-4">
             <Link href="/" className="back">
-              <i class="las la-long-arrow-alt-left"></i>
+              <i className="las la-long-arrow-alt-left"></i>
               <span>Back</span>
             </Link>
             <h3>Get in Touch</h3>
@@ -18,35 +18,35 @@ function Contact() {
               If you have any questions, feedback, or need support, please dont
               hesitate to reach out.
             </p>
-            <form class="row g-3">
-              <div class="col-12">
+            <form className="row g-3">
+              <div className="col-12">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="inputAddress"
                   placeholder="Name"
                 />
               </div>
-              <div class="col-md-12">
+              <div className="col-md-12">
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="inputEmail4"
                   placeholder="Email"
                 />
               </div>
-              <div class="col-md-12">
+              <div className="col-md-12">
                 <textarea
                   name=""
-                  class="form-control"
+                  className="form-control"
                   placeholder="Message"
                   id=""
                   cols="30"
                   rows="10"
                 ></textarea>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn submit">
+              <div className="col-12">
+                <button type="submit" className="btn submit">
                   SEND
                 </button>
               </div>

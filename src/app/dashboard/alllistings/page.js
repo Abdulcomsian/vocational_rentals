@@ -197,15 +197,15 @@ function Alllistings() {
               <p className="text-muted mx-4 mb-0 text-center mt-1">
                 Are you sure you want to Cancel this Subscription?
               </p>
-              <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+              <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                 <button
                   type="button"
-                  class="btn w-sm btn-light"
+                  className="btn w-sm btn-light"
                   data-bs-dismiss="modal"
                 >
                   Close
                 </button>
-                <button type="button" class="btn w-sm btn-danger">
+                <button type="button" className="btn w-sm btn-danger">
                   Yes, Cancel It!
                 </button>
               </div>
@@ -230,17 +230,17 @@ function Alllistings() {
               <p className="text-muted mx-4 mb-0 text-center mt-1">
                 Are you sure you want to remove this Company?
               </p>
-              <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+              <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                 <button
                   type="button"
-                  class="btn w-sm btn-light"
+                  className="btn w-sm btn-light"
                   data-bs-dismiss="modal"
                 >
                   Close
                 </button>
                 <button
                   type="button"
-                  class="btn w-sm btn-danger"
+                  className="btn w-sm btn-danger"
                   id="delete_company"
                 >
                   Yes, Delete It!

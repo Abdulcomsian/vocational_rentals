@@ -23,25 +23,25 @@ function Addlisting() {
         </form>
       </section>
       <section className="select-package">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="info">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="info">
               <h3>Select Plan</h3>
             </div>
           </div>
-          <div class="packages mt-4">
-            <div class="row justify-content-center">
-              <div class="col-md-3">
-                <div class="package-single">
+          <div className="packages mt-4">
+            <div className="row justify-content-center">
+              <div className="col-md-3">
+                <div className="package-single">
                   <h3>
                     <span className="validity">Monthly</span> <b>$1</b>
-                    <span class="sale">$5.99</span>
+                    <span className="sale">$5.99</span>
                   </h3>
-                  <ul class="mt-3">
+                  <ul className="mt-3">
                     <li>$1 first month, then $5.99/month.</li>
                   </ul>
-                  <div class="action-btn mt-2">
-                    <a href="#" class="subscribe-btn">
+                  <div className="action-btn mt-2">
+                    <a href="#" className="subscribe-btn">
                       Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
@@ -51,18 +51,18 @@ function Addlisting() {
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="package-single">
-                  {/* <span class="feature">save 15%</span> */}
+              <div className="col-md-3">
+                <div className="package-single">
+                  {/* <span className="feature">save 15%</span> */}
                   <h3>
                     <span className="validity">Yearly</span> <b>$59.99</b>
-                    {/* <span class="sale">$5.99</span> */}
+                    {/* <span className="sale">$5.99</span> */}
                   </h3>
-                  <ul class="mt-3">
+                  <ul className="mt-3">
                     <li>You save $10. </li>
                   </ul>
-                  <div class="action-btn mt-2">
-                    <a href="#" class="subscribe-btn">
+                  <div className="action-btn mt-2">
+                    <a href="#" className="subscribe-btn">
                       Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
@@ -72,18 +72,18 @@ function Addlisting() {
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="package-single">
-                  <span class="feature">Featured</span>
+              <div className="col-md-3">
+                <div className="package-single">
+                  <span className="feature">Featured</span>
                   <h3>
                     <span className="validity">Featured </span> <b>$59.99</b>
-                    {/* <span class="sale">$5.99</span> */}
+                    {/* <span className="sale">$5.99</span> */}
                   </h3>
-                  <ul class="mt-3">
+                  <ul className="mt-3">
                     <li>You save $10. </li>
                   </ul>
-                  <div class="action-btn mt-2">
-                    <a href="#" class="subscribe-btn">
+                  <div className="action-btn mt-2">
+                    <a href="#" className="subscribe-btn">
                       Submit Listing
                     </a>
                     <p className="cancel-text">Cancel anytime.</p>
