@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import Topbar from "../Topbar/Topbar";
 

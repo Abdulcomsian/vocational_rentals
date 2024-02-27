@@ -1,14 +1,28 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.png";
 import Link from "next/link";
 // import { useState } from "react";
 
-import {loaderProp} from '../utilities.js';
+import { loaderProp } from "../utilities.js";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 // const loaderProp =({ src }) => {
 //   return src;
 // }
 function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
+  const router = useRouter();
+  const [isToken, setIsToken] = useState(function () {
+    const token = localStorage.getItem("token");
+    console.log("TOKEN", token);
+    return token ? token : null;
+  });
+
+  const handleLogout = function () {
+    localStorage.setItem("token", "");
+    router("/login");
+  };
+
   return (
     <>
       <section className="menu-top">
@@ -44,7 +58,9 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
               <div
                 className={`buttons-actions ${loginSection ? "isOpen" : ""}`}
               >
-                <Link href="/signin">Login</Link>
+                <Link href="/signin" onClick={handleLogout}>
+                  {isToken !== null ? "Logout" : "Login"}
+                </Link>
                 <Link href="/signup">Signup</Link>
                 <Link href="/dashboard/addlisting" className="submit-btn">
                   Submit
