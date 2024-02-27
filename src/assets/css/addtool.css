@@ -30,7 +30,7 @@ section.addtool input:focus, section.addtool input :active, section.addtool inpu
   border-color: #E30B0B;
 }
 .editor-parent{
-    height: 400px;
+    height: 100%;
 }
 .ql-container{
     height: 300px !important;

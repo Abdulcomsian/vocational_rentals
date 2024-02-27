@@ -120,7 +120,7 @@ function Addtool() {
     <>
       <section className="addtool mt-5 mb-5">
         <div className="row">
-          <div className="col-md-12 col-sl-12 col-lg-6 offset-lg-3">
+          <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
             <form>
               <div className="mb-3 upload-icon" id="upload_icon">
                 <Image
