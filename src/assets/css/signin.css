@@ -4,9 +4,10 @@ body {
 }
 
 section.signin-module {
-  width: 500px;
-  margin: 0 auto;
+  /* width: 500px;
+  margin: 0 auto; */
   margin-top: 5rem;
+  padding: 0 25px;
   margin-bottom: 5rem;
 }
 .back {
