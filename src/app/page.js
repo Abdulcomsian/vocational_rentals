@@ -1,12 +1,15 @@
 import Cardpage from "./cardpage/page";
 import Layout from "./Applayout";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 function Textpage() {
   return (
     <>
-      <Layout>
-        <Cardpage />
-      </Layout>
+      <AuthProvider>
+        <Layout>
+          <Cardpage />
+        </Layout>
+      </AuthProvider>
     </>
   );
 }

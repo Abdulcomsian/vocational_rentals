@@ -8,11 +8,14 @@ import * as yup from "yup";
 import { BASE_URL } from "@/constant/utilities";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
 
 function Signin() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const router = useRouter();
+  const { user, isAuthenticated, login, logout } = useAuth();
+
   const validationSchema = yup.object({
     email: yup
       .string()
@@ -34,7 +37,6 @@ function Signin() {
         formData.append("email", values.email);
         formData.append("password", values.password);
 
-        console.log("CLICKED", formData, "VALUES", values);
         const resp = await fetch(`${BASE_URL}/api/login`, {
           method: "POST",
           header: {
@@ -43,16 +45,14 @@ function Signin() {
           body: formData,
         });
 
-        console.log("RESP", resp);
         // if (!resp.ok)
         //   throw new Error(`Something went wrong with status: ${resp}`);
 
         const data = await resp.json();
         if (resp.status === 200) {
-          localStorage.setItem("token", data.token.original.access_token);
+          login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXXT
           router.push("/dashboard");
         } else setError(data.error);
-        console.log(data);
       } catch (err) {
         console.log(err);
       } finally {
@@ -64,7 +64,9 @@ function Signin() {
     <>
       <div className="container-mini">
         <header className="mt-3">
-          <Image src={Logo} alt="" height={50} />
+          <Link href="/">
+            <Image src={Logo} alt="" height={50} />
+          </Link>
         </header>
         <section className="signin-module">
           <Link href="/" className="back">
@@ -119,7 +121,7 @@ function Signin() {
             </div>
             <div className="mb-4 form-check text-end">
               <label className="form-check-label" for="exampleCheck1">
-                <Link href="#">Forgot Password?</Link>
+                <Link href="/forgot-password">Forgot Password?</Link>
               </label>
             </div>
             <button

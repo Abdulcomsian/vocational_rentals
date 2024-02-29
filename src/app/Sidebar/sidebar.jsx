@@ -11,16 +11,6 @@ import { useEffect } from "react";
 
 function Sidebar({ isOpen, onToggleOpen }) {
   const pathname = usePathname();
-  console.log(pathname);
-
-  // useEffect(function () {
-  //   document.documentElement.addEventListener("click", function (e) {
-  //     console.log(
-  //       "Class Identification",
-  //       e.target.getAttribute("className") !== "sidbar--main"
-  //     );
-  //   });
-  // }, []);
 
   return (
     <>
