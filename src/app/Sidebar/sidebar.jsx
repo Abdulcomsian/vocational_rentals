@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "@/assets/images/logo-mini.svg";
+import Logo from "../../../public/images/logo-mini.svg";
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
@@ -11,16 +11,6 @@ import { useEffect } from "react";
 
 function Sidebar({ isOpen, onToggleOpen }) {
   const pathname = usePathname();
-  console.log(pathname);
-
-  // useEffect(function () {
-  //   document.documentElement.addEventListener("click", function (e) {
-  //     console.log(
-  //       "Class Identification",
-  //       e.target.getAttribute("className") !== "sidbar--main"
-  //     );
-  //   });
-  // }, []);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import ProductImage from "@/assets/images/detail.svg";
-import ProductIcon from "@/assets/images/detail-icon.svg";
+import ProductImage from "../../../public/images/detail.svg";
+import ProductIcon from "../../../public/images/detail-icon.svg";
 import Link from "next/link";
 
 function Contact() {

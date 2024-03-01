@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import ProductIcon from "@/assets/images/detail-icon.svg";
-import DeleteIcon from "@/assets/images/trash-bin.png";
-import Warning from "@/assets/images/emergency.png";
+import ProductIcon from "../../../../public/images/detail-icon.svg";
+import DeleteIcon from "../../../../public/images/trash-bin.png";
+import Warning from "../../../../public/images/emergency.png";
 import { useQuill } from "react-quilljs";
 import { useEffect } from "react";
 import "quill/dist/quill.snow.css";
-import UploadIcon from "@/assets/images/upload.svg";
+import UploadIcon from "../../../../public/images/upload.svg";
 function Alllistings() {
   useEffect(() => {
     require("/src/assets/js/bootstrap.bundle.min.js");

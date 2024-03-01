@@ -2,8 +2,8 @@
 import Image from "next/image";
 // import { useQuill } from 'react-quilljs';
 import "quill/dist/quill.snow.css";
-import UploadIcon from "@/assets/images/upload.svg";
-import DeleteIcon from "@/assets/images/trash-bin.png";
+import UploadIcon from "../../../../public/images/upload.svg";
+import DeleteIcon from "../../../../public/images/trash-bin.png";
 import React, { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
 import { useEffect } from "react";
@@ -214,8 +214,7 @@ function Addtool() {
                             <option selected>Select Currency</option>
                             <option value="1">$ - USD</option>
                             <option value="2">£ - Pound</option>
-                            <option value="2">₽ - Ruouble</option>
-                            <option value="2">€ - Euro</option>
+                            <option value="3">€ - Euro</option>
                           </select>
                         </div>
                         <div className="col-md-4">

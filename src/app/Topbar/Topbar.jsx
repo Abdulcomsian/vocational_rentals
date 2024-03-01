@@ -1,9 +1,27 @@
+"use client";
 import Image from "next/image";
-import Logo from "@/assets/images/logo.png";
+import Logo from "../../../public/images/logo.png";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
+import { loaderProp } from "../utilities.js";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
+import { useEffect } from "react";
+// const loaderProp =({ src }) => {
+//   return src;
+// }
 function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
+  const router = useRouter();
+
+  const { logout, isAuthenticated } = useAuth();
+
+  const handleLogout = function () {
+    logout();
+    router("/login");
+  };
+
   return (
     <>
       <section className="menu-top">
@@ -39,10 +57,19 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
               <div
                 className={`buttons-actions ${loginSection ? "isOpen" : ""}`}
               >
-                <Link href="/signin">Login</Link>
-                <Link href="/signup">Signup</Link>
-                <Link href="/dashboard/addlisting" className="submit-btn">
-                  Submit
+                {isAuthenticated && (
+                  <Link href="/dashboard/addlisting">Submit</Link>
+                )}
+
+                <Link href="/signup">
+                  {isAuthenticated ? "My Listing" : "Signup"}
+                </Link>
+                <Link
+                  href="/signin"
+                  onClick={handleLogout}
+                  className="submit-btn"
+                >
+                  {isAuthenticated ? "Logout" : "Login"}
                 </Link>
                 <Link
                   href="https://vrt.beehiiv.com/subscribe"
