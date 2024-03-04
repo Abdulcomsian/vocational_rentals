@@ -37,8 +37,8 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
               </Link>
               <div className="desc">
                 <Link className="navbar-brand" href="/">
-                  {/* <Image src={Logo} alt="" /> */}
-                  <h3>VacationRentals</h3>
+                  <Image src={Logo} alt="" />
+                  {/* <h3>VacationRentals</h3> */}
                 </Link>
                 <p>
                   An exclusive list of the best tools & resources for Vacation

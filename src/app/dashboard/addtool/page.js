@@ -122,7 +122,7 @@ function Addtool() {
         <div className="row">
           <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
             <form>
-              <div className="mb-3 upload-icon" id="upload_icon">
+              {/* <div className="mb-3 upload-icon" id="upload_icon">
                 <Image
                   id="imgFileUpload"
                   src={UploadIcon}
@@ -132,7 +132,7 @@ function Addtool() {
                 />
                 <span>Upload Company Icon</span>
                 <input type="file" id="IconUpload" />
-              </div>
+              </div> */}
               <div className="mb-3">
                 <label className="form-label">Company Name</label>
                 <input

@@ -58,7 +58,7 @@ function Cardpage() {
                 <Image src={card} loader={loaderProp}  alt="" />
                 <div className="card-info">
                   <div className="name-img">
-                    <Image src={card11} loader={loaderProp}  alt="" />
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
                     <h3>EasyFast</h3>
                   </div>
                   <div className="type sponsor">Ad</div>
