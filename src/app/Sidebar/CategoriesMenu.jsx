@@ -8,6 +8,7 @@ export default function CategoriesMenu() {
   const [catagories, setCatagories] = useState([]);
 
   useEffect(function () {
+    if (catagories.length > 0) return;
     const requestOptions = {
       method: "GET",
       redirect: "follow",
