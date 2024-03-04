@@ -1,5 +1,6 @@
 "use client";
 
+import { AuthProvider } from "@/contexts/AuthContext";
 import { useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import Topbar from "../Topbar/Topbar";
@@ -22,15 +23,17 @@ export default function Layout({ children }) {
   return (
     <>
       <div>
-        <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} />
-        <main>
-          <Topbar
-            onToggleSidebar={handleToggleSidebar}
-            loginSection={loginSection}
-            setLoginSection={handleToggleLoginSection}
-          />
-          <div className="dashboard">{children}</div>
-        </main>
+        <AuthProvider>
+          <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} />
+          <main>
+            <Topbar
+              onToggleSidebar={handleToggleSidebar}
+              loginSection={loginSection}
+              setLoginSection={handleToggleLoginSection}
+            />
+            <div className="dashboard">{children}</div>
+          </main>
+        </AuthProvider>
       </div>
     </>
   );

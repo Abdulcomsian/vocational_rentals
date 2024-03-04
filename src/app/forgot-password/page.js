@@ -168,7 +168,7 @@ function ForgotPassword() {
       };
 
       fetch(
-        `https://admin.vacationrentals.tools/api/update-password?email=muneeb@gmail.com&new_password=${values.password}`,
+        `https://admin.vacationrentals.tools/api/update-password?email=${verifyingUserEmail}&new_password=${values.password}`,
         requestOptions
       )
         .then((response) => response.text())
