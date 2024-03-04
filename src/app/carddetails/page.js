@@ -13,7 +13,7 @@ function Carddetails() {
         <div className="row">
           <div className="col-lg-7">
             <div className="tool-detail-top">
-              <Image src={ProductIcon} alt="" />
+              {/* <Image src={ProductIcon} alt="" /> */}
               <div className="other">
                 <h1>
                   Universium

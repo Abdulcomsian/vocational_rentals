@@ -102,7 +102,7 @@ section.cards .card .card-info .name-img h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 section.cards .card p {
   margin-bottom: 0;
