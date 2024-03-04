@@ -69,9 +69,16 @@ nav.navbar .top-menu .desc p {
   font-weight: 500;
   color: #555555;
 }
+nav.navbar .top-menu .navbar-brand{
+  display: inline-block;
+}
 nav.navbar .top-menu .navbar-brand img {
   width: 300px;
   height: auto;
+}
+nav.navbar .top-menu .navbar-brand h3 {
+  color: #6b7280;
+  margin-bottom: 0;
 }
 nav.navbar .top-menu .buttons-actions a {
   margin-bottom: 10px;

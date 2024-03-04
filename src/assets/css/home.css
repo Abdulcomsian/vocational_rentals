@@ -15,7 +15,7 @@ section.search-area .search-box .search-input {
           box-shadow: rgba(99, 99, 99, 0.11) 0px 2px 24px 0px;
 }
 section.search-area .search-box .search-input input {
-  padding-left: 35px;
+  padding-left: 50px;
   height: 60px;
   border-width: 1px;
   border-top-left-radius: 5px !important;
@@ -34,7 +34,7 @@ section.search-area .search-box .search-input i {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   font-size: 19px;
-  padding: 20px 10px;
+  padding: 20px 20px;
 }
 section.search-area .search-box .search-input .dropdown-toggle {
   background: transparent;

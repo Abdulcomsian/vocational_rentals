@@ -68,7 +68,9 @@ function Signin() {
             <Image src={Logo} alt="" height={50} />
           </Link>
         </header>
-        <section className="signin-module">
+        <div className="row justify-content-md-center">
+          <div className="col-md-4">
+          <section className="signin-module">
           <Link href="/" className="back">
             <i className="las la-long-arrow-alt-left"></i>
             <span>Back</span>
@@ -133,6 +135,10 @@ function Signin() {
             </button>
           </form>
         </section>
+          </div>
+        </div>
+
+        
       </div>
     </>
   );

@@ -2,7 +2,57 @@
 body {
   font-family: "Inter", sans-serif;
 }
-
+.thankyou{
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.tankyou_content_dash{
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 50px;
+  padding-bottom: 70px;
+  margin-top: 15rem;
+  text-align: center;
+  box-shadow: rgb(208 4 4 / 17%) 0px 6px 24px 0px, rgb(193 27 27 / 8%) 0px 0px 0px 1px;
+}
+.tankyou_content_dash h3{
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 00px;
+}
+.tankyou_content_dash p{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.tankyou_content_dash a{
+  display: inline !important;
+  padding: 15px 35px !important;
+  background: #E30B0B !important;
+  font-size: 18px;
+  color: #fff !important;
+}
+.tankyou_content h3{
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.tankyou_content p{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.tankyou_content a{
+  display: inline !important;
+  padding: 15px 35px !important;
+  background: #E30B0B !important;
+  font-size: 18px;
+  color: #fff !important;
+}
 section.about {
   margin-top: 50px;
 }
