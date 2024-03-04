@@ -1,8 +1,9 @@
-const { createSlice } = require("@reduxjs/toolkit");
+"use client";
+import { BASE_URL } from "@/constant/utilities";
 
 const initialState = {
   catagories: [],
-  isLoading,
+  isLoading: false,
 };
 
 const catagoriesReducer = function (state = initialState, action) {
@@ -23,6 +24,29 @@ const catagoriesReducer = function (state = initialState, action) {
   }
 };
 
-function getCatagories() {
-  return function (dispatch, getState) {};
+// ACTION CREATORS
+
+export function getCatagories() {
+  return function (dispatch, getState) {
+    dispatch({ type: "cataories/loading" });
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(`${BASE_URL}/api/show-category`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const parsedData = JSON.parse(result);
+        console.log("CALLED FROM ACTION CREATOR", parsedData);
+
+        dispatch({
+          type: "catagories/getCatagories",
+          payload: parsedData.data,
+        });
+      })
+      .catch((error) => console.error(error));
+  };
 }
+
+export default catagoriesReducer;

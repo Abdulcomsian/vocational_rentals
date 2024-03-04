@@ -1,15 +1,19 @@
 "use client";
+import { getCatagories } from "./Sidebar/catagoriesSlice";
 
 import { useState } from "react";
 import Sidebar from "./Sidebar/sidebar";
 import Topbar from "./Topbar/Topbar";
 
 import { AuthProvider } from "@/contexts/AuthContext";
+import {
+  CatagoriesProvider,
+  useCatagories,
+} from "@/contexts/CatagoriesContext";
 
 export default function Layout({ children }) {
   const [isOpenSidbar, setIsOpenSidebar] = useState(false);
   const [loginSection, setLoginSection] = useState(false);
-  console.log("APP LAYOUT");
 
   function handleToggleSidebar() {
     if (loginSection) setLoginSection(false);
@@ -19,23 +23,28 @@ export default function Layout({ children }) {
   function handleToggleLoginSection() {
     if (isOpenSidbar) setIsOpenSidebar(false);
     setLoginSection((is) => !is);
+
+    store.dispatch(getCatagories());
+    console.log(store.getState());
   }
 
   return (
     <>
-      <AuthProvider>
-        <div>
-          <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} />
-          <main>
-            <Topbar
-              onToggleSidebar={handleToggleSidebar}
-              loginSection={loginSection}
-              setLoginSection={handleToggleLoginSection}
-            />
-            <div className="dashboard">{children}</div>
-          </main>
-        </div>
-      </AuthProvider>
+      <CatagoriesProvider>
+        <AuthProvider>
+          <div>
+            <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} />
+            <main>
+              <Topbar
+                onToggleSidebar={handleToggleSidebar}
+                loginSection={loginSection}
+                setLoginSection={handleToggleLoginSection}
+              />
+              <div className="dashboard">{children}</div>
+            </main>
+          </div>
+        </AuthProvider>
+      </CatagoriesProvider>
     </>
   );
 }

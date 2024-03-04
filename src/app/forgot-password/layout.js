@@ -1,14 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import Sidebar from "../Sidebar/sidebar";
+import Topbar from "../Topbar/Topbar";
 import { AuthProvider } from "@/contexts/AuthContext";
-import { useEffect, useState } from "react";
-import Sidebar from "@/app/Sidebar/sidebar";
-import Topbar from "@/app/Topbar/Topbar";
 import { CatagoriesProvider } from "@/contexts/CatagoriesContext";
 
 export default function Layout({ children }) {
-  const [isOpenSidbar, setIsOpenSidebar] = useState(true);
-
   return (
     <>
       <CatagoriesProvider>
@@ -16,7 +14,11 @@ export default function Layout({ children }) {
           {/* <div> */}
           {/* <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} /> */}
           {/* <main> */}
-          {/* <Topbar onToggleSidebar={() => setIsOpenSidebar((is) => !is)} /> */}
+          {/* <Topbar
+              onToggleSidebar={handleToggleSidebar}
+              loginSection={loginSection}
+              setLoginSection={handleToggleLoginSection}
+            /> */}
           <div className="dashboard">{children}</div>
           {/* </main> */}
           {/* </div> */}

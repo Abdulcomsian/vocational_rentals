@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import Image from "next/image";
 import card from "../../../public/images/card1.png";
 import card11 from "../../../public/images/card11.png";
 import Link from "next/link";
-import {loaderProp} from '../utilities.js';
+import { loaderProp } from "../utilities.js";
 // const loaderProp =({ src }) => {
 //   return src;
 // }
@@ -55,10 +55,10 @@ function Cardpage() {
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/carddetails">
               <div className="card">
-                <Image src={card} loader={loaderProp}  alt="" />
+                <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
-                    <Image src={card11} loader={loaderProp}  alt="" />
+                    <Image src={card11} loader={loaderProp} alt="" />
                     <h3>EasyFast</h3>
                   </div>
                   <div className="type sponsor">Ad</div>
@@ -73,10 +73,10 @@ function Cardpage() {
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/carddetails">
               <div className="card">
-                <Image src={card} loader={loaderProp}  alt="" />
+                <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
-                    <Image src={card11} loader={loaderProp}  alt="" />
+                    <Image src={card11} loader={loaderProp} alt="" />
                     <h3>EasyFast</h3>
                   </div>
                 </div>
@@ -90,10 +90,10 @@ function Cardpage() {
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/carddetails">
               <div className="card">
-                <Image src={card} loader={loaderProp}  alt="" />
+                <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
-                    <Image src={card11} loader={loaderProp}  alt="" />
+                    <Image src={card11} loader={loaderProp} alt="" />
                     <h3>EasyFast</h3>
                   </div>
                 </div>
@@ -107,10 +107,10 @@ function Cardpage() {
           <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
             <Link href="/carddetails">
               <div className="card">
-                <Image src={card} loader={loaderProp}  alt="" />
+                <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
-                    <Image src={card11} loader={loaderProp}  alt="" />
+                    <Image src={card11} loader={loaderProp} alt="" />
                     <h3>EasyFast</h3>
                   </div>
                   <div className="type deals">2 Deals</div>

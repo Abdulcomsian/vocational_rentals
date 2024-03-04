@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ProductImage from "../../../public/images/detail.svg";
 import ProductIcon from "../../../public/images/detail-icon.svg";

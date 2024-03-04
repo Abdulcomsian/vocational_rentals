@@ -7,36 +7,24 @@ import DeleteIcon from "../../../../public/images/trash-bin.png";
 import React, { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
 import { useEffect } from "react";
+import { useCatagories } from "@/contexts/CatagoriesContext";
 const { useQuill } = require("react-quilljs");
 function Addtool() {
+  const { catagories } = useCatagories();
+  console.log(catagories);
   useEffect(() => {
     require("/src/assets/js/bootstrap.bundle.min.js");
   }, []);
   const { quill, quillRef } = useQuill();
-  // window.onload = () => {
-  //   var fileupload = document.getElementById("IconUpload");
-  //   var imgFileUpload = document.getElementById("imgFileUpload");
-  //   upload_icon.onclick = function () {
-  //     fileupload.click();
-  //   };
+  const [options, setOptions] = useState([]);
 
-  //   IconUpload.addEventListener("change", function () {
-  //     const file = this.files[0];
-
-  //     if (file) {
-  //       const reader = new FileReader();
-
-  //       reader.onload = function (e) {
-  //         imgFileUpload.src = e.target.result;
-  //       };
-
-  //       reader.readAsDataURL(file);
-  //     } else {
-  //       imagePreview.innerHTML = "No image selected";
-  //     }
-  //   });
-  // };
-  const [options, setOptions] = useState(['3D Tours', 'Accounting', 'Advertising', 'Booking Channel']);
+  useEffect(
+    function () {
+      const options = catagories.map((catagory) => catagory.category_name);
+      if (catagories.length > 0) setOptions(options);
+    },
+    [catagories]
+  );
   const [cards, setCards] = useState([
     <div className="deal-body">
       <div className="deal-added">
@@ -116,6 +104,10 @@ function Addtool() {
       </div>,
     ]);
   };
+
+  const handleSelectCatagory = function (selectedList, selectedItem) {
+    console.log("*****", selectedItem, selectedList);
+  };
   return (
     <>
       <section className="addtool mt-5 mb-5">
@@ -143,11 +135,12 @@ function Addtool() {
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Company Category</label>
-                <Multiselect 
-                  isObject= {false}
+                <Multiselect
+                  isObject={false}
                   options={options}
                   showCheckbox={true}
                   placeholder="Select Categories"
+                  onSelect={() => handleSelectCatagory()}
                 />
               </div>
               <div className="mb-3">
@@ -236,17 +229,17 @@ function Addtool() {
                         <div className="col-md-12 mt-3">
                           <label className="form-label">Billing Interval</label>
                           <div className="intervals">
-                              <span>Lifetime</span>
-                              <span>Annual</span>
-                              <span className="active">Monthly</span>
-                              <span>Once</span>
+                            <span>Lifetime</span>
+                            <span>Annual</span>
+                            <span className="active">Monthly</span>
+                            <span>Once</span>
                           </div>
                         </div>
                         <div className="col-md-12 mt-3">
                           <label className="form-label">Type</label>
                           <div className="intervals">
-                              <span>Url</span>
-                              <span className="active">Code</span>
+                            <span>Url</span>
+                            <span className="active">Code</span>
                           </div>
                         </div>
                         <div className="col-md-12 mt-3">
