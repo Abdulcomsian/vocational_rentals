@@ -19,7 +19,7 @@ function Contact() {
                             <Image src={thanksimg} alt="" width="584" height="368" />
                             <h3>Registeration Succuessfull</h3>
                             <p>We have sent a verification email. Please verify your Email </p>
-                            <a href="/login" title="Back to Login" className="btn mt-30">Back to Login <i className="ti-home"></i></a>
+                            <a href="/signin" title="Back to Login" className="btn mt-30">Back to Login <i className="ti-home"></i></a>
                         </div>
                         </div>
                     </div>

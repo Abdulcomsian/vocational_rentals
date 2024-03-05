@@ -14,6 +14,7 @@ function Aboutus() {
 
   return (
     <>
+    {isAuthenticated ? (
         <section className="about">
           <div className="row">
             <div className="col-md-6">
@@ -121,7 +122,9 @@ function Aboutus() {
             </div>
           </div>
         </section>
-      
+        ) : (
+        router.push("/signin")
+      )}
     </>
   );
 }
