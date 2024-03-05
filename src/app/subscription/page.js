@@ -3,8 +3,30 @@ import Image from "next/image";
 import ProductImage from "../../../public/images/detail.svg";
 import ProductIcon from "../../../public/images/detail-icon.svg";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "@/constant/utilities";
+import { useAuth } from "@/contexts/AuthContext";
 
 function Carddetails() {
+  const [plans, setPlans] = useState([]);
+  const { isAuthenticated } = useAuth();
+  console.log(isAuthenticated);
+
+  useEffect(function () {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch("https://admin.vacationrentals.tools/api/plans", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const convertedData = JSON.parse(result);
+        setPlans(convertedData.plans);
+        console.log(convertedData.plans);
+      })
+      .catch((error) => console.error(error));
+  }, []);
   return (
     <>
       <section className="subscribe-pkgs">
@@ -31,9 +53,11 @@ function Carddetails() {
                     <li>$1 first month, then $5.99/month.</li>
                   </ul>
                   <div className="action-btn mt-5">
-                    <Link href="/signup" className="subscribe-btn">
-                      Sign Up
-                    </Link>
+                    {!isAuthenticated && (
+                      <Link href="/signup" className="subscribe-btn">
+                        Sign Up
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -46,9 +70,11 @@ function Carddetails() {
                     <li>You Save $10</li>
                   </ul>
                   <div className="action-btn mt-5">
-                    <Link href="/signup" className="subscribe-btn">
-                      Sign Up
-                    </Link>
+                    {!isAuthenticated && (
+                      <Link href="/signup" className="subscribe-btn">
+                        Sign Up
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -62,9 +88,11 @@ function Carddetails() {
                     <li>Lorem ipsum dolor sit amet consectetur. </li>
                   </ul>
                   <div className="action-btn mt-5">
-                    <Link href="/signup" className="subscribe-btn">
-                      Sign Up
-                    </Link>
+                    {!isAuthenticated && (
+                      <Link href="/signup" className="subscribe-btn">
+                        Sign Up
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

@@ -21,7 +21,7 @@ function Addtool() {
   useEffect(
     function () {
       const options = catagories.map((catagory) => catagory.category_name);
-      if (catagories.length > 0) setOptions(options);
+      if (catagories.length > 0) setOptions(options.slice(1));
     },
     [catagories]
   );
