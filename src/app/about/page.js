@@ -4,11 +4,11 @@ import ProductImage from "../../../public/images/detail.svg";
 import ProductIcon from "../../../public/images/detail-icon.svg";
 import Accordion from 'react-bootstrap/Accordion';
 
-// import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 
 function Aboutus() {
-  // const { user, isAuthenticated, login, logout } = useAuth();
+  const { user, isAuthenticated, login, logout } = useAuth();
 
   const router = useRouter();
 
