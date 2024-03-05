@@ -9,11 +9,32 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function Addlisting() {
-  const { isAuthenticated } = useAuth();
-  // const [isAuth, setIsAuth] = useState(function () {
-  //   // const token = localStorage.getItem("token");
-  //   return token ? token : null;
-  // });
+  // const { isAuthenticated } = useAuth();
+  const [isAuth, setIsAuth] = useState(function () {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      return token ? token : null;
+    }
+    return null;
+  });
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check if running on the client side
+    if (typeof window !== "undefined") {
+      const currentLocation = window.location.href;
+      console.log("Current URL:", currentLocation);
+
+      // Perform additional client-side actions with the location object as needed
+    }
+  }, []);
+
+  useEffect(() => {
+    // Redirect to sign-in if not authenticated
+    if (!isAuth) {
+      router.push("/signin");
+    }
+  }, [isAuth, router]);
 
   // useEffect(function () {
   //   // const token = localStorage.getItem("token");
@@ -25,17 +46,17 @@ function Addlisting() {
   //   token ? setIsAuth(true) : setIsAuth(false);
   // }, []);
 
-  useEffect(function () {
-    if (!isAuthenticated) {
-      router.push("/signin");
-    }
-  }, []);
-  const router = useRouter();
+  // useEffect(function () {
+  //   if (!isAuthenticated) {
+  //     router.push("/signin");
+  //   }
+  // }, []);
+  // const router = useRouter();
 
-  console.log("IS AUTH", isAuthenticated);
+  console.log("IS AUTH", isAuth);
   return (
     <>
-      {isAuthenticated ? (
+      {isAuth ? (
         <>
           <section className="add-link">
             <form className="row g-3 justify-content-center" action="#">

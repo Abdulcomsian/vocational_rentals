@@ -15,7 +15,9 @@ export default function CatagoryItem({ itemData }) {
       >
         <span
           className="categories"
-          style={{ maskImage: `url(${BASE_URL}/${category_image})` }}
+          style={{
+            maskImage: `url(https://admin.vacationrentals.tools/assets/category_images/default.svg)`,
+          }}
         />
         {category_name}
       </Link>
