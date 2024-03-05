@@ -38,6 +38,10 @@ function CatagoriesProvider({ children }) {
   const requestOptions = {
     method: "GET",
     redirect: "follow",
+    header: {
+      // "Content-Type": "application/json",
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
   useEffect(function () {
     async function getCatagories() {

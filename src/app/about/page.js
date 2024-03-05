@@ -25,13 +25,13 @@ function Aboutus() {
                 </p>
                 <div className="detail mt-4">
                   <p>
-                    Listing my properties on different listing sites, maintenance of the property, check-in software, ... These all took a lot of time, and seriously, I’d not had much time.
+                    Listing my properties on different listing sites, maintenance of the property, check-in software, ... These all took a lot of time, and seriously, I'd not had much time.
                   </p>
                   <p>
-                    That time I can’t even explain in words how stressful it was.
+                    That time I can't even explain in words how stressful it was.
                   </p>
                   <p>
-                    But after years of experience and continuous struggle, I’ve been able to gather all the tools and service providers on one platform.
+                    But after years of experience and continuous struggle, I've been able to gather all the tools and service providers on one platform.
                   </p>
                   <p>
                     Because I have an aim in mind, the effort I put in and the struggle I suffer with, would not happen with new or existing rental business entrepreneurs.
@@ -62,7 +62,7 @@ function Aboutus() {
                       Guest communications
                     </li>
                     <li>
-                      And 31+ more services and tools you can’t miss.
+                      And 31+ more services and tools you can't miss.
                     </li>
                   </ul>
                 </div>
@@ -123,7 +123,8 @@ function Aboutus() {
           </div>
         </section>
         ) : (
-        router.push("/signin")
+        // router.push("/signin")
+        null
       )}
     </>
   );
