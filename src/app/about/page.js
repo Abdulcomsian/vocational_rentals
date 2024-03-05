@@ -121,15 +121,10 @@ function Aboutus() {
               </div>
             </div>
           </div>
-<<<<<<< HEAD
-        </div>
-      </section>
-=======
         </section>
         ) : (
         router.push("/signin")
       )}
->>>>>>> 95bf1de003504f6cd42436b743f5db20b6e7630c
     </>
   );
 }
