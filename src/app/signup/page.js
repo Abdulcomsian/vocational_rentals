@@ -130,7 +130,7 @@ function Signin() {
                 </label>
                 <div className="pass-view">
                   <input
-                    type="email"
+                    type="password"
                     className="form-control"
                     id="password"
                     name="password"
