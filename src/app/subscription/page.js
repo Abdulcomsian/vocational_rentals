@@ -33,11 +33,9 @@ function Carddetails() {
         <div className="row">
           <div className="col-md-4">
             <div className="info">
-              <h3>Sponsorship Packages</h3>
+              <h3>Listings Packages</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur. Velit neque viverra
-                risus gravida etiam cursus et imperdiet faucibus. Purus lacinia
-                scelerisque morbi habitasse urna non et.
+                Choose your package  
               </p>
             </div>
           </div>

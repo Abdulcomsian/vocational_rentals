@@ -76,7 +76,11 @@ function Cardpage() {
                 <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
+<<<<<<< HEAD
                     <Image src={card11} loader={loaderProp} alt="" />
+=======
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+>>>>>>> 95bf1de003504f6cd42436b743f5db20b6e7630c
                     <h3>EasyFast</h3>
                   </div>
                 </div>
@@ -93,7 +97,11 @@ function Cardpage() {
                 <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
+<<<<<<< HEAD
                     <Image src={card11} loader={loaderProp} alt="" />
+=======
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+>>>>>>> 95bf1de003504f6cd42436b743f5db20b6e7630c
                     <h3>EasyFast</h3>
                   </div>
                 </div>
@@ -110,7 +118,11 @@ function Cardpage() {
                 <Image src={card} loader={loaderProp} alt="" />
                 <div className="card-info">
                   <div className="name-img">
+<<<<<<< HEAD
                     <Image src={card11} loader={loaderProp} alt="" />
+=======
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+>>>>>>> 95bf1de003504f6cd42436b743f5db20b6e7630c
                     <h3>EasyFast</h3>
                   </div>
                   <div className="type deals">2 Deals</div>
