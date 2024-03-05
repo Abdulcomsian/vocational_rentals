@@ -7,6 +7,38 @@ import { useEffect, useState } from "react";
 import { BASE_URL } from "@/constant/utilities";
 import { useAuth } from "@/contexts/AuthContext";
 
+function PlanItem({ planData, isAuthenticated, index }) {
+  console.log(planData);
+  return (
+    <div className="col-md-4">
+      <div className={`package-single ${index === 1 ? "color-primary" : ""}`}>
+        {planData.plan_name === "Featured" && (
+          <span className="feature">Featured</span>
+        )}
+        <span
+          className="sale"
+          style={index === 0 ? {} : { visibility: "hidden" }}
+        >
+          $5.99
+        </span>
+        <h3>
+          <b>${planData.price}</b>/Month
+        </h3>
+        <ul className="mt-4">
+          <li>{planData.description}</li>
+        </ul>
+        <div className="action-btn mt-5">
+          {!isAuthenticated && (
+            <Link href="/signup" className="subscribe-btn">
+              Sign Up
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Carddetails() {
   const [plans, setPlans] = useState([]);
   const { isAuthenticated } = useAuth();
@@ -27,6 +59,7 @@ function Carddetails() {
       })
       .catch((error) => console.error(error));
   }, []);
+
   return (
     <>
       <section className="subscribe-pkgs">
@@ -41,59 +74,14 @@ function Carddetails() {
           </div>
           <div className="packages mt-4">
             <div className="row">
-              <div className="col-md-4">
-                <div className="package-single">
-                  <span className="sale">$5.99</span>
-                  <h3>
-                    <b>$1</b>/Month
-                  </h3>
-                  <ul className="mt-4">
-                    <li>$1 first month, then $5.99/month.</li>
-                  </ul>
-                  <div className="action-btn mt-5">
-                    {!isAuthenticated && (
-                      <Link href="/signup" className="subscribe-btn">
-                        Sign Up
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="package-single color-primary">
-                  <h3 className="mt-cs">
-                    <b>$59.99</b>/Year
-                  </h3>
-                  <ul className="mt-4">
-                    <li>You Save $10</li>
-                  </ul>
-                  <div className="action-btn mt-5">
-                    {!isAuthenticated && (
-                      <Link href="/signup" className="subscribe-btn">
-                        Sign Up
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="package-single">
-                  <span className="feature">Featured</span>
-                  <h3 className="mt-cs">
-                    <b>$59.99</b>/Year
-                  </h3>
-                  <ul className="mt-4">
-                    <li>Lorem ipsum dolor sit amet consectetur. </li>
-                  </ul>
-                  <div className="action-btn mt-5">
-                    {!isAuthenticated && (
-                      <Link href="/signup" className="subscribe-btn">
-                        Sign Up
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
+              {plans.map((plan, index) => (
+                <PlanItem
+                  key={plan.id}
+                  planData={plan}
+                  isAuthenticated={isAuthenticated}
+                  index={index}
+                />
+              ))}
             </div>
           </div>
         </div>
