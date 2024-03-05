@@ -5,10 +5,8 @@ import Link from "next/link";
 
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { BASE_URL } from "@/constant/utilities";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { parseJSON } from "jquery";
 
 function ForgotPassword() {
   const [isLoading, setIsLoading] = useState(false);
@@ -57,6 +55,7 @@ function ForgotPassword() {
         )
           .then((response) => response.text())
           .then((result) => {
+            console.log(result);
             const parsedResult = JSON.parse(result);
             console.log(parsedResult);
             if (parsedResult.status === 200) {
@@ -131,6 +130,8 @@ function ForgotPassword() {
       )
         .then((response) => response.text())
         .then((result) => {
+          console.log(result);
+
           const parsedResult = JSON.parse(result);
           if (parsedResult.status === 200) {
             setOTPvarified(true);
@@ -173,6 +174,8 @@ function ForgotPassword() {
       )
         .then((response) => response.text())
         .then((result) => {
+          console.log(result);
+
           const parsedResult = JSON.parse(result);
           if (parsedResult.status === 200) {
             setOTPvarified(false);

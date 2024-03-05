@@ -6,20 +6,36 @@ import ProductIcon from "../../../../public/images/detail-icon.svg";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Addlisting() {
-  // const { isAuthenticated } = useAuth();
-  const [isAuth, setIsAuth] = useState(function () {
-    const token = localStorage.getItem("token");
-    return token ? token : null;
-  });
+  const { isAuthenticated } = useAuth();
+  // const [isAuth, setIsAuth] = useState(function () {
+  //   // const token = localStorage.getItem("token");
+  //   return token ? token : null;
+  // });
+
+  // useEffect(function () {
+  //   // const token = localStorage.getItem("token");
+  //   // const token =
+  //   //   typeof window !== "undefined"
+  //   //     ? window.localStorage.getItem("token")
+  //   //     : false;
+
+  //   token ? setIsAuth(true) : setIsAuth(false);
+  // }, []);
+
+  useEffect(function () {
+    if (!isAuthenticated) {
+      router.push("/signin");
+    }
+  }, []);
   const router = useRouter();
 
-  console.log("IS AUTH", isAuth);
+  console.log("IS AUTH", isAuthenticated);
   return (
     <>
-      {isAuth ? (
+      {isAuthenticated ? (
         <>
           <section className="add-link">
             <form className="row g-3 justify-content-center" action="#">
@@ -115,9 +131,7 @@ function Addlisting() {
             </div>
           </section>{" "}
         </>
-      ) : (
-        router.push("/signin")
-      )}
+      ) : null}
     </>
   );
 }
