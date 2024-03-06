@@ -142,3 +142,9 @@ a {
 .btn--round:visited {
   border-radius: 50px;
 }
+
+.errorMessage {
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 3px;
+}
