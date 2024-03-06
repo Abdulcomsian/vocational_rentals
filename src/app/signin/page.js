@@ -40,6 +40,7 @@ function Signin() {
         const resp = await fetch(`${BASE_URL}/api/login`, {
           method: "POST",
           header: {
+            "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
           },
           body: formData,
