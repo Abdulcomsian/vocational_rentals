@@ -17,7 +17,6 @@ const AuthProvider = ({ children }) => {
       setUser(decodedUser);
       setIsAuthenticated(true);
     } else {
-      console.log("HAS NOT TOKEN");
       setUser(null);
       setIsAuthenticated(false);
     }

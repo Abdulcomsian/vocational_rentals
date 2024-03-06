@@ -62,9 +62,11 @@ function Topbar({ loginSection, setLoginSection, onToggleSidebar }) {
                   <Link href="/dashboard/addlisting">Submit</Link>
                 )}
 
-                <Link href="/signup">
-                  {isAuthenticated ? "My Listing" : "Signup"}
-                </Link>
+                {isAuthenticated ? (
+                  <Link href="/dashboard/alllistings">My Listing</Link>
+                ) : (
+                  <Link href="/signup">Signup</Link>
+                )}
                 <Link
                   href="/signin"
                   onClick={handleLogout}

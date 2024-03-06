@@ -20,9 +20,9 @@ section.subscribe-pkgs .info p {
 }
 section.subscribe-pkgs .packages .package-single.color-primary {
   background: rgba(252, 90, 90, 0.0549019608);
-  border: 2px solid #E30B0B;
+  border: 2px solid #e30b0b;
   -webkit-box-shadow: 0px 0px 10px 2px rgba(227, 11, 11, 0.2);
-          box-shadow: 0px 0px 10px 2px rgba(227, 11, 11, 0.2);
+  box-shadow: 0px 0px 10px 2px rgba(227, 11, 11, 0.2);
 }
 section.subscribe-pkgs .packages .package-single {
   background: rgba(193, 193, 193, 0.0941176471);
@@ -30,17 +30,18 @@ section.subscribe-pkgs .packages .package-single {
   padding: 20px 30px;
   border-radius: 10px;
   padding-bottom: 40px;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
+  height: 100%;
   position: relative;
 }
 section.subscribe-pkgs .packages .package-single span.sale {
   text-decoration: line-through;
   font-size: 23px;
   font-weight: 500;
-  color: #8A92A6;
+  color: #8a92a6;
 }
 section.subscribe-pkgs .packages .package-single .feature {
-  background: #D6D6D6;
+  background: #d6d6d6;
   color: #000;
   position: absolute;
   padding: 5px 20px;
@@ -50,7 +51,7 @@ section.subscribe-pkgs .packages .package-single .feature {
 }
 section.subscribe-pkgs .packages .package-single h3 {
   margin-top: 5px;
-  color: #8A92A6;
+  color: #8a92a6;
   font-size: 25px;
   font-weight: 400;
 }

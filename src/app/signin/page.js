@@ -49,10 +49,11 @@ function Signin() {
         //   throw new Error(`Something went wrong with status: ${resp}`);
 
         const data = await resp.json();
+        console.log(data);
         if (resp.status === 200) {
           login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXXT
           router.push("/dashboard");
-        } else setError(data.error);
+        } else setError(data.msg);
       } catch (err) {
         console.log(err);
       } finally {
@@ -70,75 +71,75 @@ function Signin() {
         </header>
         <div className="row justify-content-md-center">
           <div className="col-md-4">
-          <section className="signin-module">
-          <Link href="/" className="back">
-            <i className="las la-long-arrow-alt-left"></i>
-            <span>Back</span>
-          </Link>
-          <h3 className="title">Sign In</h3>
-          <form onSubmit={formik.handleSubmit}>
-            {error !== null && <p className="text-danger">{error}</p>}
-            <div className="mb-4">
-              <label for="exampleInputEmail1" className="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                name="email"
-                placeholder="Your name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-              />
-              {formik.touched.email && formik.errors.email ? (
-                <div className="text-danger mt-2 ">{formik.errors.email}</div>
-              ) : null}
-            </div>
-            <div className="mb-4">
-              <label for="exampleInputPassword1" className="form-label">
-                Password
-              </label>
-              <div className="pass-view">
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Enter Password"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.password}
-                />
-                <a href="javascript:void(0)" className="view-pass">
-                  <i className="las la-eye"></i>
-                </a>
-                {formik.touched.password && formik.errors.password ? (
-                  <div className="text-danger mt-2 ">
-                    {formik.errors.password}
+            <section className="signin-module">
+              <Link href="/" className="back">
+                <i className="las la-long-arrow-alt-left"></i>
+                <span>Back</span>
+              </Link>
+              <h3 className="title">Sign In</h3>
+              <form onSubmit={formik.handleSubmit}>
+                {error !== null && <p className="text-danger">{error}</p>}
+                <div className="mb-4">
+                  <label for="exampleInputEmail1" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Your name"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                  />
+                  {formik.touched.email && formik.errors.email ? (
+                    <div className="text-danger mt-2 ">
+                      {formik.errors.email}
+                    </div>
+                  ) : null}
+                </div>
+                <div className="mb-4">
+                  <label for="exampleInputPassword1" className="form-label">
+                    Password
+                  </label>
+                  <div className="pass-view">
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      name="password"
+                      placeholder="Enter Password"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.password}
+                    />
+                    <a href="javascript:void(0)" className="view-pass">
+                      <i className="las la-eye"></i>
+                    </a>
+                    {formik.touched.password && formik.errors.password ? (
+                      <div className="text-danger mt-2 ">
+                        {formik.errors.password}
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-            </div>
-            <div className="mb-4 form-check text-end">
-              <label className="form-check-label" for="exampleCheck1">
-                <Link href="/forgot-password">Forgot Password?</Link>
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="btn submit mt-5"
-              disabled={isLoading}
-            >
-              Sign In
-            </button>
-          </form>
-        </section>
+                </div>
+                <div className="mb-4 form-check text-end">
+                  <label className="form-check-label" for="exampleCheck1">
+                    <Link href="/forgot-password">Forgot Password?</Link>
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  className="btn submit mt-5"
+                  disabled={isLoading}
+                >
+                  Sign In
+                </button>
+              </form>
+            </section>
           </div>
         </div>
-
-        
       </div>
     </>
   );

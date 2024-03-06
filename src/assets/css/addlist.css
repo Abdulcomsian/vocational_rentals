@@ -12,7 +12,7 @@ ssection.add-link input:visited {
   border-color: #e30b0b;
 }
 section.add-link input {
-  height: 100%;
+  padding: 0.675rem 0.75rem;
 }
 .submit-tool {
   font-size: 30px;
