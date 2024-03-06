@@ -202,164 +202,168 @@ function ForgotPassword() {
             <Image src={Logo} alt="" height={50} />
           </Link>
         </header>
-        <section className="signin-module">
-          <Link href="/" className="back">
-            <i className="las la-long-arrow-alt-left"></i>
-            <span>Back</span>
-          </Link>
-          <h3 className="title">Forgot Password</h3>
+        <div className="row justify-content-md-center">
+          <div className="col-md-4">
+            <section className="signin-module">
+              <Link href="/" className="back">
+                <i className="las la-long-arrow-alt-left"></i>
+                <span>Back</span>
+              </Link>
+              <h3 className="title">Forgot Password</h3>
 
-          {step1 && (
-            <form onSubmit={formik.handleSubmit}>
-              {error !== null && <p className="text-danger">{error}</p>}
-              <div className="mb-4">
-                <label for="exampleInputEmail1" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="Your name"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.email}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="text-danger mt-2 ">{formik.errors.email}</div>
-                ) : null}
-              </div>
-              <button
-                type="submit"
-                className="btn submit mt-5"
-                disabled={isLoading}
-              >
-                Verify
-              </button>
-            </form>
-          )}
-          {step2 && (
-            <form onSubmit={formikVarifyOTP.handleSubmit}>
-              <>
-                {error !== null && <p className="text-danger">{error}</p>}
-                <div className="mb-4">
-                  <label for="exampleInputPassword1" className="form-label">
-                    OTP code:
-                  </label>
-                  <div className="d-flex gap-3 pass-view">
+              {step1 && (
+                <form onSubmit={formik.handleSubmit}>
+                  {error !== null && <p className="text-danger">{error}</p>}
+                  <div className="mb-4">
+                    <label for="exampleInputEmail1" className="form-label">
+                      Email
+                    </label>
                     <input
-                      type="text"
+                      type="email"
                       className="form-control"
-                      id="digit1"
-                      name="digit1"
-                      onChange={formikVarifyOTP.handleChange}
-                      onBlur={formikVarifyOTP.handleBlur}
-                      value={formikVarifyOTP.values.digit1}
+                      id="email"
+                      name="email"
+                      placeholder="Your name"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.email}
                     />
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="digit2"
-                      name="digit2"
-                      onChange={formikVarifyOTP.handleChange}
-                      onBlur={formikVarifyOTP.handleBlur}
-                      value={formikVarifyOTP.values.digit2}
-                    />
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="digit3"
-                      name="digit3"
-                      onChange={formikVarifyOTP.handleChange}
-                      onBlur={formikVarifyOTP.handleBlur}
-                      value={formikVarifyOTP.values.digit3}
-                    />
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="digit4"
-                      name="digit4"
-                      onChange={formikVarifyOTP.handleChange}
-                      onBlur={formikVarifyOTP.handleBlur}
-                      value={formikVarifyOTP.values.digit4}
-                    />
+                    {formik.touched.email && formik.errors.email ? (
+                      <div className="text-danger mt-2 ">{formik.errors.email}</div>
+                    ) : null}
                   </div>
-                  {formikVarifyOTP.touched.digit4 &&
-                  formikVarifyOTP.errors.digit4 ? (
-                    <div className="text-danger mt-2 ">
-                      {formikVarifyOTP.errors.digit1 ||
-                        formikVarifyOTP.errors.digit2 ||
-                        formikVarifyOTP.errors.digit3 ||
-                        formikVarifyOTP.errors.digit4}
+                  <button
+                    type="submit"
+                    className="btn submit mt-5"
+                    disabled={isLoading}
+                  >
+                    Verify
+                  </button>
+                </form>
+              )}
+              {step2 && (
+                <form onSubmit={formikVarifyOTP.handleSubmit}>
+                  <>
+                    {error !== null && <p className="text-danger">{error}</p>}
+                    <div className="mb-4">
+                      <label for="exampleInputPassword1" className="form-label">
+                        OTP code:
+                      </label>
+                      <div className="d-flex gap-3 pass-view">
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="digit1"
+                          name="digit1"
+                          onChange={formikVarifyOTP.handleChange}
+                          onBlur={formikVarifyOTP.handleBlur}
+                          value={formikVarifyOTP.values.digit1}
+                        />
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="digit2"
+                          name="digit2"
+                          onChange={formikVarifyOTP.handleChange}
+                          onBlur={formikVarifyOTP.handleBlur}
+                          value={formikVarifyOTP.values.digit2}
+                        />
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="digit3"
+                          name="digit3"
+                          onChange={formikVarifyOTP.handleChange}
+                          onBlur={formikVarifyOTP.handleBlur}
+                          value={formikVarifyOTP.values.digit3}
+                        />
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="digit4"
+                          name="digit4"
+                          onChange={formikVarifyOTP.handleChange}
+                          onBlur={formikVarifyOTP.handleBlur}
+                          value={formikVarifyOTP.values.digit4}
+                        />
+                      </div>
+                      {formikVarifyOTP.touched.digit4 &&
+                      formikVarifyOTP.errors.digit4 ? (
+                        <div className="text-danger mt-2 ">
+                          {formikVarifyOTP.errors.digit1 ||
+                            formikVarifyOTP.errors.digit2 ||
+                            formikVarifyOTP.errors.digit3 ||
+                            formikVarifyOTP.errors.digit4}
+                        </div>
+                      ) : null}
                     </div>
-                  ) : null}
-                </div>
-                <button
-                  type="submit"
-                  className="btn submit mt-5"
-                  disabled={isLoading}
-                >
-                  Confirm
-                </button>
-              </>
-            </form>
-          )}
-          {step3 && (
-            <form onSubmit={formikNewPassword.handleSubmit}>
-              {error !== null && <p className="text-danger">{error}</p>}
-              <div className="mb-4">
-                <label for="exampleInputEmail1" className="form-label">
-                  New Password
-                </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="New Password"
-                  onChange={formikNewPassword.handleChange}
-                  onBlur={formikNewPassword.handleBlur}
-                  value={formikNewPassword.values.password}
-                />
-                {formikNewPassword.touched.password &&
-                formikNewPassword.errors.password ? (
-                  <div className="text-danger mt-2 ">
-                    {formikNewPassword.errors.password}
+                    <button
+                      type="submit"
+                      className="btn submit mt-5"
+                      disabled={isLoading}
+                    >
+                      Confirm
+                    </button>
+                  </>
+                </form>
+              )}
+              {step3 && (
+                <form onSubmit={formikNewPassword.handleSubmit}>
+                  {error !== null && <p className="text-danger">{error}</p>}
+                  <div className="mb-4">
+                    <label for="exampleInputEmail1" className="form-label">
+                      New Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      name="password"
+                      placeholder="New Password"
+                      onChange={formikNewPassword.handleChange}
+                      onBlur={formikNewPassword.handleBlur}
+                      value={formikNewPassword.values.password}
+                    />
+                    {formikNewPassword.touched.password &&
+                    formikNewPassword.errors.password ? (
+                      <div className="text-danger mt-2 ">
+                        {formikNewPassword.errors.password}
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-              <div className="mb-4">
-                <label for="exampleInputEmail1" className="form-label">
-                  Confirm Password
-                </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="passwordConfirmation"
-                  name="passwordConfirmation"
-                  placeholder="Confirm new password"
-                  onChange={formikNewPassword.handleChange}
-                  onBlur={formikNewPassword.handleBlur}
-                  value={formikNewPassword.values.passwordConfirmation}
-                />
-                {formikNewPassword.touched.passwordConfirmation &&
-                formikNewPassword.errors.passwordConfirmation ? (
-                  <div className="text-danger mt-2 ">
-                    {formikNewPassword.errors.passwordConfirmation}
+                  <div className="mb-4">
+                    <label for="exampleInputEmail1" className="form-label">
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="passwordConfirmation"
+                      name="passwordConfirmation"
+                      placeholder="Confirm new password"
+                      onChange={formikNewPassword.handleChange}
+                      onBlur={formikNewPassword.handleBlur}
+                      value={formikNewPassword.values.passwordConfirmation}
+                    />
+                    {formikNewPassword.touched.passwordConfirmation &&
+                    formikNewPassword.errors.passwordConfirmation ? (
+                      <div className="text-danger mt-2 ">
+                        {formikNewPassword.errors.passwordConfirmation}
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-              <button
-                type="submit"
-                className="btn submit mt-5"
-                disabled={isLoading}
-              >
-                Submit
-              </button>
-            </form>
-          )}
-        </section>
+                  <button
+                    type="submit"
+                    className="btn submit mt-5"
+                    disabled={isLoading}
+                  >
+                    Submit
+                  </button>
+                </form>
+              )}
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );

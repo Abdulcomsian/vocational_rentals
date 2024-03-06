@@ -117,4 +117,5 @@ aside .sidebar-menu ul li a img {
   background-repeat: no-repeat;
   background-color: #8a92a6;
   mask-size: contain;
+  margin-bottom: -2px;
 }

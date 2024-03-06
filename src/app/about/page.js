@@ -24,37 +24,49 @@ function Aboutus() {
                   of the property, check-in software, ... These all took a lot
                   of time, and seriously, I’d not had much time.
                 </p>
-                <p>
-                  That time I can’t even explain in words how stressful it was.
-                </p>
-                <p>
-                  But after years of experience and continuous struggle, I’ve
-                  been able to gather all the tools and service providers on one
-                  platform.
-                </p>
-                <p>
-                  Because I have an aim in mind, the effort I put in and the
-                  struggle I suffer with, would not happen with new or existing
-                  rental business entrepreneurs.
-                </p>
-                <p>
-                  So, I opened it for all the property owners entering the
-                  short-term rental business. And believe me it is extreme value
-                  stuff for you...
-                </p>
-                <p>
-                  Because it has ALL THE TOOLS AND SERVICES YOU NEED in one
-                  place to hostyour Airbnb ...
-                </p>
-                <ul>
-                  <li>Channel managers</li>
-                  <li>Listing Sites</li>
-                  <li>Check-in software</li>
-                  <li>Dynamic pricing</li>
-                  <li>Education & Training</li>
-                  <li>Guest communications</li>
-                  <li>And 31+ more services and tools you can’t miss.</li>
-                </ul>
+                <div className="detail mt-4">
+                  <p>
+                    Listing my properties on different listing sites, maintenance of the property, check-in software, ... These all took a lot of time, and seriously, I'd not had much time.
+                  </p>
+                  <p>
+                    That time I can't even explain in words how stressful it was.
+                  </p>
+                  <p>
+                    But after years of experience and continuous struggle, I've been able to gather all the tools and service providers on one platform.
+                  </p>
+                  <p>
+                    Because I have an aim in mind, the effort I put in and the struggle I suffer with, would not happen with new or existing rental business entrepreneurs.
+                  </p>
+                  <p>
+                    So, I opened it for all the property owners entering the short-term rental business. And believe me it is extreme value stuff for you...
+                  </p>
+                  <p>
+                    Because it has ALL THE TOOLS AND SERVICES YOU NEED in one place to hostyour Airbnb ...
+                  </p>
+                  <ul>
+                    <li>
+                      Channel managers
+                    </li>
+                    <li>
+                      Listing Sites
+                    </li>
+                    <li>
+                      Check-in software
+                    </li>
+                    <li>
+                      Dynamic pricing
+                    </li>
+                    <li>
+                      Education & Training
+                    </li>
+                    <li>
+                      Guest communications
+                    </li>
+                    <li>
+                      And 31+ more services and tools you can't miss.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

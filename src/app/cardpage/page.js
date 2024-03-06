@@ -61,7 +61,7 @@ function Cardpage() {
                     {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
                     <h3>EasyFast</h3>
                   </div>
-                  <div className="type sponsor">Ad</div>
+                  <div className="type sponsor">Featured</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
@@ -79,6 +79,78 @@ function Cardpage() {
                     {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
                     <h3>EasyFast</h3>
                   </div>
+                  <div className="type sponsor">Featured</div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
+                  dolor dignissim ornare ullamcorper.
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+            <Link href="/carddetails">
+              <div className="card">
+                <Image src={card} loader={loaderProp} alt="" />
+                <div className="card-info">
+                  <div className="name-img">
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+                    <h3>EasyFast</h3>
+                  </div>
+                  <div className="type sponsor">Featured</div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
+                  dolor dignissim ornare ullamcorper.
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+            <Link href="/carddetails">
+              <div className="card">
+                <Image src={card} loader={loaderProp} alt="" />
+                <div className="card-info">
+                  <div className="name-img">
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+                    <h3>EasyFast</h3>
+                  </div>
+                  <div className="type sponsor">Featured</div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
+                  dolor dignissim ornare ullamcorper.
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+            <Link href="/carddetails">
+              <div className="card">
+                <Image src={card} loader={loaderProp} alt="" />
+                <div className="card-info">
+                  <div className="name-img">
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+                    <h3>EasyFast</h3>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
+                  dolor dignissim ornare ullamcorper.
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-xl-3 col-lg-6 col-md-12 col-sm-12">
+            <Link href="/carddetails">
+              <div className="card">
+                <Image src={card} loader={loaderProp} alt="" />
+                <div className="card-info">
+                  <div className="name-img">
+                    {/* <Image src={card11} loader={loaderProp}  alt="" /> */}
+                    <h3>EasyFast</h3>
+                  </div>
+                  <div className="type deals">2 Deals</div>
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur. Ultrices enim urna in
