@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 
 function Signin() {
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const router = useRouter();
@@ -40,7 +41,6 @@ function Signin() {
         const resp = await fetch(`${BASE_URL}/api/login`, {
           method: "POST",
           header: {
-            "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
           },
           body: formData,
@@ -89,7 +89,7 @@ function Signin() {
                     className="form-control"
                     id="email"
                     name="email"
-                    placeholder="Your name"
+                    placeholder="Your Email"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
@@ -106,7 +106,7 @@ function Signin() {
                   </label>
                   <div className="pass-view">
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       className="form-control"
                       id="password"
                       name="password"
@@ -115,7 +115,11 @@ function Signin() {
                       onBlur={formik.handleBlur}
                       value={formik.values.password}
                     />
-                    <a href="javascript:void(0)" className="view-pass">
+                    <a
+                      href="javascript:void(0)"
+                      className="view-pass"
+                      onClick={() => setShowPassword((is) => !is)}
+                    >
                       <i className="las la-eye"></i>
                     </a>
                     {formik.touched.password && formik.errors.password ? (
