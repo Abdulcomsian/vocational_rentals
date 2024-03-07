@@ -163,6 +163,11 @@ function Signin() {
                   <input
                     type="checkbox"
                     className="form-check-input"
+                    style={
+                      formik.touched.tc_status && formik.errors.tc_status
+                        ? { border: "1px solid red" }
+                        : {}
+                    }
                     id="tc_status"
                     name="tc_status"
                     onChange={(e) =>
