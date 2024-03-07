@@ -52,6 +52,7 @@ function Addlisting() {
   const [website_link, setwebsite_link] = useState("");
   const [error, setError] = useState("");
   const [showPlans, setShowPlans] = useState(false);
+
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
@@ -100,7 +101,13 @@ function Addlisting() {
 
     fetch("https://admin.vacationrentals.tools/api/checkout", requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        const convertedData = JSON.parse(result);
+        if (convertedData.status === 200) {
+          router.push(convertedData.redirectURL);
+        }
+        console.log(result);
+      })
       .catch((error) => console.error(error));
   };
 

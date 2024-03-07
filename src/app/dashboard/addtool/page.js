@@ -8,23 +8,39 @@ import React, { useState } from "react";
 import Multiselect from "multiselect-react-dropdown";
 import { useEffect } from "react";
 import { useCatagories } from "@/contexts/CatagoriesContext";
+import { useFormik } from "formik";
+import * as yup from "yup";
 const { useQuill } = require("react-quilljs");
+
 function Addtool() {
   const { catagories } = useCatagories();
-  console.log(catagories);
   useEffect(() => {
     require("/src/assets/js/bootstrap.bundle.min.js");
   }, []);
   const { quill, quillRef } = useQuill();
   const [options, setOptions] = useState([]);
+  const [selectedCategories, setSelectCategories] = useState([]);
 
   useEffect(
     function () {
-      const options = catagories.map((catagory) => catagory.category_name);
-      if (catagories.length > 0) setOptions(options.slice(1));
+      setOptions(catagories.slice(1));
     },
     [catagories]
   );
+  React.useEffect(() => {
+    if (quill) {
+      quill.on("text-change", (delta, oldDelta, source) => {
+        console.log("Text change!");
+        console.log("Text", quill.getText()); // Get text only
+        console.log("Delta Content", quill.getContents()); // Get delta contents
+        console.log("Inner HTML", quill.root.innerHTML); // Get innerHTML using quill
+        console.log(
+          "First child InnerHTML",
+          quillRef.current.firstChild.innerHTML
+        ); // Get innerHTML using quillRef
+      });
+    }
+  }, [quill]);
   const [cards, setCards] = useState([
     <div className="deal-body">
       <div className="deal-added">
@@ -105,15 +121,30 @@ function Addtool() {
     ]);
   };
 
-  const handleSelectCatagory = function (selectedList, selectedItem) {
-    console.log("*****", selectedItem, selectedList);
+  const handleSelectCategory = function (selectedList, selectedItem) {
+    const selectedIds = selectedList.map((listItem) => listItem.id);
+    setSelectCategories(selectedIds);
   };
+
+  const validationSchema = yup.object({
+    company_name: yup.string().required("Company name is Required"),
+    company_tagline: yup.string().required("Company tagline must be required"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      company_name: "",
+      company_tagline: "",
+    },
+    validationSchema,
+    onSubmit: (values) => {},
+  });
   return (
     <>
       <section className="addtool mt-5 mb-5">
         <div className="row">
           <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               {/* <div className="mb-3 upload-icon" id="upload_icon">
                 <Image
                   id="imgFileUpload"
@@ -129,18 +160,27 @@ function Addtool() {
                 <label className="form-label">Company Name</label>
                 <input
                   type="text"
+                  id="company_name"
                   className="form-control"
                   placeholder="Enter Company Name"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.company_name}
                 />
+                {formik.touched.company_name && formik.errors.company_name ? (
+                  <p className="errorMessage">{formik.errors.company_name}</p>
+                ) : null}
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Company Category</label>
                 <Multiselect
-                  isObject={false}
+                  isObject={true}
                   options={options}
                   showCheckbox={true}
                   placeholder="Select Categories"
-                  onSelect={() => handleSelectCatagory()}
+                  displayValue="category_name" // Display category_name in the dropdown
+                  valueField="id" // Obtain id when an item is selected
+                  onSelect={handleSelectCategory}
                 />
               </div>
               <div className="mb-3">
@@ -149,7 +189,17 @@ function Addtool() {
                   type="text"
                   className="form-control"
                   placeholder="Tag line Here"
+                  id="company_tagline"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.company_tagline}
                 />
+                {formik.touched.company_tagline &&
+                formik.errors.company_tagline ? (
+                  <p className="errorMessage">
+                    {formik.errors.company_tagline}
+                  </p>
+                ) : null}
               </div>
               <div className="editor-parent mb-3">
                 <label className="form-label">Short Description</label>
