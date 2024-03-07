@@ -23,7 +23,7 @@ function ForgotPassword() {
   console.log("STEP STATUS", step1, step2, step3);
 
   const verifyingUserEmail = useRef(null); //To persist useremail for varification
-  console.log(verifyingUserEmail.current);
+  console.log("Verification EMial", verifyingUserEmail.current);
 
   const validationSchema = yup.object({
     email: yup
@@ -168,8 +168,9 @@ function ForgotPassword() {
         redirect: "follow",
       };
 
+      console.log("Verification EMial***", verifyingUserEmail.current);
       fetch(
-        `https://admin.vacationrentals.tools/api/update-password?email=${verifyingUserEmail}&new_password=${values.password}`,
+        `https://admin.vacationrentals.tools/api/update-password?email=${verifyingUserEmail.current}&new_password=${values.password}`,
         requestOptions
       )
         .then((response) => response.text())
@@ -223,13 +224,15 @@ function ForgotPassword() {
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder="Your name"
+                      placeholder="Your Email"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.email}
                     />
                     {formik.touched.email && formik.errors.email ? (
-                      <div className="text-danger mt-2 ">{formik.errors.email}</div>
+                      <div className="text-danger mt-2 ">
+                        {formik.errors.email}
+                      </div>
                     ) : null}
                   </div>
                   <button
