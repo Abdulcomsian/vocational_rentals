@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 function Signin() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
   const validationSchema = Yup.object({
@@ -135,7 +136,7 @@ function Signin() {
                   </label>
                   <div className="pass-view">
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       className="form-control"
                       id="password"
                       name="password"
@@ -144,7 +145,11 @@ function Signin() {
                       onBlur={formik.handleBlur}
                       value={formik.values.password}
                     />
-                    <a href="javascript:void(0)" className="view-pass">
+                    <a
+                      href="javascript:void(0)"
+                      className="view-pass"
+                      onClick={() => setShowPassword((is) => !is)}
+                    >
                       <i className="las la-eye"></i>
                     </a>
                     {formik.touched.password && formik.errors.password ? (
@@ -171,8 +176,13 @@ function Signin() {
                   />
                   <label className="form-check-label" for="exampleCheck1">
                     Please confirm that you have read and agree to our{" "}
-                    <Link href="/term-conditions">terms & conditions</Link> and{" "}
-                    <Link href="/privacy-policy">privacy policy</Link>
+                    <Link href="/term-conditions" target="_blank">
+                      terms & conditions
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/privacy-policy" target="_blank">
+                      privacy policy
+                    </Link>
                   </label>
                 </div>
                 <button
