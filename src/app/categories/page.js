@@ -4,7 +4,6 @@ import Cardpage from "../cardpage/page";
 
 const Post = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div>
       <h1>{pathname}</h1>

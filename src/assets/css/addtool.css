@@ -1,203 +1,206 @@
-.addtool form label{
-    font-weight: 600;
+.addtool form label {
+  font-weight: 600;
 }
-.addtool form input{
-    height: 50px;
+.addtool form input {
+  height: 50px;
 }
 .upload-icon {
-    display: block;
-    text-align: center;
-    cursor: pointer;
+  display: block;
+  text-align: center;
+  cursor: pointer;
 }
-.upload-icon img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+.upload-icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
 }
-.upload-icon span{
-    display: block;
-    font-size:12px;
-    font-weight: 600;
+.upload-icon span {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
 }
-#IconUpload{
-    display: none;
+#IconUpload {
+  display: none;
 }
-section.addtool input:focus, section.addtool input :active, section.addtool input :visited {
+section.addtool input:focus,
+section.addtool input :active,
+section.addtool input :visited {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   outline: none;
-  border-right: 1px solid #E30B0B;
-  border-color: #E30B0B;
+  border-right: 1px solid #e30b0b;
+  border-color: #e30b0b;
 }
-.editor-parent{
-    height: 100%;
+.editor-parent {
+  height: 100%;
 }
-.ql-container{
-    height: 300px !important;
+.ql-container {
+  height: 300px !important;
 }
 .btn-submit {
-    display: block;
-    width: 100%;
-    background: #E30B0B;
-    color: #fff;
-    height: 50px;
+  display: block;
+  width: 100%;
+  background: #e30b0bc7 !important;
+  color: #fff !important;
+  height: 50px;
 }
-.btn-submit:hover, .btn-submit:focus, .btn-submit:visited, .btn-submit:active{
-    background: #E30B0B !important;
-    color: #fff !important;
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:visited,
+.btn-submit:active {
+  background: #e30b0b !important;
+  color: #fff !important;
 }
-.deals-sec{
-    position: relative;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 7px;
-    margin-top: 40px;
-    padding-top: 30px;
+.deals-sec {
+  position: relative;
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 7px;
+  margin-top: 40px;
+  padding-top: 30px;
 }
-.deals-sec .deal-head{
-    position: absolute;
-    top: -12px;
-    display: flex;
-    justify-content: space-between;
-    font-family: "Inter", sans-serif;
-    width: 94%;
+.deals-sec .deal-head {
+  position: absolute;
+  top: -12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  width: 94%;
 }
-.deal-head h3{
-    background: #fff;
-    padding-left: 10px;
-    font-size: 21px;
-    margin: 0;
-    padding-right: 10px;
+.deal-head h3 {
+  background: #fff;
+  padding-left: 10px;
+  font-size: 21px;
+  margin: 0;
+  padding-right: 10px;
 }
-.multiSelectContainer .searchWrapper input{
-    border: none !important;
-    height: 40px;
-    font-family: "Inter", sans-serif;
+.multiSelectContainer .searchWrapper input {
+  border: none !important;
+  height: 40px;
+  font-family: "Inter", sans-serif;
 }
-.multiSelectContainer .searchWrapper{
-    border: 1px solid #dee2e6;
-    font-family: "Inter", sans-serif;
+.multiSelectContainer .searchWrapper {
+  border: 1px solid #dee2e6;
+  font-family: "Inter", sans-serif;
 }
 .multiSelectContainer li:hover {
-    background: #e731311f !important;
-    color: #000 !important;
-    
+  background: #e731311f !important;
+  color: #000 !important;
 }
 .multiSelectContainer li.selected {
-    background: #e7313128 !important;
-    color: #e73131 !important;
+  background: #e7313128 !important;
+  color: #e73131 !important;
 }
 .highlightOption {
-    background: #fff !important;
-    color: #000 !important;
-    font-family: "Inter", sans-serif;
+  background: #fff !important;
+  color: #000 !important;
+  font-family: "Inter", sans-serif;
 }
-.chip{
-    background: #e73131 !important;
-    color: #fff !important;
-    font-family: "Inter", sans-serif;
+.chip {
+  background: #e73131 !important;
+  color: #fff !important;
+  font-family: "Inter", sans-serif;
 }
-.optionListContainer{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.optionListContainer {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.optionContainer input{
-    height: auto !important;
-    accent-color: #e30d0d;
+.optionContainer input {
+  height: auto !important;
+  accent-color: #e30d0d;
 }
-.modal select{
-    height: 37px;
-    font-size: 12px !important;
-    padding-right: 10px !important;
+.modal select {
+  height: 37px;
+  font-size: 12px !important;
+  padding-right: 10px !important;
 }
-.deal-head a{
-    background: #000;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    padding-right: 10px;
-    display: flex;
-    padding-left: 10px;
-    align-items: center;
+.deal-head a {
+  background: #000;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  padding-right: 10px;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
 }
-.deal-head a i{
-    margin-right: 5px;
+.deal-head a i {
+  margin-right: 5px;
 }
-.intervals{
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+.intervals {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
-.intervals span.active{
-    border: 1px solid #E30B0B;
+.intervals span.active {
+  border: 1px solid #e30b0b;
 }
-.intervals span{
-    border: 1px solid #eee;
-    cursor: pointer;
-    border-radius: 50px;
-    color: #000;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 3px 20px;
+.intervals span {
+  border: 1px solid #eee;
+  cursor: pointer;
+  border-radius: 50px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 20px;
 }
-.deal-body{
-    border: 1px solid #dee2e6;
-    padding: 15px ;
-    border-radius: 7px;
-    font-family: "Inter", sans-serif;
-    margin-bottom: 15px;
-    
+.deal-body {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 7px;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 15px;
 }
-.deal-added{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.deal-added {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.deal-added h3{
-    font-size: 15px;
-    font-weight: bold;
+.deal-added h3 {
+  font-size: 15px;
+  font-weight: bold;
 }
-.deal-added .price{
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 7px;
+.deal-added .price {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 7px;
 }
-.deal-added .total-save{
-    color: #22c55e;
-    background-color: #22c55e2d;
-    border-radius: 50px;
-    padding: 5px 12px;
-    font-weight: 500;
-    font-family: "Inter", sans-serif;
-    font-size: 13px;
-    border: 1px solid #22c55e;
-    display: flow-root;
+.deal-added .total-save {
+  color: #22c55e;
+  background-color: #22c55e2d;
+  border-radius: 50px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  border: 1px solid #22c55e;
+  display: flow-root;
 }
-.deal-added .buy-button{
-    background: #000;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    padding: 10px 21px;
-    display: flow-root;
-    text-align: center;
-    align-items: center;
+.deal-added .buy-button {
+  background: #000;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 10px 21px;
+  display: flow-root;
+  text-align: center;
+  align-items: center;
 }
 .line-through {
-    color: #a1a1a1;
-    text-decoration-line: line-through;
+  color: #a1a1a1;
+  text-decoration-line: line-through;
 }
-.actions{
-    text-align: center;
-    margin-bottom: 20px;
+.actions {
+  text-align: center;
+  margin-bottom: 20px;
 }
 /* .actions a{
     padding: 10px 12px;
     background-color: #eee;
     border-radius: 50px;
 } */
-.actions a i{
-    font-size: 19px;
+.actions a i {
+  font-size: 19px;
 }

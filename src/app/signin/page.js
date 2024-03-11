@@ -50,13 +50,11 @@ function Signin() {
         //   throw new Error(`Something went wrong with status: ${resp}`);
 
         const data = await resp.json();
-        console.log(data);
         if (resp.status === 200) {
           login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXXT
           router.push("/dashboard");
         } else setError(data.msg);
       } catch (err) {
-        console.log(err);
       } finally {
         setIsLoading(false);
       }

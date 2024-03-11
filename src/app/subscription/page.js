@@ -60,27 +60,8 @@ function PlanHeader() {
 }
 
 function Carddetails() {
-  // const [plans, setPlans] = useState([]);
   const { isAuthenticated } = useAuth();
   const { plans } = usePlans();
-
-  // console.log(isAuthenticated);
-
-  // useEffect(function () {
-  //   const requestOptions = {
-  //     method: "GET",
-  //     redirect: "follow",
-  //   };
-
-  //   fetch("https://admin.vacationrentals.tools/api/plans", requestOptions)
-  //     .then((response) => response.text())
-  //     .then((result) => {
-  //       const convertedData = JSON.parse(result);
-  //       setPlans(convertedData.plans);
-  //       console.log(convertedData.plans);
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, []);
 
   return (
     <>

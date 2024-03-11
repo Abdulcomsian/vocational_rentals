@@ -25,7 +25,6 @@ export default function Layout({ children }) {
     setLoginSection((is) => !is);
 
     store.dispatch(getCatagories());
-    console.log(store.getState());
   }
 
   return (

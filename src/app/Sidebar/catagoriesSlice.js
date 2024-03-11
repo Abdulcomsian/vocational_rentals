@@ -38,7 +38,6 @@ export function getCatagories() {
       .then((response) => response.text())
       .then((result) => {
         const parsedData = JSON.parse(result);
-        console.log("CALLED FROM ACTION CREATOR", parsedData);
 
         dispatch({
           type: "catagories/getCatagories",

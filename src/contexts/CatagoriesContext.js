@@ -40,8 +40,8 @@ function CatagoriesProvider({ children }) {
     redirect: "follow",
     header: {
       // "Content-Type": "application/json",
-      "Access-Control-Allow-Origin" : "*"
-    }
+      "Access-Control-Allow-Origin": "*",
+    },
   };
   useEffect(function () {
     async function getCatagories() {

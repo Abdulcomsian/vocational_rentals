@@ -78,7 +78,6 @@ function Addlisting() {
 
   const handleSubmitListing = function (e, price_id) {
     e.preventDefault();
-    console.log(price_id, website_link);
 
     if (!website_link) {
       setError("Website link must be Required.");
@@ -86,6 +85,7 @@ function Addlisting() {
     }
 
     const myHeaders = new Headers();
+    myHeaders.append("Access-Control-Allow-Origin", "*");
     myHeaders.append("Authorization", `Bearer ${isAuth}`);
 
     const formdata = new FormData();
@@ -106,7 +106,6 @@ function Addlisting() {
         if (convertedData.status === 200) {
           router.push(convertedData.redirectURL);
         }
-        console.log(result);
       })
       .catch((error) => console.error(error));
   };
@@ -124,7 +123,6 @@ function Addlisting() {
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
       setwebsite_link(values.url);
       setShowPlans(true);
     },

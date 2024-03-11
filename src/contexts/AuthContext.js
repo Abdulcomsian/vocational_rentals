@@ -11,7 +11,6 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token"); // Replace with your method of storing the token
 
     if (token) {
-      console.log("HAS TOKEN");
       const decodedUser = JSON.parse(atob(token.split(".")[1]));
 
       setUser(decodedUser);
@@ -27,7 +26,6 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (token) => {
-    console.log("LOGIN FUNCTION TRIGGERED FROM AUTH-CONTEXT");
     localStorage.setItem("token", token);
 
     const decodedUser = JSON.parse(atob(token.split(".")[1]));
@@ -37,7 +35,6 @@ const AuthProvider = ({ children }) => {
 
   const logout = () => {
     // Remove the token from localStorage
-    console.log("LOGOUT FUNCTION TRIGGERED FROM AUTH-CONTEXT");
     localStorage.removeItem("token");
     setUser(null);
     setIsAuthenticated(false);

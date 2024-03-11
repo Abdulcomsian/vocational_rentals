@@ -9,7 +9,6 @@ import { CatagoriesProvider } from "@/contexts/CatagoriesContext";
 export default function Layout({ children }) {
   const [isOpenSidbar, setIsOpenSidebar] = useState(false);
   const [loginSection, setLoginSection] = useState(false);
-  console.log("APP LAYOUT");
 
   function handleToggleSidebar() {
     if (loginSection) setLoginSection(false);

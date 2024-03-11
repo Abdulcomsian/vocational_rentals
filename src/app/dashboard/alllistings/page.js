@@ -8,8 +8,18 @@ import { useEffect, useState } from "react";
 import "quill/dist/quill.snow.css";
 import UploadIcon from "../../../../public/images/upload.svg";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Listing from "./Listing";
+import ListingTitle from "./ListingTitle";
+import ListingTable from "./ListingTable";
+import Modal from "@/app/components/Modal";
+import DeleteModal from "@/app/components/DeleteModal";
 
 function Alllistings() {
+  const [allListing, setAllListing] = useState([]);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [canclePlanModal, setCancelPlanModal] = useState(false);
+
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
@@ -38,153 +48,44 @@ function Alllistings() {
 
   const { quill, quillRef } = useQuill();
 
+  useEffect(function () {
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${isAuth}`);
+
+    const requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://admin.vacationrentals.tools/api/show-all-listings",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        const convertedData = JSON.parse(result);
+        if (convertedData.status === 200) setAllListing(convertedData.listings);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
+  const handleDeleteListing = function (id) {
+    console.log(id);
+  };
+
   return (
     <>
       {isAuth ? (
         <>
-          <section className="listings mt-4">
-            <h2 className="table-heading">My Listings</h2>
-            <table className="table table-bordered justify-content-center">
-              <thead>
-                <tr>
-                  <th>Company Logo</th>
-                  <th>Company Name</th>
-                  <th>Link</th>
-                  <th>Plan Type</th>
-                  <th>Has deal</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <Image
-                      className="company-logo"
-                      src={ProductIcon}
-                      alt=""
-                      width={40}
-                      height={40}
-                    />
-                  </td>
-                  <td>MagicSpace SEO</td>
-                  <td>
-                    <a href="#" className="comapny-link">
-                      Visit Link
-                    </a>
-                  </td>
-                  <td>
-                    $50 / Monthly
-                    <a
-                      href="#"
-                      className="text-danger fs-10 d-block cancel-plan"
-                      data-bs-toggle="modal"
-                      data-bs-target="#cancelModal"
-                    >
-                      Cancel Plan
-                    </a>
-                  </td>
-                  <td>Yes</td>
-                  <td className="actions">
-                    <a href="addtool" className="text-success">
-                      <i className="las la-pencil-alt"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-danger mx-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deletelistModal"
-                    >
-                      <i className="lar la-trash-alt"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <Image
-                      className="company-logo"
-                      src={ProductIcon}
-                      alt=""
-                      width={40}
-                      height={40}
-                    />
-                  </td>
-                  <td>MagicSpace SEO</td>
-                  <td>
-                    <a href="#" className="comapny-link">
-                      Visit Link
-                    </a>
-                  </td>
-                  <td>
-                    $50 / Yearly
-                    <a
-                      href="#"
-                      className="text-danger fs-10 d-block cancel-plan"
-                      data-bs-toggle="modal"
-                      data-bs-target="#cancelModal"
-                    >
-                      Cancel Plan
-                    </a>
-                  </td>
-                  <td>Yes</td>
-                  <td className="actions">
-                    <a href="addtool" className="text-success">
-                      <i className="las la-pencil-alt"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-danger mx-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deletelistModal"
-                    >
-                      <i className="lar la-trash-alt"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <Image
-                      className="company-logo"
-                      src={ProductIcon}
-                      alt=""
-                      width={40}
-                      height={40}
-                    />
-                  </td>
-                  <td>MagicSpace SEO</td>
-                  <td>
-                    <a href="#" className="comapny-link">
-                      Visit Link
-                    </a>
-                  </td>
-                  <td>
-                    $50 / Featured
-                    <a
-                      href="#"
-                      className="text-danger fs-10 d-block cancel-plan"
-                      data-bs-toggle="modal"
-                      data-bs-target="#cancelModal"
-                    >
-                      Cancel Plan
-                    </a>
-                  </td>
-                  <td>Yes</td>
-                  <td className="actions">
-                    <a href="addtool" className="text-success">
-                      <i className="las la-pencil-alt"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-danger mx-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deletelistModal"
-                    >
-                      <i className="lar la-trash-alt"></i>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+          <Listing>
+            <ListingTitle />
+            <ListingTable
+              allListing={allListing}
+              onDeleteListing={handleDeleteListing}
+            />
+          </Listing>
+          {showDeleteModal && <DeleteModal />}
           <div
             className="modal fade"
             id="cancelModal"
@@ -212,43 +113,6 @@ function Alllistings() {
                     </button>
                     <button type="button" className="btn w-sm btn-danger">
                       Yes, Cancel It!
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="modal fade"
-            id="deletelistModal"
-            tabIndex={-1}
-            aria-labelledby="deletelistModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-body">
-                  <div className="icon-modal">
-                    <Image src={DeleteIcon} alt="" />
-                  </div>
-                  <h4 className="text-dark text-center mt-4">Are you sure?</h4>
-                  <p className="text-muted mx-4 mb-0 text-center mt-1">
-                    Are you sure you want to remove this Company?
-                  </p>
-                  <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
-                    <button
-                      type="button"
-                      className="btn w-sm btn-light"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      className="btn w-sm btn-danger"
-                      id="delete_company"
-                    >
-                      Yes, Delete It!
                     </button>
                   </div>
                 </div>

@@ -36,7 +36,6 @@ function PlansProvider({ children }) {
       .then((result) => {
         const convertedData = JSON.parse(result);
         dispatch({ type: "plans/loaded", payload: convertedData.plans });
-        console.log("PLAN CONTEXT", convertedData.plans);
       })
       .catch((error) => console.error(error));
   }, []);

@@ -20,10 +20,7 @@ function ForgotPassword() {
   const step2 = isVerified && !OTPvarified;
   const step3 = OTPvarified && isVerified && !passChangedSuccess;
 
-  console.log("STEP STATUS", step1, step2, step3);
-
   const verifyingUserEmail = useRef(null); //To persist useremail for varification
-  console.log("Verification EMial", verifyingUserEmail.current);
 
   const validationSchema = yup.object({
     email: yup
@@ -55,9 +52,7 @@ function ForgotPassword() {
         )
           .then((response) => response.text())
           .then((result) => {
-            console.log(result);
             const parsedResult = JSON.parse(result);
-            console.log(parsedResult);
             if (parsedResult.status === 200) {
               setIsVarified(true);
               setError(parsedResult.msg);
@@ -70,7 +65,6 @@ function ForgotPassword() {
           })
           .catch((error) => console.error(error));
       } catch (err) {
-        console.log(err);
       } finally {
         setIsLoading(false);
       }
@@ -130,8 +124,6 @@ function ForgotPassword() {
       )
         .then((response) => response.text())
         .then((result) => {
-          console.log(result);
-
           const parsedResult = JSON.parse(result);
           if (parsedResult.status === 200) {
             setOTPvarified(true);
@@ -143,7 +135,6 @@ function ForgotPassword() {
             setError(parsedResult.msg);
             setOTPvarified(false);
           }
-          console.log(result);
         })
         .catch((error) => console.error(error));
     },
@@ -168,21 +159,17 @@ function ForgotPassword() {
         redirect: "follow",
       };
 
-      console.log("Verification EMial***", verifyingUserEmail.current);
       fetch(
         `https://admin.vacationrentals.tools/api/update-password?email=${verifyingUserEmail.current}&new_password=${values.password}`,
         requestOptions
       )
         .then((response) => response.text())
         .then((result) => {
-          console.log(result);
-
           const parsedResult = JSON.parse(result);
           if (parsedResult.status === 200) {
             setOTPvarified(false);
             setIsVarified(false);
             setError(false);
-            console.log("Final step to signin", parsedResult.msg);
             router.push("/signin");
           }
           if (parsedResult.status === 400) {
@@ -190,7 +177,6 @@ function ForgotPassword() {
             setOTPvarified(false);
             setIsVarified(null);
           }
-          console.log(result);
         })
         .catch((error) => console.error(error));
     },

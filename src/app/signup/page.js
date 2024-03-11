@@ -56,13 +56,11 @@ function Signin() {
           body: formData,
         });
 
-        console.log("RESP", response);
         // Handle the response as needed
         const data = await response.json();
         if (response.status === 200) {
           router.push("/thankyou");
         } else {
-          // console.log(data);
           setError(data.msg);
         }
       } catch (err) {
