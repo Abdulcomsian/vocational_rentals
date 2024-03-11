@@ -1,6 +1,7 @@
 "use client";
+
+import { lazy, Suspense } from "react";
 import Image from "next/image";
-// import { useQuill } from 'react-quilljs';
 import "quill/dist/quill.snow.css";
 import UploadIcon from "../../../../public/images/upload.svg";
 import React, { useState } from "react";
