@@ -26,8 +26,8 @@ function PlanItem({ planData, isAuthenticated, index }) {
           ${planData.recurring_price}
         </span>
         <h3>
-          <b>${planData.actual_price}</b>/
-          {planData.plan_name.toLowerCase() === "monthly"
+          <b>${planData.discounted_price || planData.recurring_price}</b>/
+          {planData.plan_type.toLowerCase() === "monthly"
             ? "Monthly"
             : "Yearly"}
         </h3>

@@ -1,9 +1,9 @@
-import Modal from "./Modal";
 import Warning from "../../../public/images/trash-bin.png";
+import ModalContainer from "./ModalContainer";
 
-export default function DeleteModal() {
+export default function DeleteModal({ show, onHide }) {
   return (
-    <Modal>
+    <ModalContainer show={show} onHide={onHide}>
       <div className="icon-modal">
         <Image src={Warning} alt="" />
       </div>
@@ -23,6 +23,6 @@ export default function DeleteModal() {
           Yes, Cancel It!
         </button>
       </div>
-    </Modal>
+    </ModalContainer>
   );
 }

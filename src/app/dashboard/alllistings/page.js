@@ -4,7 +4,7 @@ import ProductIcon from "../../../../public/images/detail-icon.svg";
 import DeleteIcon from "../../../../public/images/trash-bin.png";
 import Warning from "../../../../public/images/emergency.png";
 import { useQuill } from "react-quilljs";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "quill/dist/quill.snow.css";
 import UploadIcon from "../../../../public/images/upload.svg";
 import { useRouter } from "next/navigation";
@@ -12,16 +12,21 @@ import Link from "next/link";
 import Listing from "./Listing";
 import ListingTitle from "./ListingTitle";
 import ListingTable from "./ListingTable";
-import Modal from "@/app/components/Modal";
+import Modal from "@/app/components/ModalContainer";
 import DeleteModal from "@/app/components/DeleteModal";
 import { Spin } from "antd";
+import { useAuth } from "@/contexts/AuthContext";
 
 function Alllistings() {
   const [allListing, setAllListing] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [canclePlanModal, setCancelPlanModal] = useState(false);
 
+  const selectedId = useRef();
+
   const [isLoading, setIsLoading] = useState(false);
+
+  const { logout } = useAuth();
 
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
@@ -70,6 +75,10 @@ function Alllistings() {
       .then((result) => {
         const convertedData = JSON.parse(result);
         if (convertedData.status === 200) setAllListing(convertedData.listings);
+        if (convertedData.status === 401) {
+          logout();
+          router.push("/signin");
+        }
       })
       .catch((error) => console.error(error))
       .finally(() => {
@@ -78,6 +87,8 @@ function Alllistings() {
   }, []);
 
   const handleDeleteListing = function (id) {
+    selectedId.current = id;
+    setShowDeleteModal(true);
     console.log(id);
   };
 
@@ -94,7 +105,12 @@ function Alllistings() {
               />
             </Spin>
           </Listing>
-          {showDeleteModal && <DeleteModal />}
+          {showDeleteModal && (
+            <DeleteModal
+              show={showDeleteModal}
+              onHide={() => setShowDeleteModal(false)}
+            />
+          )}
           <div
             className="modal fade"
             id="cancelModal"

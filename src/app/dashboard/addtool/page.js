@@ -21,6 +21,14 @@ import { useRouter } from "next/navigation";
 import { Spin } from "antd";
 
 function Addtool() {
+  const [isAuth, setIsAuth] = useState(function () {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      return token ? token : null;
+    }
+    return null;
+  });
+
   const [showADdNewDealModal, setShowADdNewDealModal] = useState(false);
   const [showDeleteDealModal, setShowDeleteDealModal] = useState(false);
   const [showEditDealModal, setShowEditDealModal] = useState(false);
@@ -44,6 +52,18 @@ function Addtool() {
 
   const router = useRouter();
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentLocation = window.location.href;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isAuth) {
+      router.push("/signin");
+    }
+  }, [isAuth, router]);
+
   useEffect(
     function () {
       setOptions(catagories.slice(1));
@@ -62,7 +82,7 @@ function Addtool() {
   useEffect(() => {
     if (quill) {
       quill.on("text-change", (delta, oldDelta, source) => {
-        console.log("Inner HTML", quill.root.innerHTML);
+        // console.log("Inner HTML", quill.root.innerHTML);
         setCkEditorData(quill.root.innerHTML);
         // console.log("Text change!");
         // console.log("Text", quill.getText());
@@ -212,6 +232,11 @@ function Addtool() {
 
           if (convertedData.status === 400)
             setError((error) => ({ ...error, formError: convertedData.msg }));
+
+          if (convertedData.status === 401) {
+            logout();
+            router.push("/signin");
+          }
         })
         .catch((error) => console.error(error))
         .finally(() => {
@@ -222,93 +247,95 @@ function Addtool() {
 
   return (
     <>
-      <section className="addtool mt-5 mb-5">
-        <div className="row">
-          <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
-            {error.formError?.length > 0 && (
-              <p className="text-danger">{error.formError}</p>
-            )}
-            <form onSubmit={formik.handleSubmit}>
-              <div className="mb-3">
-                <label className="form-label">Company Name</label>
-                <input
-                  type="text"
-                  id="company_name"
-                  className="form-control"
-                  placeholder="Enter Company Name"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.company_name}
-                />
-                {formik.touched.company_name && formik.errors.company_name ? (
-                  <p className="errorMessage">{formik.errors.company_name}</p>
-                ) : null}
-              </div>
-              <div className="col-md-12 mb-3">
-                <label className="form-label">Company Category</label>
-                <Multiselect
-                  isObject={true}
-                  options={options}
-                  showCheckbox={true}
-                  placeholder="Select Categories"
-                  displayValue="category_name" // Display category_name in the dropdown
-                  valueField="id" // Obtain id when an item is selected
-                  onSelect={handleSelectCategory}
-                />
-                {error.selectedCategories && (
-                  <p className="errorMessage">{error.selectedCategories}</p>
-                )}
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Company Tag line</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Tag line Here"
-                  id="company_tagline"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.company_tagline}
-                />
-                {formik.touched.company_tagline &&
-                formik.errors.company_tagline ? (
-                  <p className="errorMessage">
-                    {formik.errors.company_tagline}
-                  </p>
-                ) : null}
-              </div>
-              <div className="editor-parent mb-3">
-                <label className="form-label">Short Description</label>
-                <div ref={quillRef} />
-              </div>
-              <div className="deals-sec">
-                <div className="deal-head">
-                  <h3>Add Deals</h3>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setShowADdNewDealModal(true);
-                    }}
-                  >
-                    <i className="las la-plus"></i>Add New Deal
-                  </a>
+      {isAuth ? (
+        <section className="addtool mt-5 mb-5">
+          <div className="row">
+            <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
+              {error.formError?.length > 0 && (
+                <p className="text-danger">{error.formError}</p>
+              )}
+              <form onSubmit={formik.handleSubmit}>
+                <div className="mb-3">
+                  <label className="form-label">Company Name</label>
+                  <input
+                    type="text"
+                    id="company_name"
+                    className="form-control"
+                    placeholder="Enter Company Name"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.company_name}
+                  />
+                  {formik.touched.company_name && formik.errors.company_name ? (
+                    <p className="errorMessage">{formik.errors.company_name}</p>
+                  ) : null}
                 </div>
-                <Deals
-                  deals={deals}
-                  onDeleteDeal={toggleDeleteModal}
-                  onEditDeal={toggleEditDealModal}
-                />
-              </div>
-              <Spin spinning={isLoading}>
-                <button type="submit" className="btn btn-submit">
-                  Submit
-                </button>
-              </Spin>
-            </form>
+                <div className="col-md-12 mb-3">
+                  <label className="form-label">Company Category</label>
+                  <Multiselect
+                    isObject={true}
+                    options={options}
+                    showCheckbox={true}
+                    placeholder="Select Categories"
+                    displayValue="category_name" // Display category_name in the dropdown
+                    valueField="id" // Obtain id when an item is selected
+                    onSelect={handleSelectCategory}
+                  />
+                  {error.selectedCategories && (
+                    <p className="errorMessage">{error.selectedCategories}</p>
+                  )}
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Company Tag line</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Tag line Here"
+                    id="company_tagline"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.company_tagline}
+                  />
+                  {formik.touched.company_tagline &&
+                  formik.errors.company_tagline ? (
+                    <p className="errorMessage">
+                      {formik.errors.company_tagline}
+                    </p>
+                  ) : null}
+                </div>
+                <div className="editor-parent mb-3">
+                  <label className="form-label">Short Description</label>
+                  <div ref={quillRef} />
+                </div>
+                <div className="deals-sec">
+                  <div className="deal-head">
+                    <h3>Add Deals</h3>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowADdNewDealModal(true);
+                      }}
+                    >
+                      <i className="las la-plus"></i>Add New Deal
+                    </a>
+                  </div>
+                  <Deals
+                    deals={deals}
+                    onDeleteDeal={toggleDeleteModal}
+                    onEditDeal={toggleEditDealModal}
+                  />
+                </div>
+                <Spin spinning={isLoading}>
+                  <button type="submit" className="btn btn-submit">
+                    Submit
+                  </button>
+                </Spin>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
       <AddDealsModal
         onAddDeal={handleSubmitDeal}
         show={showADdNewDealModal}

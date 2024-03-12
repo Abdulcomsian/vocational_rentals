@@ -19,7 +19,7 @@ function TableBody({ columnData = [], onDeleteListing }) {
   return (
     <tbody>
       {columnData.map((data) => (
-        <tr>
+        <tr key={data.id}>
           <td>{data.company_name}</td>
           <td>
             <Link href={`${data.company_link}`} className="comapny-link">

@@ -107,6 +107,10 @@ function Addlisting() {
         if (convertedData.status === 200) {
           router.push(convertedData.redirectURL);
         }
+        if (convertedData.status === 401) {
+          logout();
+          router.push("/signin");
+        }
       })
       .catch((error) => console.error(error));
   };

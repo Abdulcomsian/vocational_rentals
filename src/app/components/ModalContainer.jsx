@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Modal({ children, show, onHide }) {
+export default function ModalContainer({ children, show, onHide }) {
   return (
     <Modal
       show={show}
