@@ -1,10 +1,12 @@
 "use client";
-
+import { useEffect, useState, lazy, Suspense } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { CatagoriesProvider } from "@/contexts/CatagoriesContext";
-import { useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import Topbar from "../Topbar/Topbar";
+import { Spin } from "antd";
+
+const Carddetails = lazy(() => import("./page"));
 
 export default function Layout({ children }) {
   const [isOpenSidbar, setIsOpenSidebar] = useState(false);
@@ -32,7 +34,17 @@ export default function Layout({ children }) {
                 loginSection={loginSection}
                 setLoginSection={handleToggleLoginSection}
               />
-              <div className="dashboard">{children}</div>
+              <Suspense
+                fallback={
+                  <div style={{ textAlign: "center", height: "100dvh" }}>
+                    <Spin></Spin>
+                  </div>
+                }
+              >
+                <div className="dashboard">
+                  <Carddetails />
+                </div>
+              </Suspense>
             </main>
           </AuthProvider>
         </CatagoriesProvider>
