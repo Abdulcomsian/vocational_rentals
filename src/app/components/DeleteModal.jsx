@@ -1,27 +1,25 @@
-import Warning from "../../../public/images/trash-bin.png";
+import DeleteIcon from "../../../public/images/trash-bin.png";
+import Button from "./Button";
 import ModalContainer from "./ModalContainer";
 
-export default function DeleteModal({ show, onHide }) {
+export default function DeleteModal({ show, onHide, handleDeleteItem }) {
   return (
     <ModalContainer show={show} onHide={onHide}>
       <div className="icon-modal">
-        <Image src={Warning} alt="" />
+        {/* <Image src={DeleteIcon} alt="" /> */}
       </div>
       <h4 className="text-dark text-center mt-4">Are you sure?</h4>
       <p className="text-muted mx-4 mb-0 text-center mt-1">
         Are you sure you want to Cancel this Subscription?
       </p>
       <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
-        <button
-          type="button"
-          className="btn w-sm btn-light"
-          data-bs-dismiss="modal"
-        >
+        <Button className="btn w-sm btn-light" onClick={onHide}>
           Close
-        </button>
-        <button type="button" className="btn w-sm btn-danger">
+        </Button>
+
+        <Button className="btn w-sm btn-danger" onClick={handleDeleteItem}>
           Yes, Cancel It!
-        </button>
+        </Button>
       </div>
     </ModalContainer>
   );

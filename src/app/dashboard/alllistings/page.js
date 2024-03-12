@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import ProductIcon from "../../../../public/images/detail-icon.svg";
-import DeleteIcon from "../../../../public/images/trash-bin.png";
 import Warning from "../../../../public/images/emergency.png";
 import { useQuill } from "react-quilljs";
 import { useEffect, useRef, useState } from "react";
@@ -16,13 +15,15 @@ import Modal from "@/app/components/ModalContainer";
 import DeleteModal from "@/app/components/DeleteModal";
 import { Spin } from "antd";
 import { useAuth } from "@/contexts/AuthContext";
+import { notification } from "antd";
 
 function Alllistings() {
   const [allListing, setAllListing] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [canclePlanModal, setCancelPlanModal] = useState(false);
+  const [error, setError] = useState("");
 
-  const selectedId = useRef();
+  const selectedId = useRef(null);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -86,12 +87,49 @@ function Alllistings() {
       });
   }, []);
 
-  const handleDeleteListing = function (id) {
+  const toggleDeleteModal = function (id) {
+    console.log(id);
     selectedId.current = id;
     setShowDeleteModal(true);
-    console.log(id);
   };
 
+  const handleDeleteItem = function () {
+    setShowDeleteModal(false);
+
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${isAuth}`);
+
+    const formdata = new FormData();
+    formdata.append("listing_id", selectedId.current);
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://admin.vacationrentals.tools/api/delete-listing",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.status === 200) {
+          setAllListing((listings) =>
+            listings.filter((listing) => listing.id !== selectedId.current)
+          );
+          notification.success({ description: result.msg });
+        }
+        if (result.status === 400) {
+          notification.error({ description: result.msg });
+        }
+        console.log(result);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  console.log(selectedId.current);
   return (
     <>
       {isAuth ? (
@@ -101,7 +139,7 @@ function Alllistings() {
             <Spin spinning={isLoading}>
               <ListingTable
                 allListing={allListing}
-                onDeleteListing={handleDeleteListing}
+                onDeleteListing={toggleDeleteModal}
               />
             </Spin>
           </Listing>
@@ -109,6 +147,7 @@ function Alllistings() {
             <DeleteModal
               show={showDeleteModal}
               onHide={() => setShowDeleteModal(false)}
+              handleDeleteItem={handleDeleteItem}
             />
           )}
           <div
