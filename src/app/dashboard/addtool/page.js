@@ -48,6 +48,7 @@ function Addtool() {
   const [ckEditorData, setCkEditorData] = useState(null);
   const query = useSearchParams();
   const listingId = query.get("id");
+  const isFeatured = query.get("featured");
   const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
   const router = useRouter();
@@ -307,25 +308,27 @@ function Addtool() {
                   <label className="form-label">Short Description</label>
                   <div ref={quillRef} />
                 </div>
-                <div className="deals-sec">
-                  <div className="deal-head">
-                    <h3>Add Deals</h3>
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setShowADdNewDealModal(true);
-                      }}
-                    >
-                      <i className="las la-plus"></i>Add New Deal
-                    </a>
+                {isFeatured && (
+                  <div className="deals-sec">
+                    <div className="deal-head">
+                      <h3>Add Deals</h3>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowADdNewDealModal(true);
+                        }}
+                      >
+                        <i className="las la-plus"></i>Add New Deal
+                      </a>
+                    </div>
+                    <Deals
+                      deals={deals}
+                      onDeleteDeal={toggleDeleteModal}
+                      onEditDeal={toggleEditDealModal}
+                    />
                   </div>
-                  <Deals
-                    deals={deals}
-                    onDeleteDeal={toggleDeleteModal}
-                    onEditDeal={toggleEditDealModal}
-                  />
-                </div>
+                )}
                 <Spin spinning={isLoading}>
                   <button type="submit" className="btn btn-submit">
                     Submit
