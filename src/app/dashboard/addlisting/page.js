@@ -12,6 +12,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 function PlanItem({ planData, onSubmitListing }) {
+  console.log(planData);
   return (
     <div className="col-md-3">
       <div className="package-single">

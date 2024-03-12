@@ -5,6 +5,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import Sidebar from "@/app/Sidebar/sidebar";
 import Topbar from "@/app/Topbar/Topbar";
 import { CatagoriesProvider } from "@/contexts/CatagoriesContext";
+import { Spin } from "antd";
 
 const AddToolPage = lazy(() => import("./page"));
 
@@ -19,7 +20,13 @@ export default function Layout({ children }) {
           {/* <Sidebar isOpen={isOpenSidbar} onToggleOpen={setIsOpenSidebar} /> */}
           {/* <main> */}
           {/* <Topbar onToggleSidebar={() => setIsOpenSidebar((is) => !is)} /> */}
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div style={{ textAlign: "center", height: "100dvh" }}>
+                <Spin></Spin>
+              </div>
+            }
+          >
             <div className="dashboard">
               <AddToolPage />
             </div>

@@ -14,11 +14,14 @@ import ListingTitle from "./ListingTitle";
 import ListingTable from "./ListingTable";
 import Modal from "@/app/components/Modal";
 import DeleteModal from "@/app/components/DeleteModal";
+import { Spin } from "antd";
 
 function Alllistings() {
   const [allListing, setAllListing] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [canclePlanModal, setCancelPlanModal] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
@@ -58,6 +61,7 @@ function Alllistings() {
       redirect: "follow",
     };
 
+    setIsLoading(true);
     fetch(
       "https://admin.vacationrentals.tools/api/show-all-listings",
       requestOptions
@@ -67,7 +71,10 @@ function Alllistings() {
         const convertedData = JSON.parse(result);
         if (convertedData.status === 200) setAllListing(convertedData.listings);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   const handleDeleteListing = function (id) {
@@ -80,10 +87,12 @@ function Alllistings() {
         <>
           <Listing>
             <ListingTitle />
-            <ListingTable
-              allListing={allListing}
-              onDeleteListing={handleDeleteListing}
-            />
+            <Spin spinning={isLoading}>
+              <ListingTable
+                allListing={allListing}
+                onDeleteListing={handleDeleteListing}
+              />
+            </Spin>
           </Listing>
           {showDeleteModal && <DeleteModal />}
           <div

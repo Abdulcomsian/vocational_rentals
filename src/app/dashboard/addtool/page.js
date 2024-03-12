@@ -18,11 +18,13 @@ import EditDealModal from "./EditDealModal";
 import { useSearchParams } from "next/navigation";
 import { BASE_URL } from "@/constant/utilities";
 import { useRouter } from "next/navigation";
+import { Spin } from "antd";
 
 function Addtool() {
   const [showADdNewDealModal, setShowADdNewDealModal] = useState(false);
   const [showDeleteDealModal, setShowDeleteDealModal] = useState(false);
   const [showEditDealModal, setShowEditDealModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [id, setId] = useState(null);
   const { catagories } = useCatagories();
   // useEffect(() => {
@@ -38,7 +40,7 @@ function Addtool() {
   const [ckEditorData, setCkEditorData] = useState(null);
   const query = useSearchParams();
   const listingId = query.get("id");
-  const [error, setError] = useState("");
+  const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
   const router = useRouter();
 
@@ -155,7 +157,19 @@ function Addtool() {
       company_tagline: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
+      setError((error) => ({
+        ...error,
+        formError: "",
+        selectedCategories: "",
+      }));
+      if (selectedCategories.length === 0) {
+        setError((error) => ({
+          ...error,
+          selectedCategories: "At least one category must be selected",
+        }));
+        return;
+      }
       console.log(
         "FINAL ADD_TOOL DATA => DEALS",
         deals,
@@ -188,6 +202,7 @@ function Addtool() {
         redirect: "follow",
       };
 
+      setIsLoading(true);
       fetch(`${BASE_URL}/api/add-listing`, requestOptions)
         .then((response) => response.text())
         .then((result) => {
@@ -195,9 +210,13 @@ function Addtool() {
           console.log(convertedData, typeof convertedData);
           if (convertedData.status === 200) router.push("alllistings");
 
-          if (convertedData.status === 400) setError(convertedData.msg);
+          if (convertedData.status === 400)
+            setError((error) => ({ ...error, formError: convertedData.msg }));
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
+        .finally(() => {
+          setIsLoading(false);
+        });
     },
   });
 
@@ -206,7 +225,9 @@ function Addtool() {
       <section className="addtool mt-5 mb-5">
         <div className="row">
           <div className="col-md-12 col-sl-12 col-lg-8 col-xl-6 offset-lg-2">
-            {error?.length > 0 && <p className="text-danger">{error}</p>}
+            {error.formError?.length > 0 && (
+              <p className="text-danger">{error.formError}</p>
+            )}
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Company Name</label>
@@ -234,6 +255,9 @@ function Addtool() {
                   valueField="id" // Obtain id when an item is selected
                   onSelect={handleSelectCategory}
                 />
+                {error.selectedCategories && (
+                  <p className="errorMessage">{error.selectedCategories}</p>
+                )}
               </div>
               <div className="mb-3">
                 <label className="form-label">Company Tag line</label>
@@ -276,9 +300,11 @@ function Addtool() {
                   onEditDeal={toggleEditDealModal}
                 />
               </div>
-              <button type="submit" className="btn btn-submit">
-                Submit
-              </button>
+              <Spin spinning={isLoading}>
+                <button type="submit" className="btn btn-submit">
+                  Submit
+                </button>
+              </Spin>
             </form>
           </div>
         </div>
