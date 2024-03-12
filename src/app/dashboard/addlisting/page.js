@@ -18,9 +18,9 @@ function PlanItem({ planData, onSubmitListing }) {
       <div className="package-single">
         <h3>
           <span className="validity">{planData.plan_name}</span>{" "}
-          <b>{`$${planData.actual_price}`}</b>
+          <b>{`$${planData.discounted_price || planData.recurring_price}`}</b>
           <span className="sale">
-            {planData.recurring_price && `$${planData.recurring_price}`}
+            {planData.discounted_price && `$${planData.recurring_price}`}
           </span>
         </h3>
         <ul className="mt-3">
