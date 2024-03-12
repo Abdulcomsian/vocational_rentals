@@ -20,7 +20,10 @@ function TableBody({ columnData = [], onDeleteListing }) {
     <tbody>
       {columnData.map((data) => (
         <tr key={data.id}>
-          <td>{data.company_name}</td>
+          <td>
+            {data.company_name}{" "}
+            <Link href={`/carddetails?listingId=${data.id}`}>Detail</Link>
+          </td>
           <td>
             <Link href={`${data.company_link}`} className="comapny-link">
               Visit Link
@@ -39,9 +42,12 @@ function TableBody({ columnData = [], onDeleteListing }) {
           </td>
           <td>{data.has_deals ? "Yes" : "No"}</td>
           <td className="actions">
-            <a href={`addtool?${data.id}`} className="text-success">
+            <Link
+              href={`addtool?id=${data.id}&featured=${data.has_deals}`}
+              className="text-success"
+            >
               <i className="las la-pencil-alt"></i>
-            </a>
+            </Link>
             <a
               href="#"
               className="text-danger mx-2"

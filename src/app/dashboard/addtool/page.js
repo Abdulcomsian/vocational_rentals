@@ -51,6 +51,8 @@ function Addtool() {
   const isFeatured = query.get("featured");
   const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
+  console.log("ID", listingId, "FEATURED", typeof isFeatured);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -308,7 +310,7 @@ function Addtool() {
                   <label className="form-label">Short Description</label>
                   <div ref={quillRef} />
                 </div>
-                {isFeatured && (
+                {isFeatured !== "false" && (
                   <div className="deals-sec">
                     <div className="deal-head">
                       <h3>Add Deals</h3>

@@ -1,12 +1,55 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import ProductImage from "../../../public/images/detail.svg";
 import ProductIcon from "../../../public/images/detail-icon.svg";
 import Link from "next/link";
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
 
 function Carddetails() {
+  const [isAuth, setIsAuth] = useState(function () {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      return token ? token : null;
+    }
+    return null;
+  });
+  const [details, setDetails] = useState({});
+
+  const data = useSearchParams();
+  const id = data.get("listingId");
+
+  useEffect(
+    function () {
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", `Bearer ${isAuth}`);
+
+      const formdata = new FormData();
+      formdata.append("listing_id", id);
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: formdata,
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://admin.vacationrentals.tools/api/listing-detail",
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          setDetails(result.listingData);
+          console.log(result);
+        })
+        .catch((error) => console.error(error));
+    },
+    [id]
+  );
   return (
     <>
       <section className="detail">
@@ -16,183 +59,69 @@ function Carddetails() {
               {/* <Image src={ProductIcon} alt="" /> */}
               <div className="other">
                 <h1>
-                  Universium
+                  {details.company_name}
                   <div className="type new">New</div>
                 </h1>
-                <p>
-                  Exceptional web & digital design for marketing and SaaS
-                  product teams.
-                </p>
-                <a href="#" className="web-link">
+                <p>{details.company_tagline}</p>
+                <Link
+                  href={`${details.company_link}`}
+                  target="_blank"
+                  className="web-link"
+                >
                   Visit Website
                   <i className="las la-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
-            <section className="select-package with-bg">
-              <h3 className="deal-title-main">Deals</h3>
-              <div className="row justify-content-center">
-                <div className="col-md-12">
-                  <div className="carousal-deal">
-                  <div className="card card--white card-deals text-left">
-                        <h3 className="deal-title">Black Friday</h3>
-                        <ul className="mt-3 list">
-                          <li>
-                            $1
-                            <span
-                              style={{
-                                textDecoration: "line-through",
-                                marginLeft: "0.4rem",
-                              }}
-                            >
-                              $5.99
-                            </span>
-                            &nbsp;/&nbsp; month
-                          </li>
-                        </ul>
-                        <small
-                          className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                          style={{ width: "fit-content", fontSize: "0.65rem" }}
+            {details.deals?.length > 0 && (
+              <section className="select-package with-bg">
+                <h3 className="deal-title-main">Deals</h3>
+                <div className="row justify-content-center">
+                  <div className="col-md-12">
+                    <div className="carousal-deal">
+                      {details.deals.map((deal) => (
+                        <div
+                          className="card card--white card-deals text-left"
+                          key={deal.id}
                         >
-                        You Save $10
-                        </small>
-                        <div className="action-btn mt-2">
-                          <Link
-                            href="#"
-                            className="btn-buy  m-auto"
+                          <h3 className="deal-title">{deal.deal_name}</h3>
+                          <ul className="mt-3 list">
+                            <li>
+                              ${deal.discount_price}
+                              <span
+                                style={{
+                                  textDecoration: "line-through",
+                                  marginLeft: "0.4rem",
+                                }}
+                              >
+                                ${deal.actual_price}
+                              </span>
+                              &nbsp;/&nbsp; {deal.billing_interval}
+                            </li>
+                          </ul>
+                          <small
+                            className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
+                            style={{
+                              width: "fit-content",
+                              fontSize: "0.65rem",
+                            }}
                           >
-                            Buy
-                          </Link>
+                            You Save $
+                            {Number(deal.actual_price) -
+                              Number(deal.discount_price)}
+                          </small>
+                          <div className="action-btn mt-2">
+                            <Link href="#" className="btn-buy  m-auto">
+                              Buy
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                      <div className="card card--white card-deals text-left">
-                        <h3 className="deal-title">Black Friday</h3>
-                        <ul className="mt-3 list">
-                          <li>
-                            $1
-                            <span
-                              style={{
-                                textDecoration: "line-through",
-                                marginLeft: "0.4rem",
-                              }}
-                            >
-                              $5.99
-                            </span>
-                            &nbsp;/&nbsp; month
-                          </li>
-                        </ul>
-                        <small
-                          className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                          style={{ width: "fit-content", fontSize: "0.65rem" }}
-                        >
-                        You Save $10
-                        </small>
-                        <div className="action-btn mt-2">
-                          <Link
-                            href="#"
-                            className="btn-buy  m-auto"
-                          >
-                            Buy
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="card card--white card-deals text-left">
-                        <h3 className="deal-title">Black Friday</h3>
-                        <ul className="mt-3 list">
-                          <li>
-                            $1
-                            <span
-                              style={{
-                                textDecoration: "line-through",
-                                marginLeft: "0.4rem",
-                              }}
-                            >
-                              $5.99
-                            </span>
-                            &nbsp;/&nbsp; month
-                          </li>
-                        </ul>
-                        <small
-                          className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                          style={{ width: "fit-content", fontSize: "0.65rem" }}
-                        >
-                        You Save $10
-                        </small>
-                        <div className="action-btn mt-2">
-                          <Link
-                            href="#"
-                            className="btn-buy  m-auto"
-                          >
-                            Buy
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="card card--white card-deals text-left">
-                        <h3 className="deal-title">Black Friday</h3>
-                        <ul className="mt-3 list">
-                          <li>
-                            $1
-                            <span
-                              style={{
-                                textDecoration: "line-through",
-                                marginLeft: "0.4rem",
-                              }}
-                            >
-                              $5.99
-                            </span>
-                            &nbsp;/&nbsp; month
-                          </li>
-                        </ul>
-                        <small
-                          className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                          style={{ width: "fit-content", fontSize: "0.65rem" }}
-                        >
-                        You Save $10
-                        </small>
-                        <div className="action-btn mt-2">
-                          <Link
-                            href="#"
-                            className="btn-buy  m-auto"
-                          >
-                            Buy
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="card card--white card-deals text-left">
-                        <h3 className="deal-title">Black Friday</h3>
-                        <ul className="mt-3 list">
-                          <li>
-                            $1
-                            <span
-                              style={{
-                                textDecoration: "line-through",
-                                marginLeft: "0.4rem",
-                              }}
-                            >
-                              $5.99
-                            </span>
-                            &nbsp;/&nbsp; month
-                          </li>
-                        </ul>
-                        <small
-                          className="d-inline-block mb-3 px-2 py-1  text-success-emphasis bg-success-subtle border border-success-subtle rounded-pill"
-                          style={{ width: "fit-content", fontSize: "0.65rem" }}
-                        >
-                        You Save $10
-                        </small>
-                        <div className="action-btn mt-2">
-                          <Link
-                            href="#"
-                            className="btn-buy  m-auto"
-                          >
-                            Buy
-                          </Link>
-                        </div>
-                      </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
             <Image src={ProductImage} className="detail-image mb-0" alt="" />
             <div className="tool-detail">
               <p>No time to wait for design? You are at the right place.</p>
