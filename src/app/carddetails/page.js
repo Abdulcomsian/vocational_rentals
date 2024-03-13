@@ -75,7 +75,7 @@ function Carddetails() {
               <div className="other">
                 <h1>
                   {details.company_name}
-                  <div className="type new">New</div>
+                  {/* <div className="type new">New</div> */}
                 </h1>
                 <p>{details.company_tagline}</p>
                 <Link
@@ -137,42 +137,9 @@ function Carddetails() {
                 </div>
               </section>
             )}
-            <Image src={ProductImage} className="detail-image mb-0" alt="" />
+            {/* <Image src={ProductImage} className="detail-image mb-0" alt="" /> */}
             <div className="tool-detail">
               <div ref={containerRef}></div>
-              {/* {details.short_description} */}
-              <p>No time to wait for design? You are at the right place.</p>
-              <p>
-                <b>With us, you can expect:</b>
-              </p>
-              <ol>
-                <li>
-                  48-hour guaranteed delivery (larger tasks are broken down into
-                  smaller ones);
-                </li>
-                <li>Flat monthly tiers, for any team size;</li>
-                <li>No long-term commitments, pause/cancel anytime;</li>
-                <li>Unlimited design requests;</li>
-                <li>
-                  Dedicated creative director and designer, no team swapping;
-                </li>
-                <li>
-                  Only senior-level experts; our team worked at/with
-                  Google/Amazon/Credit Suisse/Uber/Cisco.
-                </li>
-                <li>Get started within 12 hours.</li>
-              </ol>
-              <p>
-                We are a design service provider specializing in
-                subscription-based offerings for a flat monthly fee, targeting
-                clients who seek exceptional user experiences without the hassle
-                of expensive agencies and hourly freelance jobs.
-              </p>
-              <p>
-                Our services eliminate the need for long-term commitments,
-                making them accessible and flexible for different business
-                needs.
-              </p>
             </div>
           </div>
           <div className="col-lg-5">

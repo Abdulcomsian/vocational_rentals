@@ -148,3 +148,8 @@ a {
   color: red;
   margin-top: 3px;
 }
+
+.ck-image {
+  width: auto !important;
+  height: 500px !important;
+}

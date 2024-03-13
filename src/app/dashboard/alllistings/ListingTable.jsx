@@ -43,7 +43,7 @@ function TableBody({ columnData = [], onDeleteListing }) {
           <td>{data.has_deals ? "Yes" : "No"}</td>
           <td className="actions">
             <Link
-              href={`addtool?id=${data.id}&featured=${data.has_deals}`}
+              href={`updateTool?id=${data.id}&featured=${data.has_deals}`}
               className="text-success"
             >
               <i className="las la-pencil-alt"></i>
