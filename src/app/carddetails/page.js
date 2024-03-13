@@ -5,7 +5,7 @@ import ProductImage from "../../../public/images/detail.svg";
 import ProductIcon from "../../../public/images/detail-icon.svg";
 import Link from "next/link";
 import Carousel from "react-bootstrap/Carousel";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -21,6 +21,19 @@ function Carddetails() {
 
   const data = useSearchParams();
   const id = data.get("listingId");
+
+  const htmlString = details?.short_description;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    const node = doc.body.firstChild;
+
+    if (containerRef.current && node) {
+      containerRef.current.appendChild(node);
+    }
+  }, [htmlString]);
 
   useEffect(
     function () {
@@ -124,6 +137,8 @@ function Carddetails() {
             )}
             <Image src={ProductImage} className="detail-image mb-0" alt="" />
             <div className="tool-detail">
+              <div ref={containerRef}></div>
+              {/* {details.short_description} */}
               <p>No time to wait for design? You are at the right place.</p>
               <p>
                 <b>With us, you can expect:</b>
