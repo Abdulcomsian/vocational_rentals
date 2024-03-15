@@ -16,6 +16,7 @@ import DeleteModal from "@/app/components/DeleteModal";
 import { Spin } from "antd";
 import { useAuth } from "@/contexts/AuthContext";
 import { notification } from "antd";
+import Message from "@/app/components/Message";
 
 function Alllistings() {
   const [allListing, setAllListing] = useState([]);
@@ -130,6 +131,10 @@ function Alllistings() {
   };
 
   console.log(selectedId.current);
+
+  if (allListing.length === 0)
+    return <Message>There are no listing to show</Message>;
+
   return (
     <>
       {isAuth ? (

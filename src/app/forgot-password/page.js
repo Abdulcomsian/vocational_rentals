@@ -242,6 +242,7 @@ function ForgotPassword() {
                         <input
                           type="text"
                           className="form-control"
+                          maxLength={1}
                           id="digit1"
                           name="digit1"
                           onChange={formikVarifyOTP.handleChange}
@@ -250,6 +251,7 @@ function ForgotPassword() {
                         />
                         <input
                           type="text"
+                          maxLength={1}
                           className="form-control"
                           id="digit2"
                           name="digit2"
@@ -259,6 +261,7 @@ function ForgotPassword() {
                         />
                         <input
                           type="text"
+                          maxLength={1}
                           className="form-control"
                           id="digit3"
                           name="digit3"
@@ -267,7 +270,8 @@ function ForgotPassword() {
                           value={formikVarifyOTP.values.digit3}
                         />
                         <input
-                          type="number"
+                          type="text"
+                          maxLength={1}
                           className="form-control"
                           id="digit4"
                           name="digit4"
