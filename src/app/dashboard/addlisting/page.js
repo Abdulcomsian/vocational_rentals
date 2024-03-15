@@ -13,7 +13,7 @@ import * as yup from "yup";
 import { Spin } from "antd";
 // import second from "@/context/authContext";
 
-function PlanItem({ planData, onSubmitListing, isLoading }) {
+function PlanItem({ planData, onSubmitListing, isLoading, selectedPlanId }) {
   console.log(planData);
   return (
     <div className="col-md-3">
@@ -33,7 +33,9 @@ function PlanItem({ planData, onSubmitListing, isLoading }) {
           )}
         </ul>
         <div className="action-btn mt-2">
-          <Spin spinning={isLoading}>
+          <Spin
+            spinning={planData.plan_id === selectedPlanId ? isLoading : false}
+          >
             <Link
               href="#"
               className="subscribe-btn"
@@ -58,6 +60,7 @@ function Addlisting() {
   const [error, setError] = useState("");
   const [showPlans, setShowPlans] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedPlanId, setSelectedPlanId] = useState(null);
 
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
@@ -91,6 +94,8 @@ function Addlisting() {
       setError("Website link must be Required.");
       return;
     }
+
+    setSelectedPlanId(price_id);
 
     const myHeaders = new Headers();
     myHeaders.append("Access-Control-Allow-Origin", "*");
@@ -190,6 +195,7 @@ function Addlisting() {
                         planData={plan}
                         onSubmitListing={handleSubmitListing}
                         isLoading={isLoading}
+                        selectedPlanId={selectedPlanId}
                       />
                     ))}
                   </div>
