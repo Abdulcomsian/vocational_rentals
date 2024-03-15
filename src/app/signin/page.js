@@ -13,7 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 function Signin() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const router = useRouter();
   const { user, isAuthenticated, login, logout } = useAuth();
 
@@ -50,11 +50,15 @@ function Signin() {
         //   throw new Error(`Something went wrong with status: ${resp}`);
 
         const data = await resp.json();
-        if (resp.status === 200) {
-          login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXXT
+        if (data.status === 200) {
+          login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXT
           router.push("/");
-        } else setError(data.msg);
+        }
+        if (data.status === 401) {
+          setError(data.msg);
+        }
       } catch (err) {
+        console.log(err);
       } finally {
         setIsLoading(false);
       }
@@ -77,7 +81,7 @@ function Signin() {
               </Link>
               <h3 className="title">Sign In</h3>
               <form onSubmit={formik.handleSubmit}>
-                {error !== null && <p className="text-danger">{error}</p>}
+                {error && <p className="text-danger">{error}</p>}
                 <div className="mb-4">
                   <label for="exampleInputEmail1" className="form-label">
                     Email
