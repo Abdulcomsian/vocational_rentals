@@ -7,13 +7,18 @@ import Link from "next/link";
 import Image from "next/image";
 import card from "../../../../public/images/card1.png";
 import { loaderProp } from "../../utilities";
-import Message from "../../components/Message";
 import { Spin } from "antd";
+import { useCatagories } from "@/contexts/CatagoriesContext";
 
 const Post = () => {
   const pathname = usePathname();
   const sliceIndex = pathname.lastIndexOf("/");
   const sliceSlug = pathname.slice(sliceIndex + 1);
+
+  const { catagories } = useCatagories();
+  const selectedCatgeoryName = catagories.find(
+    (catagory) => catagory.slug === sliceSlug
+  );
 
   const [listing, setListing] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -48,12 +53,9 @@ const Post = () => {
     [sliceSlug]
   );
 
-  console.log("LISTING", listing);
-
   return (
     <div>
-      <h1>{sliceSlug}</h1>
-      {/* <Cardpage listing={listing} /> */}
+      <h1>{selectedCatgeoryName?.category_name}</h1>
       <section className="search-area">
         <div className="row">
           <div className="search-box">
