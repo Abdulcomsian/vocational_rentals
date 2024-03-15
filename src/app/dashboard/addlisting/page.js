@@ -10,8 +10,10 @@ import { useEffect, useState } from "react";
 import { usePlans } from "@/contexts/plansContext";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Spin } from "antd";
+// import second from "@/context/authContext";
 
-function PlanItem({ planData, onSubmitListing }) {
+function PlanItem({ planData, onSubmitListing, isLoading }) {
   console.log(planData);
   return (
     <div className="col-md-3">
@@ -31,13 +33,15 @@ function PlanItem({ planData, onSubmitListing }) {
           )}
         </ul>
         <div className="action-btn mt-2">
-          <a
-            href="#"
-            className="subscribe-btn"
-            onClick={(event) => onSubmitListing(event, planData.plan_id)}
-          >
-            Submit Listing
-          </a>
+          <Spin spinning={isLoading}>
+            <Link
+              href="#"
+              className="subscribe-btn"
+              onClick={(event) => onSubmitListing(event, planData.plan_id)}
+            >
+              Submit Listing
+            </Link>
+          </Spin>
           <p className="cancel-text">Cancel anytime.</p>
           <Link href="/subscription" className="cancel-text">
             More info
@@ -53,6 +57,7 @@ function Addlisting() {
   const [website_link, setwebsite_link] = useState("");
   const [error, setError] = useState("");
   const [showPlans, setShowPlans] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isAuth, setIsAuth] = useState(function () {
     if (typeof window !== "undefined") {
@@ -61,6 +66,8 @@ function Addlisting() {
     }
     return null;
   });
+
+  const { logout } = useAuth();
   const router = useRouter();
 
   const { plans } = usePlans();
@@ -100,6 +107,7 @@ function Addlisting() {
       redirect: "follow",
     };
 
+    setIsLoading(true);
     fetch("https://admin.vacationrentals.tools/api/checkout", requestOptions)
       .then((response) => response.text())
       .then((result) => {
@@ -112,7 +120,8 @@ function Addlisting() {
           router.push("/signin");
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setIsLoading(false));
   };
 
   const validationSchema = yup.object({
@@ -180,6 +189,7 @@ function Addlisting() {
                       <PlanItem
                         planData={plan}
                         onSubmitListing={handleSubmitListing}
+                        isLoading={isLoading}
                       />
                     ))}
                   </div>
