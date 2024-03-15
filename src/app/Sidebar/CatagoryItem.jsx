@@ -8,7 +8,7 @@ export default function CatagoryItem({ itemData }) {
   return (
     <li>
       <Link
-        href={`/categories/${slug}`}
+        href={!slug ? `/` : `/categories/${slug}`}
         className={`link ${
           pathname === `/categories/${slug}` ? "active-catagory" : ""
         }`}

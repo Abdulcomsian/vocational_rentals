@@ -21,11 +21,13 @@ function TableBody({ columnData = [], onDeleteListing }) {
       {columnData.map((data) => (
         <tr key={data.id}>
           <td>
-            {data.company_name}{" "}
-            <Link href={`/carddetails?listingId=${data.id}`}>Detail</Link>
+            {data.company_name} {/* <Link >Detail</Link> */}
           </td>
           <td>
-            <Link href={`${data.company_link}`} className="comapny-link">
+            <Link
+              href={`/carddetails?listingId=${data.id}`}
+              className="comapny-link"
+            >
               Visit Link
             </Link>
           </td>

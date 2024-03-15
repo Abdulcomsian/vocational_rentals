@@ -39,15 +39,15 @@ function Carddetails() {
 
   useEffect(
     function () {
-      const myHeaders = new Headers();
-      myHeaders.append("Authorization", `Bearer ${isAuth}`);
+      // const myHeaders = new Headers();
+      // myHeaders.append("Authorization", `Bearer ${isAuth}`);
 
       const formdata = new FormData();
       formdata.append("listing_id", id);
 
       const requestOptions = {
         method: "POST",
-        headers: myHeaders,
+        // headers: myHeaders,
         body: formdata,
         redirect: "follow",
       };

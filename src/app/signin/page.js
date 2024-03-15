@@ -52,7 +52,7 @@ function Signin() {
         const data = await resp.json();
         if (resp.status === 200) {
           login(data.token.original.access_token); // LOGIN FUNCTION CALLED FROM AUTH-CONTEXXT
-          router.push("/dashboard");
+          router.push("/");
         } else setError(data.msg);
       } catch (err) {
       } finally {
