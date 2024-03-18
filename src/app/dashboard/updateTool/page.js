@@ -263,7 +263,6 @@ function Addtool() {
                     valueField="id" // Obtain id when an item is selected
                     onSelect={handleSelectCategory}
                     selectedValues={preSlectedCategories}
-                    disablePreSelectedValues={true}
                   />
                   {error.selectedCategories && (
                     <p className="errorMessage">{error.selectedCategories}</p>

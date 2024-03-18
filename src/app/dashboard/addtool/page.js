@@ -170,7 +170,10 @@ function Addtool() {
   };
 
   const validationSchema = yup.object({
-    company_name: yup.string().required("Company name is Required"),
+    company_name: yup
+      .string()
+      .max(15, "Field must not exceed 15 characters")
+      .required("Company name is Required"),
     company_tagline: yup.string().required("Company tagline must be required"),
   });
 

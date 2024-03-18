@@ -55,7 +55,9 @@ const Post = () => {
 
   return (
     <div>
-      <h1>{selectedCatgeoryName?.category_name}</h1>
+      <h1 style={{ fontSize: "1.3rem", color: "darkslategray" }}>
+        {selectedCatgeoryName?.category_name}
+      </h1>
       <section className="search-area">
         <div className="row">
           <div className="search-box">
