@@ -58,11 +58,10 @@ function Addtool() {
       if (initialValuesData.category_ids === undefined) return;
       const cate = initialValuesData.category_ids.map((id, i) => {
         return catagories.filter((cate) => cate.id === Number(id));
-        // return category.id === Number(initialValuesData.category_ids[i]);
       });
 
       console.log("PRE-SELECTED", cate.flat());
-      setPreSlectedCategories(cate);
+      setPreSlectedCategories(cate.flat());
     },
     [initialValuesData.category_ids]
   );
@@ -263,6 +262,7 @@ function Addtool() {
                     valueField="id" // Obtain id when an item is selected
                     onSelect={handleSelectCategory}
                     selectedValues={preSlectedCategories}
+                    disablePreSelectedValues={true}
                   />
                   {error.selectedCategories && (
                     <p className="errorMessage">{error.selectedCategories}</p>
