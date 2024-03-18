@@ -132,8 +132,8 @@ function Alllistings() {
 
   console.log(selectedId.current);
 
-  // if (allListing.length === 0)
-  //   return <Message>There are no listing to show</Message>;
+  if (allListing.length === 0)
+    return <Message>No Lisitng to show.. Comming soon :)</Message>;
 
   return (
     <>
