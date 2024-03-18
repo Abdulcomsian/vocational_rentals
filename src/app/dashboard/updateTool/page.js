@@ -49,16 +49,24 @@ function Addtool() {
   const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
   const [initialValuesData, setInitialValuesData] = useState({});
-  console.log("INIT DATA", initialValuesData);
+  const [preSlectedCategories, setPreSlectedCategories] = useState([]);
+  // console.log("INIT DATA", initialValuesData.category_ids, "CATEG", catagories);
 
-  const preSlectedCategories =
-    initialValuesData.category_ids?.length > 0
-      ? catagories.filter(
-          (category, i) => category.id === initialValuesData.category_ids[i]
-        )
-      : [];
+  useEffect(
+    function () {
+      // console.log("HERE");
+      if (initialValuesData.category_ids === undefined) return;
+      const cate = initialValuesData.category_ids.map((id, i) => {
+        return catagories.filter((cate) => cate.id === Number(id));
+        // return category.id === Number(initialValuesData.category_ids[i]);
+      });
 
-  console.log("PRE-SELECTED", preSlectedCategories);
+      console.log("PRE-SELECTED", cate.flat());
+      setPreSlectedCategories(cate);
+    },
+    [initialValuesData.category_ids]
+  );
+
   useEffect(
     function () {
       const myHeaders = new Headers();
@@ -251,11 +259,11 @@ function Addtool() {
                     options={options}
                     showCheckbox={true}
                     placeholder="Select Categories"
-                    // disablePreSelectedValues={true}
                     displayValue="category_name" // Display category_name in the dropdown
                     valueField="id" // Obtain id when an item is selected
                     onSelect={handleSelectCategory}
                     selectedValues={preSlectedCategories}
+                    disablePreSelectedValues={true}
                   />
                   {error.selectedCategories && (
                     <p className="errorMessage">{error.selectedCategories}</p>
