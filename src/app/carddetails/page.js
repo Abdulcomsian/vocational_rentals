@@ -30,7 +30,7 @@ function Carddetails() {
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
-    const node = doc.body;
+    const node = doc.body.firstChild;
 
     if (containerRef.current && node) {
       containerRef.current.appendChild(node);

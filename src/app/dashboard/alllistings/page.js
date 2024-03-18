@@ -3,7 +3,7 @@ import Image from "next/image";
 import ProductIcon from "../../../../public/images/detail-icon.svg";
 import Warning from "../../../../public/images/emergency.png";
 import { useQuill } from "react-quilljs";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "quill/dist/quill.snow.css";
 import UploadIcon from "../../../../public/images/upload.svg";
 import { useRouter } from "next/navigation";
@@ -132,8 +132,8 @@ function Alllistings() {
 
   console.log(selectedId.current);
 
-  if (allListing.length === 0)
-    return <Message>There are no listing to show</Message>;
+  // if (allListing.length === 0)
+  //   return <Message>There are no listing to show</Message>;
 
   return (
     <>

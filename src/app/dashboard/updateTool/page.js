@@ -49,8 +49,16 @@ function Addtool() {
   const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
   const [initialValuesData, setInitialValuesData] = useState({});
-  console.log(initialValuesData);
+  console.log("INIT DATA", initialValuesData);
 
+  const preSlectedCategories =
+    initialValuesData.category_ids?.length > 0
+      ? catagories.filter(
+          (category, i) => category.id === initialValuesData.category_ids[i]
+        )
+      : [];
+
+  console.log("PRE-SELECTED", preSlectedCategories);
   useEffect(
     function () {
       const myHeaders = new Headers();
@@ -247,6 +255,7 @@ function Addtool() {
                     displayValue="category_name" // Display category_name in the dropdown
                     valueField="id" // Obtain id when an item is selected
                     onSelect={handleSelectCategory}
+                    selectedValues={preSlectedCategories}
                   />
                   {error.selectedCategories && (
                     <p className="errorMessage">{error.selectedCategories}</p>
