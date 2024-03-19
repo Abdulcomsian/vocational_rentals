@@ -235,7 +235,7 @@ function Addtool() {
           const convertedData = JSON.parse(result);
           console.log(convertedData, typeof convertedData);
           if (convertedData.status === 200) {
-            notification.success(convertedData.msg);
+            notification.success({ description: convertedData.msg });
             router.push("alllistings");
           }
 

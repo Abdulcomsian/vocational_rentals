@@ -44,6 +44,7 @@ section.search-area .search-box .search-input .dropdown-toggle {
   border-left: none;
   font-size: 13px;
   color: #8a92a6;
+  height: 100%;
 }
 
 .tags {

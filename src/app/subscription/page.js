@@ -53,7 +53,7 @@ function PlanHeader() {
     <div className="col-md-4">
       <div className="info">
         <h3>Listings Packages</h3>
-        <p>Choose your package</p>
+        {/* <p>Choose your package</p> */}
       </div>
     </div>
   );

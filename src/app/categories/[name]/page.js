@@ -9,8 +9,10 @@ import card from "../../../../public/images/card1.png";
 import { loaderProp } from "../../utilities";
 import { Spin } from "antd";
 import { useCatagories } from "@/contexts/CatagoriesContext";
+import { Dropdown } from "react-bootstrap";
 
 const Post = () => {
+  const [hasDeals, setHasDeals] = useState(false);
   const pathname = usePathname();
   const sliceIndex = pathname.lastIndexOf("/");
   const sliceSlug = pathname.slice(sliceIndex + 1);
@@ -23,6 +25,8 @@ const Post = () => {
   const [listing, setListing] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  // const displayListing = hasDeals ? listing.filter()
 
   useEffect(
     function () {
@@ -69,14 +73,20 @@ const Post = () => {
                 aria-label="Text input with dropdown button"
                 placeholder="Search"
               />
-              <button
-                className="btn dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Sort By : Has Deals
-              </button>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Filter
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    href="#/action-1"
+                    onClick={() => setHasDeals((is) => !is)}
+                  >
+                    Has Deals
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               <ul className="dropdown-menu dropdown-menu-end">
                 <li>
                   <a className="dropdown-item" href="#">
