@@ -132,6 +132,8 @@ function Alllistings() {
 
   console.log(selectedId.current);
 
+  if (isLoading) return <Spin spinning={isLoading} fullscreen={true} />;
+
   if (allListing.length === 0)
     return <Message>No Lisitng to show.. Comming soon :)</Message>;
 

@@ -18,7 +18,7 @@ import EditDealModal from "./EditDealModal";
 import { useSearchParams } from "next/navigation";
 import { BASE_URL } from "@/constant/utilities";
 import { useRouter } from "next/navigation";
-import { Spin } from "antd";
+import { notification, Spin } from "antd";
 
 function Addtool() {
   const [isAuth, setIsAuth] = useState(function () {
@@ -170,11 +170,11 @@ function Addtool() {
   };
 
   const validationSchema = yup.object({
-    company_name: yup
+    company_name: yup.string().required("Company name is Required"),
+    company_tagline: yup
       .string()
       .max(15, "Field must not exceed 15 characters")
-      .required("Company name is Required"),
-    company_tagline: yup.string().required("Company tagline must be required"),
+      .required("Company tagline must be required"),
   });
 
   const formik = useFormik({
@@ -234,7 +234,10 @@ function Addtool() {
         .then((result) => {
           const convertedData = JSON.parse(result);
           console.log(convertedData, typeof convertedData);
-          if (convertedData.status === 200) router.push("alllistings");
+          if (convertedData.status === 200) {
+            notification.success(convertedData.msg);
+            router.push("alllistings");
+          }
 
           if (convertedData.status === 400)
             setError((error) => ({ ...error, formError: convertedData.msg }));
