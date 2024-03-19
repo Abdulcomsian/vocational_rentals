@@ -11,7 +11,7 @@ export default function DeleteModal({ show, onHide, handleDeleteItem }) {
       </div>
       <h4 className="text-dark text-center mt-4">Are you sure?</h4>
       <p className="text-muted mx-4 mb-0 text-center mt-1">
-        Are you sure you want to Cancel this Subscription?
+        Are you sure you want to Delete the listing?
       </p>
       <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
         <Button className="btn w-sm btn-light" onClick={onHide}>
@@ -19,7 +19,7 @@ export default function DeleteModal({ show, onHide, handleDeleteItem }) {
         </Button>
 
         <Button className="btn w-sm btn-danger" onClick={handleDeleteItem}>
-          Yes, Cancel It!
+          Yes, Delete It!
         </Button>
       </div>
     </ModalContainer>

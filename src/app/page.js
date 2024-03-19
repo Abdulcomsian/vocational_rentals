@@ -15,8 +15,10 @@ import { CatagoriesProvider } from "@/contexts/CatagoriesContext";
 import { useEffect, useState } from "react";
 import { Spin } from "antd";
 import Link from "next/link";
+import { Dropdown } from "react-bootstrap";
 
 function Textpage() {
+  const [hasDeals, setHasDeals] = useState(false);
   const [listing, setListing] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(function () {
@@ -64,31 +66,23 @@ function Textpage() {
                           aria-label="Text input with dropdown button"
                           placeholder="Search"
                         />
-                        <button
-                          className="btn dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Sort By : Has Deals
-                        </button>
-                        <ul className="dropdown-menu dropdown-menu-end">
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Action
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Another action
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Something else here
-                            </a>
-                          </li>
-                        </ul>
+                        <Dropdown>
+                          <Dropdown.Toggle
+                            variant="success"
+                            id="dropdown-basic"
+                          >
+                            Filter
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                            <Dropdown.Item
+                              href="#/action-1"
+                              onClick={() => setHasDeals((is) => !is)}
+                            >
+                              Has Deals
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
                   </div>

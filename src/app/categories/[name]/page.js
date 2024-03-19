@@ -87,13 +87,6 @@ const Post = () => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Has Deals
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
