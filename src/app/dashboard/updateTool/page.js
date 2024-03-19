@@ -164,12 +164,20 @@ function Addtool() {
     // setInitialValuesData((deals) => deals.filter((deal) => deal.id !== id));
   };
 
-  const handleEdit = function (e, id) {
-    console.log(id);
+  const handleEdit = function (data) {
+    // setInitialValuesData(obj => ({...obj, deals: []}))
+    const updatedDeals = initialValuesData.deals.map((deal) =>
+      deal.id === data.id ? data : deal
+    );
+    console.log("UPDATED DEALS", updatedDeals);
+    setInitialValuesData((obj) => ({ ...obj, deals: updatedDeals }));
+    setShowEditDealModal(false);
+    console.log("FINAL DATA", data);
   };
 
   const toggleEditDealModal = function (id) {
-    const dataToedit = deals.find((deal) => deal.id === id);
+    const dataToedit = initialValuesData.deals.find((deal) => deal.id === id);
+    console.log("DATA TO EDIT", dataToedit);
     setEditDealData(dataToedit);
     setShowEditDealModal(true);
   };

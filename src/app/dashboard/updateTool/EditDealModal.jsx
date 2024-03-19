@@ -67,10 +67,12 @@ export default function EditDealModal({
       ...inputValues,
       [e.target.name]:
         e.target.type === "number" ? Number(e.target.value) : e.target.value,
+      type: dealType,
+      billing_interval: selectedBillInterval,
     });
   };
 
-  console.log(inputValues);
+  // console.log("From Modal", inputValues, selectedBillInterval);
   return (
     <>
       <Modal
@@ -191,9 +193,9 @@ export default function EditDealModal({
                     <button
                       type="submit"
                       className="btn w-sm btn-danger"
-                      onSubmit={(e) => {
+                      onClick={(e) => {
                         e.preventDefault();
-                        handleSubmit(initialValues.id);
+                        handleSubmit(inputValues);
                       }}
                     >
                       Edit Deal

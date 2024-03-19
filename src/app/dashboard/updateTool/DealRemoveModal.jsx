@@ -1,14 +1,15 @@
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Image from "rc-image";
+// import Image from "rc-image";
+import Image from "next/image";
 import DeleteIcon from "../../../../public/images/trash-bin.png";
 
 export default function DealRemoveModal({ show, onHideModal, onDeleteDeal }) {
   return (
-    <Modal show={show} backdrop="static" keyboard={false}>
+    <Modal show={show} backdrop="static" keyboard={false} centered>
       <Modal.Body>
-        <div className="icon-modal">
-          <Image src={DeleteIcon} alt="" />
+        <div className="icon-modal text-center">
+          <Image src={DeleteIcon} alt="" width={100} />
         </div>
         <h4 className="text-dark text-center mt-4">Are you sure?</h4>
         <p className="text-muted mx-4 mb-0 text-center mt-1">

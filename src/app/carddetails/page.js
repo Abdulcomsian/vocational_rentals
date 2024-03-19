@@ -8,6 +8,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { Spin } from "antd";
 
 function Carddetails() {
   const [isAuth, setIsAuth] = useState(function () {
@@ -18,6 +19,7 @@ function Carddetails() {
     return null;
   });
   const [details, setDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const data = useSearchParams();
   const id = data.get("listingId");
@@ -33,6 +35,7 @@ function Carddetails() {
     const node = doc.body.firstChild;
 
     if (containerRef.current && node) {
+      console.log("NODE", node, containerRef.current);
       containerRef.current.appendChild(node);
     }
   }, [htmlString]);
@@ -51,7 +54,7 @@ function Carddetails() {
         body: formdata,
         redirect: "follow",
       };
-
+      setIsLoading(true);
       fetch(
         "https://admin.vacationrentals.tools/api/listing-detail",
         requestOptions
@@ -61,10 +64,14 @@ function Carddetails() {
           setDetails(result.listingData);
           console.log(result);
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
+        .finally(() => setIsLoading(false));
     },
     [id]
   );
+
+  if (!htmlString) return <Spin spinning={isLoading} fullscreen={true} />;
+
   return (
     <>
       <section className="detail">
