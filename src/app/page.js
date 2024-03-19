@@ -30,6 +30,7 @@ function Textpage() {
       body: formdata,
       redirect: "follow",
     };
+    setHasDeals(false);
 
     setIsLoading(true);
     fetch(
@@ -46,6 +47,18 @@ function Textpage() {
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false));
   }, []);
+
+  const sortByHasDeals = (a, b) => {
+    if (a.has_deals === b.has_deals) {
+      return 0;
+    } else if (a.has_deals === true) {
+      return -1;
+    } else {
+      return 1;
+    }
+  };
+
+  const sortedArray = hasDeals ? listing.sort(sortByHasDeals) : listing;
 
   return (
     <>
@@ -90,7 +103,7 @@ function Textpage() {
                 <Spin spinning={isLoading}>
                   <section className="cards">
                     <div className="row">
-                      {listing.map((list) => (
+                      {sortedArray.map((list) => (
                         <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
                           <Link href={`/carddetails?listingId=${list.id}`}>
                             <div className="card">

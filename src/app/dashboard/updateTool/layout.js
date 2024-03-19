@@ -10,7 +10,7 @@ import { Spin } from "antd";
 const AddToolPage = lazy(() => import("./page"));
 
 export default function Layout({ children }) {
-  const [isOpenSidbar, setIsOpenSidebar] = useState(true);
+  const [isOpenSidbar, setIsOpenSidebar] = useState(false);
 
   return (
     <>
