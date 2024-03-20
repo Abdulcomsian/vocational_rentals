@@ -83,7 +83,6 @@ export default function EditDealModal({
   const handleTypeChange = function (type) {
     setInputValues({ ...inputValues, type });
   };
-  console.log("From Modal", inputValues);
   return (
     <>
       <Modal

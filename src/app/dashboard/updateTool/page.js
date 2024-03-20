@@ -190,6 +190,29 @@ function Addtool() {
   const handleSubmit = function (e) {
     e.preventDefault();
 
+    if (initialValuesData.company_name === "") {
+      setError((error) => ({
+        ...error,
+        formError: "Company name must be required",
+      }));
+      return;
+    }
+    if (initialValuesData.company_tagline === "") {
+      setError((error) => ({
+        ...error,
+        formError: "Company Tagline must be required",
+      }));
+      return;
+    }
+
+    if (selectedCategories.length === 0) {
+      setError((error) => ({
+        ...error,
+        formError: "At least one category must be required",
+      }));
+      return;
+    }
+
     // setInitialValuesData((obj) => ({
     //   ...obj,
     //   short_description: ckEditorData,
