@@ -198,9 +198,9 @@ export default function EditDealModal({
                     <button
                       type="submit"
                       className="btn w-sm btn-danger"
-                      onSubmit={(e) => {
+                      onClick={(e) => {
                         e.preventDefault();
-                        handleSubmit(initialValues.id);
+                        handleSubmit(initialValues);
                       }}
                     >
                       Edit Deal

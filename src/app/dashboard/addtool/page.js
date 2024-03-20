@@ -144,8 +144,8 @@ function Addtool() {
     setDeals((deals) => deals.filter((deal) => deal.id !== id));
   };
 
-  const handleEdit = function (e, id) {
-    console.log(id);
+  const handleEdit = function (datatoEdit) {
+    console.log(datatoEdit);
   };
 
   const toggleEditDealModal = function (id) {
