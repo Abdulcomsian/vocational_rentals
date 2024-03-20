@@ -33,12 +33,24 @@ const AuthProvider = ({ children }) => {
     setIsAuthenticated(true);
   };
 
-  const logout = () => {
+  const handleBeforeUnload = (event) => {
+    localStorage.removeItem("token");
+  };
+
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
+  function logout() {
     // Remove the token from localStorage
     localStorage.removeItem("token");
     setUser(null);
     setIsAuthenticated(false);
-  };
+  }
 
   const value = {
     user,
