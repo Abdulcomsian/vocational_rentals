@@ -19,6 +19,7 @@ const BillingIntervalOption = function ({
   selectedBillInterval,
   onSeledBillInterval,
 }) {
+  console.log("selected bill interval", selectedBillInterval);
   return (
     <div className="intervals">
       {options.map((option) => (
@@ -34,12 +35,17 @@ const BillingIntervalOption = function ({
 };
 
 const DealTypes = function ({ options, selectedType, onSelectedType }) {
+  console.log(options, selectedType);
   return (
     <div className="intervals">
       {options.map((option) => (
         <span
-          className={selectedType === option.id ? "active" : ""}
-          onClick={() => onSelectedType(option.id)}
+          className={
+            selectedType.toLowerCase() === option.option.toLowerCase()
+              ? "active"
+              : ""
+          }
+          onClick={() => onSelectedType(option.option)}
         >
           {option.option}
         </span>
@@ -55,8 +61,8 @@ export default function EditDealModal({
   handleSubmit,
 }) {
   const [inputValues, setInputValues] = useState(initialValues);
-  const [selectedBillInterval, setSelectedBillInterval] = useState("monthly");
-  const [dealType, setDealType] = useState("url");
+  // const [selectedBillInterval, setSelectedBillInterval] = useState("monthly");
+  // const [dealType, setDealType] = useState("url");
 
   const handleHideModal = function () {
     onHideModal();
@@ -67,12 +73,17 @@ export default function EditDealModal({
       ...inputValues,
       [e.target.name]:
         e.target.type === "number" ? Number(e.target.value) : e.target.value,
-      type: dealType,
-      billing_interval: selectedBillInterval,
     });
   };
 
-  // console.log("From Modal", inputValues, selectedBillInterval);
+  const handleBillSelection = function (option) {
+    setInputValues({ ...inputValues, billing_interval: option });
+  };
+
+  const handleTypeChange = function (type) {
+    setInputValues({ ...inputValues, type });
+  };
+  console.log("From Modal", inputValues);
   return (
     <>
       <Modal
@@ -145,16 +156,16 @@ export default function EditDealModal({
                       <label className="form-label">Billing Interval</label>
                       <BillingIntervalOption
                         options={billingIntervalOptions}
-                        selectedBillInterval={selectedBillInterval}
-                        onSeledBillInterval={setSelectedBillInterval}
+                        selectedBillInterval={inputValues.billing_interval}
+                        onSeledBillInterval={handleBillSelection}
                       />
                     </div>
                     <div className="col-md-12 mt-3">
                       <label className="form-label">Type</label>
                       <DealTypes
                         options={dealTypeOptions}
-                        selectedType={dealType}
-                        onSelectedType={setDealType}
+                        selectedType={inputValues.type}
+                        onSelectedType={handleTypeChange}
                       />
                     </div>
                     <div className="col-md-12 mt-3">
