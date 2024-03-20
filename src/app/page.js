@@ -40,7 +40,6 @@ function Textpage() {
       .then((response) => response.json())
       .then((result) => {
         if (result.status === 200) {
-          console.log(result.listings);
           setListing(result.listings);
         }
       })

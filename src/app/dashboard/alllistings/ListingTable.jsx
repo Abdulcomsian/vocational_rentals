@@ -15,7 +15,6 @@ function TableHead() {
 }
 
 function TableBody({ columnData = [], onDeleteListing }) {
-  console.log("COLUMN DATA", columnData);
   return (
     <tbody>
       {columnData.map((data) => (

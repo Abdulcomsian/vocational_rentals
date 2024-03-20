@@ -37,8 +37,6 @@ const Post = () => {
   };
   const sortedArray = hasDeals ? listing.sort(sortByHasDeals) : listing;
 
-  console.log("SORTED", sortedArray);
-
   useEffect(
     function () {
       const formdata = new FormData();
@@ -58,7 +56,6 @@ const Post = () => {
         .then((response) => response.json())
         .then((result) => {
           if (result.status === 200) {
-            console.log(result.listings);
             setListing(result.listings);
           }
         })

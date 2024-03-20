@@ -51,8 +51,6 @@ function Addtool() {
   const isFeatured = query.get("featured");
   const [error, setError] = useState({ formError: "", selectedCategories: "" });
 
-  console.log("ID", listingId, "FEATURED", typeof isFeatured);
-
   const router = useRouter();
 
   useEffect(() => {
@@ -85,15 +83,7 @@ function Addtool() {
   useEffect(() => {
     if (quill) {
       quill.on("text-change", (delta, oldDelta, source) => {
-        // console.log("Inner HTML", quill.root.innerHTML);
         setCkEditorData(quill.root.innerHTML);
-        // console.log("Text change!");
-        // console.log("Text", quill.getText());
-        // console.log("Delta Content", quill.getContents());
-        // console.log(
-        //   "First child InnerHTML",
-        //   quillRef.current.firstChild.innerHTML
-        // );
       });
     }
   }, [quill]);
@@ -196,18 +186,6 @@ function Addtool() {
         }));
         return;
       }
-      console.log(
-        "FINAL ADD_TOOL DATA => DEALS",
-        deals,
-        "VALUES => ",
-        values,
-        "SELECTED CATAGOURIES",
-        selectedCategories,
-        "CK-EDITOR DATA",
-        ckEditorData,
-        "LISTING ID =>",
-        listingId
-      );
       const myHeaders = new Headers();
       myHeaders.append("Authorization", `Bearer ${token}`);
 
@@ -218,8 +196,6 @@ function Addtool() {
       formdata.append("company_tagline", values.company_tagline);
       formdata.append("deals", JSON.stringify(deals));
       formdata.append("id", listingId);
-
-      console.log("FORM-DATA", formdata);
 
       const requestOptions = {
         method: "POST",
@@ -233,7 +209,6 @@ function Addtool() {
         .then((response) => response.text())
         .then((result) => {
           const convertedData = JSON.parse(result);
-          console.log(convertedData, typeof convertedData);
           if (convertedData.status === 200) {
             notification.success({ description: convertedData.msg });
             router.push("alllistings");

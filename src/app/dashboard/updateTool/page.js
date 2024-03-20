@@ -50,18 +50,16 @@ function Addtool() {
 
   const [initialValuesData, setInitialValuesData] = useState({});
   const [preSlectedCategories, setPreSlectedCategories] = useState([]);
-  // console.log("INIT DATA", initialValuesData.category_ids, "CATEG", catagories);
 
   useEffect(
     function () {
-      // console.log("HERE");
       if (initialValuesData.category_ids === undefined) return;
       const cate = initialValuesData.category_ids.map((id, i) => {
         return catagories.filter((cate) => cate.id === Number(id));
       });
 
-      console.log("PRE-SELECTED", cate.flat());
       setPreSlectedCategories(cate.flat());
+      setSelectCategories(cate.flat().map((obj) => obj.id));
     },
     [initialValuesData.category_ids]
   );
@@ -88,7 +86,6 @@ function Addtool() {
         .then((response) => response.json())
         .then((result) => {
           setInitialValuesData(result.listingData);
-          console.log(result);
         })
         .catch((error) => console.error(error));
     },
@@ -132,10 +129,6 @@ function Addtool() {
     }
     if (quill) {
       quill.on("text-change", (delta, oldDelta, source) => {
-        // setInitialValuesData((obj) => ({
-        //   ...obj,
-        //   short_description: obj.short_description + quill.root.innerHTML,
-        // }));
         setCkEditorData(quill.root.innerHTML);
         setInitialValuesData((obj) => ({
           ...obj,
@@ -147,8 +140,10 @@ function Addtool() {
 
   const handleSelectCategory = function (selectedList, selectedItem) {
     const selectedIds = selectedList.map((listItem) => listItem.id);
-    setSelectCategories(selectedIds);
+    setSelectCategories([...selectedCategories, selectedItem.id]);
   };
+
+  console.log(selectedCategories);
 
   const handleSubmitDeal = function (newDeal) {
     setInitialValuesData((obj) => ({ ...obj, deals: [...obj.deals, newDeal] }));
@@ -169,15 +164,12 @@ function Addtool() {
     const updatedDeals = initialValuesData.deals.map((deal) =>
       deal.id === data.id ? data : deal
     );
-    console.log("UPDATED DEALS", updatedDeals);
     setInitialValuesData((obj) => ({ ...obj, deals: updatedDeals }));
     setShowEditDealModal(false);
-    console.log("FINAL DATA", data);
   };
 
   const toggleEditDealModal = function (id) {
     const dataToedit = initialValuesData.deals.find((deal) => deal.id === id);
-    console.log("DATA TO EDIT", dataToedit);
     setEditDealData(dataToedit);
     setShowEditDealModal(true);
   };
@@ -205,19 +197,13 @@ function Addtool() {
       return;
     }
 
-    if (selectedCategories.length === 0) {
+    if (!preSlectedCategories.length || selectedCategories.length === 0) {
       setError((error) => ({
         ...error,
         formError: "At least one category must be required",
       }));
       return;
     }
-
-    // setInitialValuesData((obj) => ({
-    //   ...obj,
-    //   short_description: ckEditorData,
-    // }));
-    // console.log("INITIAL VALUES", initialValuesData);
 
     const myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${isAuth}`);
@@ -247,13 +233,11 @@ function Addtool() {
           notification.success({ description: result.msg });
           router.push("/dashboard/alllistings");
         }
-        console.log(result);
       })
       .catch((error) => console.error(error));
   };
 
   const handleChange = function (e) {
-    console.log(e.target, e.target.value);
     setInitialValuesData((intialObj) => ({
       ...intialObj,
       [e.target.name]: e.target.value,

@@ -10,8 +10,6 @@ import Message from "../components/Message";
 // }
 
 function Cardpage({ listing }) {
-  console.log("LISTING", listing);
-
   return (
     <>
       <section className="search-area">

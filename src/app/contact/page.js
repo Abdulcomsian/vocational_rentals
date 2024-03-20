@@ -28,8 +28,6 @@ export default function Contact() {
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
-      console.log(values);
-
       const formdata = new FormData();
       formdata.append("name", values.name);
       formdata.append("email", values.email);

@@ -89,7 +89,6 @@ function Alllistings() {
   }, []);
 
   const toggleDeleteModal = function (id) {
-    console.log(id);
     selectedId.current = id;
     setShowDeleteModal(true);
   };
@@ -125,12 +124,9 @@ function Alllistings() {
         if (result.status === 400) {
           notification.error({ description: result.msg });
         }
-        console.log(result);
       })
       .catch((error) => console.error(error));
   };
-
-  console.log(selectedId.current);
 
   if (isLoading) return <Spin spinning={isLoading} fullscreen={true} />;
 

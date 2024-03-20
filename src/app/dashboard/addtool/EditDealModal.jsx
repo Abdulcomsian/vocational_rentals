@@ -70,7 +70,6 @@ export default function EditDealModal({
     });
   };
 
-  console.log(inputValues);
   return (
     <>
       <Modal

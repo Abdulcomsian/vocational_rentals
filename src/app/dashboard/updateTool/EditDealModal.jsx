@@ -19,7 +19,6 @@ const BillingIntervalOption = function ({
   selectedBillInterval,
   onSeledBillInterval,
 }) {
-  console.log("selected bill interval", selectedBillInterval);
   return (
     <div className="intervals">
       {options.map((option) => (
@@ -35,7 +34,6 @@ const BillingIntervalOption = function ({
 };
 
 const DealTypes = function ({ options, selectedType, onSelectedType }) {
-  console.log(options, selectedType);
   return (
     <div className="intervals">
       {options.map((option) => (

@@ -14,7 +14,6 @@ import { Spin } from "antd";
 // import second from "@/context/authContext";
 
 function PlanItem({ planData, onSubmitListing, isLoading, selectedPlanId }) {
-  console.log(planData);
   return (
     <div className="col-md-3">
       <div className="package-single">

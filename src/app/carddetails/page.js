@@ -27,15 +27,12 @@ function Carddetails() {
   const htmlString = details?.short_description;
   const containerRef = useRef(null);
 
-  console.log(htmlString);
-
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     const node = doc.body.firstChild;
 
     if (containerRef.current && node) {
-      console.log("NODE", node, containerRef.current);
       containerRef.current.appendChild(node);
     }
   }, [htmlString]);
@@ -62,7 +59,6 @@ function Carddetails() {
         .then((response) => response.json())
         .then((result) => {
           setDetails(result.listingData);
-          console.log(result);
         })
         .catch((error) => console.error(error))
         .finally(() => setIsLoading(false));
