@@ -163,7 +163,7 @@ function Addtool() {
     company_name: yup.string().required("Company name is Required"),
     company_tagline: yup
       .string()
-      .max(15, "Field must not exceed 15 characters")
+      .max(40, "Field must not exceed 40 characters")
       .required("Company tagline must be required"),
   });
 

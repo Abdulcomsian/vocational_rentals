@@ -30,7 +30,7 @@ function Carddetails() {
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
-    const node = doc.body.firstChild;
+    const node = doc.body;
 
     if (containerRef.current && node) {
       containerRef.current.appendChild(node);
@@ -141,7 +141,7 @@ function Carddetails() {
               </section>
             )}
             {/* <Image src={ProductImage} className="detail-image mb-0" alt="" /> */}
-            <div className="tool-detail">
+            <div className="tool-detail mt-4">
               <div ref={containerRef}></div>
             </div>
           </div>
