@@ -8,7 +8,12 @@ export default function DealRemoveModal({ show, onHideModal, onDeleteDeal }) {
     <Modal show={show} backdrop="static" keyboard={false} centered>
       <Modal.Body>
         <div className="icon-modal text-center" style={{ textAlign: "center" }}>
-          <Image src={DeleteIcon} alt="" width={100} />
+          <Image
+            src={DeleteIcon}
+            alt=""
+            width={100}
+            style={{ textAlign: "center" }}
+          />
         </div>
         <h4 className="text-dark text-center mt-4">Are you sure?</h4>
         <p className="text-muted mx-4 mb-0 text-center mt-1">
