@@ -1,13 +1,13 @@
+import Image from "next/image";
 import DeleteIcon from "../../../public/images/trash-bin.png";
 import Button from "./Button";
 import ModalContainer from "./ModalContainer";
-import Image from "next/image";
 
 export default function DeleteModal({ show, onHide, handleDeleteItem }) {
   return (
     <ModalContainer show={show} onHide={onHide}>
       <div className="icon-modal text-center">
-        <Image src={DeleteIcon} alt="" width={100} />
+        <Image src={DeleteIcon} alt="" width={100} height={100} />
       </div>
       <h4 className="text-dark text-center mt-4">Are you sure?</h4>
       <p className="text-muted mx-4 mb-0 text-center mt-1">
