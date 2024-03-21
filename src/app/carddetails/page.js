@@ -22,7 +22,9 @@ function Carddetails() {
   const [isLoading, setIsLoading] = useState(false);
 
   const data = useSearchParams();
-  const id = data.get("listingId");
+  const id = data.get("company_name");
+
+  console.log(id);
 
   const htmlString = details?.short_description;
   const containerRef = useRef(null);
@@ -43,7 +45,7 @@ function Carddetails() {
       // myHeaders.append("Authorization", `Bearer ${isAuth}`);
 
       const formdata = new FormData();
-      formdata.append("listing_id", id);
+      formdata.append("slug", id);
 
       const requestOptions = {
         method: "POST",

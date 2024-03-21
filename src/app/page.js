@@ -21,6 +21,9 @@ function Textpage() {
   const [hasDeals, setHasDeals] = useState(false);
   const [listing, setListing] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(function () {
     const formdata = new FormData();
     formdata.append("slug", "");
@@ -57,7 +60,21 @@ function Textpage() {
     }
   };
 
-  const sortedArray = hasDeals ? listing.sort(sortByHasDeals) : listing;
+  let sortedArray;
+
+  if (hasDeals) {
+    sortedArray = listing.sort(sortByHasDeals);
+  } else if (searchQuery.length > 0) {
+    // posts.filter((post) =>
+    //       `${post.title} ${post.body}`
+    //         .toLowerCase()
+    //         .includes(searchQuery.toLowerCase())
+    //     )
+    //   : posts;
+    sortedArray = listing.filter((card) =>
+      card.company_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  } else sortedArray = listing;
 
   return (
     <>
@@ -77,6 +94,8 @@ function Textpage() {
                           className="form-control"
                           aria-label="Text input with dropdown button"
                           placeholder="Search"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
                         />
                         <Dropdown>
                           <Dropdown.Toggle
@@ -88,7 +107,6 @@ function Textpage() {
 
                           <Dropdown.Menu>
                             <Dropdown.Item
-                              href="#/action-1"
                               onClick={() => setHasDeals((is) => !is)}
                             >
                               Has Deals
@@ -104,7 +122,7 @@ function Textpage() {
                     <div className="row">
                       {sortedArray.map((list) => (
                         <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
-                          <Link href={`/carddetails?listingId=${list.id}`}>
+                          <Link href={`/carddetails?company_name=${list.slug}`}>
                             <div className="card">
                               <Image src={card} loader={loaderProp} alt="" />
                               <div className="card-info">

@@ -53,6 +53,10 @@ export default function Contact() {
 
             resetForm();
           }
+
+          if (result.status === 400) {
+            notification.error({ description: result.msg });
+          }
         })
         .catch((error) => console.error(error))
         .finally(() => {

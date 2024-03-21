@@ -104,7 +104,7 @@ const Post = () => {
           <div className="row">
             {sortedArray.map((list) => (
               <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
-                <Link href={`/carddetails?listingId=${list.id}`}>
+                <Link href={`/carddetails?company_name=${list.slug}`}>
                   <div className="card">
                     <Image src={card} loader={loaderProp} alt="" />
                     <div className="card-info">
