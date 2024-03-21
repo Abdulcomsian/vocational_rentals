@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { BASE_URL } from "@/constant/utilities";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -24,6 +24,13 @@ function Signin() {
       .required("Email is Required"),
     password: yup.string().required("Password must be required"),
   });
+
+  useEffect(
+    function () {
+      if (isAuthenticated) router.push("/");
+    },
+    [isAuthenticated]
+  );
 
   const formik = useFormik({
     initialValues: {
@@ -64,6 +71,7 @@ function Signin() {
       }
     },
   });
+
   return (
     <>
       <div className="container-mini">

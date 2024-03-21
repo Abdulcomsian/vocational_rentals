@@ -121,14 +121,21 @@ function Addtool() {
     [token]
   );
 
+  useEffect(
+    function () {
+      if (quill) {
+        quill.clipboard.dangerouslyPasteHTML(
+          initialValuesData.short_description || ""
+        );
+      }
+    },
+    [quill, initialValuesData.short_description]
+  );
+
   useEffect(() => {
     if (quill) {
-      quill.clipboard.dangerouslyPasteHTML(
-        initialValuesData.short_description || ""
-      );
-    }
-    if (quill) {
       quill.on("text-change", (delta, oldDelta, source) => {
+        console.log(quill.root.innerHTML);
         setCkEditorData(quill.root.innerHTML);
         setInitialValuesData((obj) => ({
           ...obj,
@@ -136,14 +143,22 @@ function Addtool() {
         }));
       });
     }
-  }, [quill, initialValuesData.short_description]);
+  }, [quill]);
+
+  const handleRemoveCategory = function (selectedList, selectedItem) {
+    console.log(selectedList, selectedItem);
+    const id = selectedItem?.id;
+    setSelectCategories((categories) =>
+      categories.filter((cate) => cate !== id)
+    );
+  };
 
   const handleSelectCategory = function (selectedList, selectedItem) {
     const selectedIds = selectedList.map((listItem) => listItem.id);
     setSelectCategories([...selectedCategories, selectedItem.id]);
   };
 
-  console.log(selectedCategories);
+  console.log("SELECTED CATEGORY", selectedCategories);
 
   const handleSubmitDeal = function (newDeal) {
     setInitialValuesData((obj) => ({ ...obj, deals: [...obj.deals, newDeal] }));
@@ -277,6 +292,7 @@ function Addtool() {
                     valueField="id" // Obtain id when an item is selected
                     onSelect={handleSelectCategory}
                     selectedValues={preSlectedCategories}
+                    onRemove={handleRemoveCategory}
                   />
                   {error.selectedCategories && (
                     <p className="errorMessage">{error.selectedCategories}</p>
