@@ -43,7 +43,7 @@ const DealTypes = function ({ options, selectedType, onSelectedType }) {
               ? "active"
               : ""
           }
-          onClick={() => onSelectedType(option.option)}
+          onClick={() => onSelectedType(option.id)}
         >
           {option.option}
         </span>
@@ -59,14 +59,15 @@ export default function EditDealModal({
   handleSubmit,
 }) {
   const [inputValues, setInputValues] = useState(initialValues);
-  // const [selectedBillInterval, setSelectedBillInterval] = useState("monthly");
-  // const [dealType, setDealType] = useState("url");
+
+  console.log("INP", inputValues);
 
   const handleHideModal = function () {
     onHideModal();
   };
 
   const handleChange = function (e) {
+    console.log(e.target.name);
     setInputValues({
       ...inputValues,
       [e.target.name]:
@@ -165,31 +166,35 @@ export default function EditDealModal({
                         onSelectedType={handleTypeChange}
                       />
                     </div>
-                    <div className="col-md-12 mt-3">
-                      <label className="form-label">Coupon</label>
+                    {inputValues.type !== "url" && (
+                      <div className="col-md-12 mt-3">
+                        <label className="form-label">Coupon</label>
+                        <input
+                          type="text"
+                          id="coupon_codes"
+                          name="coupon_code"
+                          className="form-control"
+                          placeholder="Coupon Code"
+                          value={inputValues.coupon_code}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {inputValues.type === "url" && (
+                    <div className="mb-3">
+                      <label className="form-label">Link</label>
                       <input
                         type="text"
-                        id="coupon_codes"
-                        name="coupon_codes"
+                        id="link"
+                        name="link"
                         className="form-control"
-                        placeholder="Coupon Code"
-                        value={inputValues.coupon_codes}
+                        placeholder="Enter Link"
+                        value={inputValues.link}
                         onChange={handleChange}
                       />
                     </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Link</label>
-                    <input
-                      type="text"
-                      id="link"
-                      name="link"
-                      className="form-control"
-                      placeholder="Enter Link"
-                      value={inputValues.link}
-                      onChange={handleChange}
-                    />
-                  </div>
+                  )}
                   <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                     <button
                       type="button"

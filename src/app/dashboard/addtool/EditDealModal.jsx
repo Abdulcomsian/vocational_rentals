@@ -67,16 +67,20 @@ export default function EditDealModal({
   };
 
   const handleTypeChange = function (type) {
+    console.log(type);
     setInputValues({ ...inputValues, type });
   };
 
   const handleChange = function (e) {
+    console.log(e.target.name);
     setInputValues({
       ...inputValues,
       [e.target.name]:
         e.target.type === "number" ? Number(e.target.value) : e.target.value,
     });
   };
+
+  console.log("ADD MODAL INPUT", inputValues);
 
   return (
     <>
@@ -162,31 +166,35 @@ export default function EditDealModal({
                         onSelectedType={handleTypeChange}
                       />
                     </div>
-                    <div className="col-md-12 mt-3">
-                      <label className="form-label">Coupon</label>
+                    {inputValues.type !== "url" && (
+                      <div className="col-md-12 mt-3">
+                        <label className="form-label">Coupon</label>
+                        <input
+                          type="text"
+                          id="coupon_codes"
+                          name="coupon_code"
+                          className="form-control"
+                          placeholder="Coupon Code"
+                          value={inputValues.coupon_code}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {inputValues.type === "url" && (
+                    <div className="mb-3">
+                      <label className="form-label">Link</label>
                       <input
                         type="text"
-                        id="coupon_codes"
-                        name="coupon_codes"
+                        id="link"
+                        name="link"
                         className="form-control"
-                        placeholder="Coupon Code"
-                        value={inputValues.coupon_codes}
+                        placeholder="Enter Link"
+                        value={inputValues.link}
                         onChange={handleChange}
                       />
                     </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Link</label>
-                    <input
-                      type="text"
-                      id="link"
-                      name="link"
-                      className="form-control"
-                      placeholder="Enter Link"
-                      value={inputValues.link}
-                      onChange={handleChange}
-                    />
-                  </div>
+                  )}
                   <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                     <button
                       type="button"
@@ -200,7 +208,7 @@ export default function EditDealModal({
                       className="btn w-sm btn-danger"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleSubmit(initialValues);
+                        handleSubmit(inputValues);
                       }}
                     >
                       Edit Deal

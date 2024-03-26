@@ -24,7 +24,8 @@ function TableBody({ columnData = [], onDeleteListing }) {
           </td>
           <td>
             <Link
-              href={`/carddetails?listingId=${data.id}`}
+              href={`/[companyName]`}
+              as={`/${data.slug}`}
               className="comapny-link"
             >
               Visit Link
@@ -44,9 +45,9 @@ function TableBody({ columnData = [], onDeleteListing }) {
           <td>{data.has_deals ? "Yes" : "No"}</td>
           <td className="actions">
             <Link
-              href={`updateTool?id=${data.id}&featured=${
+              href={`updateTool?slug=${data.slug}&featured=${
                 data.plan.plan_type === "Featured" ? true : false
-              }`}
+              }&listingId=${data.id}`}
               className="text-success"
             >
               <i className="las la-pencil-alt"></i>

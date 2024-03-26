@@ -136,6 +136,7 @@ function Addtool() {
   };
 
   const handleSubmitDeal = function (newDeal) {
+    console.log("NEW DEAL AFTER ADDING ", newDeal);
     setDeals((deals) => [...deals, newDeal]);
   };
 
@@ -145,7 +146,17 @@ function Addtool() {
   };
 
   const handleEdit = function (datatoEdit) {
-    console.log(datatoEdit);
+    console.log("Data to edit", datatoEdit);
+    const updatedData = {
+      ...datatoEdit,
+      coupon_code: datatoEdit.type === "url" ? "" : datatoEdit.coupon_code,
+      link: datatoEdit.type === "url" ? datatoEdit.link : "",
+    };
+
+    setDeals((deals) =>
+      deals.map((deal) => (deal.id === datatoEdit.id ? updatedData : deal))
+    );
+    setShowEditDealModal(false);
   };
 
   const toggleEditDealModal = function (id) {
@@ -163,7 +174,7 @@ function Addtool() {
     company_name: yup.string().required("Company name is Required"),
     company_tagline: yup
       .string()
-      .max(40, "Field must not exceed 40 characters")
+      .max(60, "Field must not exceed 60 characters")
       .required("Company tagline must be required"),
   });
 
@@ -312,11 +323,15 @@ function Addtool() {
                     />
                   </div>
                 )}
-                <Spin spinning={isLoading}>
-                  <button type="submit" className="btn btn-submit">
-                    Submit
-                  </button>
-                </Spin>
+                <button
+                  type="submit"
+                  className="btn btn-submit"
+                  disabled={isLoading}
+                >
+                  {isLoading
+                    ? "We are getting your listing ready. Please wait..."
+                    : "Submit"}
+                </button>
               </form>
             </div>
           </div>

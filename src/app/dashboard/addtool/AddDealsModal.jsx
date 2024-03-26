@@ -72,6 +72,8 @@ export default function AddDealsModal({ onAddDeal, show, onHideModal }) {
         billing_interval: selectedBillInterval,
         type: dealType,
         currency,
+        coupon_code: dealType === "url" ? "" : values.coupon_code,
+        link: dealType === "url" ? values.link : "",
         id: crypto.randomUUID(),
       });
       handleHideModal();
@@ -161,31 +163,35 @@ export default function AddDealsModal({ onAddDeal, show, onHideModal }) {
                         onSelectedType={setDealType}
                       />
                     </div>
-                    <div className="col-md-12 mt-3">
-                      <label className="form-label">Coupon</label>
+                    {dealType !== "url" && (
+                      <div className="col-md-12 mt-3">
+                        <label className="form-label">Coupon</label>
+                        <input
+                          type="text"
+                          id="coupon_code"
+                          className="form-control"
+                          placeholder="Coupon Code"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.coupon_code}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {dealType === "url" && (
+                    <div className="mb-3">
+                      <label className="form-label">Link</label>
                       <input
                         type="text"
-                        id="coupon_code"
+                        id="link"
                         className="form-control"
-                        placeholder="Coupon Code"
+                        placeholder="Enter Link"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.coupon_code}
+                        value={formik.values.link}
                       />
                     </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Link</label>
-                    <input
-                      type="text"
-                      id="link"
-                      className="form-control"
-                      placeholder="Enter Link"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.link}
-                    />
-                  </div>
+                  )}
                   <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                     <button
                       type="button"

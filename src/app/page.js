@@ -65,12 +65,6 @@ function Textpage() {
   if (hasDeals) {
     sortedArray = listing.sort(sortByHasDeals);
   } else if (searchQuery.length > 0) {
-    // posts.filter((post) =>
-    //       `${post.title} ${post.body}`
-    //         .toLowerCase()
-    //         .includes(searchQuery.toLowerCase())
-    //     )
-    //   : posts;
     sortedArray = listing.filter((card) =>
       card.company_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -122,7 +116,7 @@ function Textpage() {
                     <div className="row">
                       {sortedArray.map((list) => (
                         <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
-                          <Link href={`/carddetails?company_name=${list.slug}`}>
+                          <Link href={`/[companyName]`} as={`/${list.slug}`}>
                             <div className="card">
                               <Image src={card} loader={loaderProp} alt="" />
                               <div className="card-info">
@@ -130,9 +124,16 @@ function Textpage() {
                                   {/* <Image src={card11} loader={loaderProp} alt="" /> */}
                                   <h3>{list.company_name}</h3>
                                 </div>
-                                {list?.plan_type === "Featured" && (
-                                  <div className="type sponsor">Featured</div>
-                                )}
+                                <div className="badges-container">
+                                  {list.deals.length > 0 && (
+                                    <div className="type sponsor badge--deal">
+                                      {list.deals?.length} Deals
+                                    </div>
+                                  )}
+                                  {list?.plan_type === "Featured" && (
+                                    <div className="type sponsor">Featured</div>
+                                  )}
+                                </div>
                               </div>
                               <p>{list.company_tagline}</p>
                             </div>

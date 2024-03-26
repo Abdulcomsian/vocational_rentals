@@ -34,6 +34,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
+        <title>
+          Vacation Rentals Tools | Largest Directory for Vacation Rental Tools
+          and Resources{" "}
+        </title>
       </head>
       <body className={inter.className}>
         {children}

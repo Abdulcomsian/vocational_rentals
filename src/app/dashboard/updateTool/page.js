@@ -44,9 +44,14 @@ function Addtool() {
   const [editDealData, setEditDealData] = useState(null);
   const [ckEditorData, setCkEditorData] = useState(null);
   const query = useSearchParams();
-  const listingId = query.get("id");
+  const slug = query.get("slug");
   const isFeatured = query.get("featured");
-  const [error, setError] = useState({ formError: "", selectedCategories: "" });
+  const listing_id = query.get("listingId");
+  const [error, setError] = useState({
+    formError: "",
+    selectedCategories: "",
+    tagline_error: "",
+  });
 
   const [initialValuesData, setInitialValuesData] = useState({});
   const [preSlectedCategories, setPreSlectedCategories] = useState([]);
@@ -70,7 +75,7 @@ function Addtool() {
       myHeaders.append("Authorization", `Bearer ${isAuth}`);
 
       const formdata = new FormData();
-      formdata.append("listing_id", listingId);
+      formdata.append("slug", slug);
 
       const requestOptions = {
         method: "POST",
@@ -89,7 +94,7 @@ function Addtool() {
         })
         .catch((error) => console.error(error));
     },
-    [listingId, isFeatured]
+    [slug, isFeatured]
   );
 
   const router = useRouter();
@@ -175,9 +180,14 @@ function Addtool() {
   };
 
   const handleEdit = function (data) {
-    // setInitialValuesData(obj => ({...obj, deals: []}))
+    const updatedData = {
+      ...data,
+      coupon_code: data.type === "url" ? "" : data.coupon_code,
+      link: data.type === "url" ? data.link : "",
+    };
+    console.log("UPDATED DATA FOR DEAL UPDATE", updatedData);
     const updatedDeals = initialValuesData.deals.map((deal) =>
-      deal.id === data.id ? data : deal
+      deal.id === data.id ? updatedData : deal
     );
     setInitialValuesData((obj) => ({ ...obj, deals: updatedDeals }));
     setShowEditDealModal(false);
@@ -212,6 +222,14 @@ function Addtool() {
       return;
     }
 
+    if (initialValuesData.company_tagline.length > 60) {
+      setError((err) => ({
+        ...err,
+        tagline_error: "Maximum limit for the Company tagline is 60",
+      }));
+      return;
+    }
+
     if (!preSlectedCategories.length || selectedCategories.length === 0) {
       setError((error) => ({
         ...error,
@@ -224,7 +242,7 @@ function Addtool() {
     myHeaders.append("Authorization", `Bearer ${isAuth}`);
 
     const formdata = new FormData();
-    formdata.append("id", listingId);
+    formdata.append("id", listing_id);
     formdata.append("company_name", initialValuesData.company_name);
     formdata.append("short_description", initialValuesData.short_description);
     formdata.append("company_categories", JSON.stringify(selectedCategories));
@@ -249,7 +267,15 @@ function Addtool() {
           router.push("/dashboard/alllistings");
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setError((err) => ({
+          ...err,
+          tagline_error: "",
+          formError: "",
+          selectedCategories: "",
+        }));
+      });
   };
 
   const handleChange = function (e) {
@@ -309,6 +335,9 @@ function Addtool() {
                     value={initialValuesData.company_tagline}
                     onChange={(e) => handleChange(e)}
                   />
+                  {error.tagline_error.length > 0 && (
+                    <p className="errorMessage">{error.tagline_error}</p>
+                  )}
                 </div>
                 <div className="editor-parent mb-3">
                   <label className="form-label">Short Description</label>
@@ -335,11 +364,15 @@ function Addtool() {
                     />
                   </div>
                 )}
-                <Spin spinning={isLoading}>
-                  <button type="submit" className="btn btn-submit">
-                    Submit
-                  </button>
-                </Spin>
+                <button
+                  type="submit"
+                  className="btn btn-submit"
+                  disabled={isLoading}
+                >
+                  {isLoading
+                    ? "We are getting your listing ready. Please wait..."
+                    : "Submit"}
+                </button>
               </form>
             </div>
           </div>

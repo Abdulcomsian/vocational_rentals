@@ -65,9 +65,11 @@ const Post = () => {
     [sliceSlug]
   );
 
+  console.log("ARRAY", sortedArray);
+
   return (
     <div>
-      <h1 style={{ fontSize: "1.3rem", color: "darkslategray" }}>
+      <h1 style={{ fontSize: "1.2rem", color: "darkslategray" }}>
         {selectedCatgeoryName?.category_name}
       </h1>
       <section className="search-area">
@@ -104,17 +106,26 @@ const Post = () => {
           <div className="row">
             {sortedArray.map((list) => (
               <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
-                <Link href={`/carddetails?company_name=${list.slug}`}>
+                <Link href={`/[companyName]`} as={`/${list.slug}`}>
                   <div className="card">
-                    <Image src={card} loader={loaderProp} alt="" />
+                    <div className="cardImage-container">
+                      <Image src={card} loader={loaderProp} alt="" />
+                    </div>
                     <div className="card-info">
                       <div className="name-img">
                         {/* <Image src={card11} loader={loaderProp} alt="" /> */}
                         <h3>{list.company_name}</h3>
                       </div>
-                      {list.plan.plan_type === "Featured" && (
-                        <div className="type sponsor">Featured</div>
-                      )}
+                      <div className="badges-container">
+                        {list.has_deals && (
+                          <div className="type sponsor badge--deal">
+                            {list.deals?.length} Deals
+                          </div>
+                        )}
+                        {list.plan_type === "Featured" && (
+                          <div className="type sponsor">Featured</div>
+                        )}
+                      </div>
                     </div>
                     <p>{list.company_tagline}</p>
                   </div>
