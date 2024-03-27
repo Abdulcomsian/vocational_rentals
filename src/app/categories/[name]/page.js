@@ -12,6 +12,7 @@ import { useCatagories } from "@/contexts/CatagoriesContext";
 import { Dropdown } from "react-bootstrap";
 
 const Post = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [hasDeals, setHasDeals] = useState(false);
   const pathname = usePathname();
   const sliceIndex = pathname.lastIndexOf("/");
@@ -25,17 +26,6 @@ const Post = () => {
   const [listing, setListing] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
-  const sortByHasDeals = (a, b) => {
-    if (a.has_deals === b.has_deals) {
-      return 0;
-    } else if (a.has_deals === true) {
-      return -1;
-    } else {
-      return 1;
-    }
-  };
-  const sortedArray = hasDeals ? listing.sort(sortByHasDeals) : listing;
 
   useEffect(
     function () {
@@ -65,6 +55,25 @@ const Post = () => {
     [sliceSlug]
   );
 
+  const sortByHasDeals = (a, b) => {
+    if (a.has_deals === b.has_deals) {
+      return 0;
+    } else if (a.has_deals === true) {
+      return -1;
+    } else {
+      return 1;
+    }
+  };
+  let sortedArray;
+
+  if (hasDeals) {
+    sortedArray = listing.sort(sortByHasDeals);
+  } else if (searchQuery.length > 0) {
+    sortedArray = listing.filter((card) =>
+      card.company_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  } else sortedArray = listing;
+
   console.log("ARRAY", sortedArray);
 
   return (
@@ -82,6 +91,8 @@ const Post = () => {
                 className="form-control"
                 aria-label="Text input with dropdown button"
                 placeholder="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -89,10 +100,7 @@ const Post = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item
-                    href="#/action-1"
-                    onClick={() => setHasDeals((is) => !is)}
-                  >
+                  <Dropdown.Item onClick={() => setHasDeals((is) => !is)}>
                     Has Deals
                   </Dropdown.Item>
                 </Dropdown.Menu>

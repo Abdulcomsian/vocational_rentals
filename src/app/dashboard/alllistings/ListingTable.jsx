@@ -14,7 +14,12 @@ function TableHead() {
   );
 }
 
-function TableBody({ columnData = [], onDeleteListing }) {
+function TableBody({
+  columnData = [],
+  onDeleteListing,
+  onCancelPlan,
+  onResumePlan,
+}) {
   return (
     <tbody>
       {columnData.map((data) => (
@@ -33,14 +38,21 @@ function TableBody({ columnData = [], onDeleteListing }) {
           </td>
           <td>
             ${data.plan.recurring_price} / {data.plan.plan_type}
-            <a
-              href="#"
-              className="text-danger fs-10 d-block cancel-plan"
-              data-bs-toggle="modal"
-              data-bs-target="#cancelModal"
-            >
-              Cancel Plan
-            </a>
+            {data.subscription_status === "active" ? (
+              <button
+                className="text-danger fs-10 d-block cancel-plan"
+                onClick={() => onCancelPlan(data.subscription_id)}
+              >
+                Cancel Plan
+              </button>
+            ) : (
+              <button
+                className="text-danger fs-10 d-block cancel-plan"
+                onClick={() => onResumePlan(data.subscription_id)}
+              >
+                Pause Plan
+              </button>
+            )}
           </td>
           <td>{data.has_deals ? "Yes" : "No"}</td>
           <td className="actions">
@@ -69,11 +81,21 @@ function TableBody({ columnData = [], onDeleteListing }) {
   );
 }
 
-export default function ListingTable({ allListing = [], onDeleteListing }) {
+export default function ListingTable({
+  allListing = [],
+  onDeleteListing,
+  onCancelPlan,
+  onResumePlan,
+}) {
   return (
     <table className="table table-bordered justify-content-center">
       <TableHead />
-      <TableBody columnData={allListing} onDeleteListing={onDeleteListing} />
+      <TableBody
+        columnData={allListing}
+        onDeleteListing={onDeleteListing}
+        onCancelPlan={onCancelPlan}
+        onResumePlan={onResumePlan}
+      />
     </table>
   );
 }

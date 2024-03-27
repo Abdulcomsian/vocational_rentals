@@ -1,81 +1,85 @@
-.listings table .company-logo{
-    border-radius: 50px;
+.listings table .company-logo {
+  border-radius: 50px;
 }
-.listings table tr{
-    vertical-align: middle;
+.listings table tr {
+  vertical-align: middle;
 }
-.listings table td{
-    vertical-align: middle;
+.listings table td {
+  vertical-align: middle;
 }
-.listings table .comapny-link{
-    color: #E30B0B;
-    text-decoration: none;
-    font-size: 14px;
+.listings table .comapny-link {
+  color: #e30b0b;
+  text-decoration: none;
+  font-size: 14px;
 }
-.listings table .actions{
-   
+.listings table .actions {
 }
-#deletelistModal .modal-body{
-    padding: 60px 20px;
+#deletelistModal .modal-body {
+  padding: 60px 20px;
 }
-#cancelModal .modal-body{
-    padding: 60px 20px;
+#cancelModal .modal-body {
+  padding: 60px 20px;
 }
-#deletelistModal .icon-modal{
-    text-align: center;
+#deletelistModal .icon-modal {
+  text-align: center;
 }
-#cancelModal .icon-modal{
-    text-align: center;
+#cancelModal .icon-modal {
+  text-align: center;
 }
-#deletelistModal .icon-modal img{
-    width: 100px;
-    height: auto;
+#deletelistModal .icon-modal img {
+  width: 100px;
+  height: auto;
 }
-#cancelModal .icon-modal img{
-    width: 100px;
-    height: auto;
+#cancelModal .icon-modal img {
+  width: 100px;
+  height: auto;
 }
-#editlistModal .modal-body{
-    padding: 30px 20px;
+#editlistModal .modal-body {
+  padding: 30px 20px;
 }
-.table-heading{
-    font-size: 25px;
-    margin-bottom: 20px;
+.table-heading {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
-table thead tr th{
-    font-weight: 600;
+table thead tr th {
+  font-weight: 600;
 }
-section.editcompany input:focus, section.editcompany input :active, section.editcompany input :visited {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    outline: none;
-    border-right: 1px solid #E30B0B;
-    border-color: #E30B0B;
-} 
-.cancel-plan{
-    text-decoration: none;
-    font-size: 12px;
+section.editcompany input:focus,
+section.editcompany input :active,
+section.editcompany input :visited {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  border-right: 1px solid #e30b0b;
+  border-color: #e30b0b;
 }
-.editcompany form label{
-    font-weight: 600;
-    font-size: 13px;
+.cancel-plan {
+  text-decoration: none;
+  font-size: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
-.editcompany form input{
-    height: 37px;
-    font-size: 12px;
+.editcompany form label {
+  font-weight: 600;
+  font-size: 13px;
+}
+.editcompany form input {
+  height: 37px;
+  font-size: 12px;
 }
 .upload-icon {
-    display: block;
-    text-align: center;
-    cursor: pointer;
+  display: block;
+  text-align: center;
+  cursor: pointer;
 }
-.upload-icon img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+.upload-icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
 }
-.upload-icon span{
-    display: block;
-    font-size:12px;
-    font-weight: 600;
+.upload-icon span {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
 }

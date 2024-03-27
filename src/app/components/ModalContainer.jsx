@@ -7,7 +7,7 @@ export default function ModalContainer({ children, show, onHide }) {
       centered
       show={show}
       onHide={onHide}
-      backdrop="static"
+      // backdrop="static"
       keyboard={false}
     >
       <Modal.Body>{children}</Modal.Body>
