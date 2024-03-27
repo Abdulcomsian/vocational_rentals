@@ -118,7 +118,18 @@ function Textpage() {
                         <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12">
                           <Link href={`/[companyName]`} as={`/${list.slug}`}>
                             <div className="card">
-                              <Image src={card} loader={loaderProp} alt="" />
+                              <div class="cardImage-container">
+                                {list.screenshot_image !== null && (
+                                  <Image
+                                    src={list.screenshot_image}
+                                    loader={loaderProp}
+                                    width={100}
+                                    height={100}
+                                    layout="responsive"
+                                    alt=""
+                                  />
+                                )}
+                              </div>
                               <div className="card-info">
                                 <div className="name-img">
                                   {/* <Image src={card11} loader={loaderProp} alt="" /> */}

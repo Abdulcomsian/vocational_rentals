@@ -109,7 +109,16 @@ const Post = () => {
                 <Link href={`/[companyName]`} as={`/${list.slug}`}>
                   <div className="card">
                     <div className="cardImage-container">
-                      <Image src={card} loader={loaderProp} alt="" />
+                      {list.screenshot_image !== null && (
+                        <Image
+                          src={list.screenshot_image}
+                          loader={loaderProp}
+                          width={100}
+                          height={100}
+                          layout="responsive"
+                          alt=""
+                        />
+                      )}
                     </div>
                     <div className="card-info">
                       <div className="name-img">

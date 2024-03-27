@@ -14,6 +14,7 @@ import { Spin } from "antd";
 // import second from "@/context/authContext";
 
 function PlanItem({ planData, onSubmitListing, isLoading, selectedPlanId }) {
+  console.log("PLAN DATA", planData);
   return (
     <div className="col-md-3">
       <div className="package-single">
@@ -25,10 +26,10 @@ function PlanItem({ planData, onSubmitListing, isLoading, selectedPlanId }) {
           </span>
         </h3>
         <ul className="mt-3">
-          {planData.recurring_price ? (
+          {planData.plan_type.toLowerCase() === "monthly" ? (
             <li>$1 first month, then ${planData.recurring_price}/month.</li>
           ) : (
-            <li>You save $10</li>
+            <li>{planData.recurring_price}/Year</li>
           )}
         </ul>
         <div className="action-btn mt-2">

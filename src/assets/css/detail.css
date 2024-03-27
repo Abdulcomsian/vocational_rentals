@@ -90,6 +90,10 @@ section.detail .tool-detail p {
 section.detail .tool-detail ol li {
   margin-bottom: 7px;
 }
+section.detail .tool-img {
+  position: sticky;
+  top: 170px;
+}
 section.detail .tool-img img {
   width: 100%;
 }

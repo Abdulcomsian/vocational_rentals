@@ -128,6 +128,7 @@ function Carddetails() {
                               <Link
                                 href={`${deal.link}`}
                                 className="btn-buy  m-auto"
+                                target="_blank"
                               >
                                 Buy
                               </Link>
@@ -153,7 +154,7 @@ function Carddetails() {
               </section>
             )}
             {/* <Image src={ProductImage} className="detail-image mb-0" alt="" /> */}
-            <div className="tool-detail my-4">
+            <div className="tool-detail my-4 mb-5">
               <div ref={containerRef}></div>
             </div>
           </div>

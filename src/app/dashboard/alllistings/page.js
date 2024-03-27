@@ -130,8 +130,7 @@ function Alllistings() {
 
   if (isLoading) return <Spin spinning={isLoading} fullscreen={true} />;
 
-  if (allListing.length === 0)
-    return <Message>No Lisitng to show.. Comming soon :)</Message>;
+  if (allListing.length === 0) return <Message>There are no listings.</Message>;
 
   return (
     <>
