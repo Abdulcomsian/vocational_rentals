@@ -29,7 +29,7 @@ function PlanItem({ planData, onSubmitListing, isLoading, selectedPlanId }) {
           {planData.plan_type.toLowerCase() === "monthly" ? (
             <li>$1 first month, then ${planData.recurring_price}/month.</li>
           ) : (
-            <li>{planData.recurring_price}/Year</li>
+            <li>${planData.recurring_price}/Year</li>
           )}
         </ul>
         <div className="action-btn mt-2">

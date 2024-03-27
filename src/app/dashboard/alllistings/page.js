@@ -299,7 +299,7 @@ function Alllistings() {
                 <button
                   type="button"
                   className="btn w-sm btn-light"
-                  onClick={() => setShowCancelPlanModal(false)}
+                  onClick={() => setShowResumePlanModal(false)}
                   disabled={subscriptionStatusLoading}
                 >
                   Close
